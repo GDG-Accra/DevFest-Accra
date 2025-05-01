@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import ShadrackImage from "../../assets/images/Speakers/ShadrackInusah.svg";
 import OkaiImage from "../../assets/images/Speakers/OkaiAbena.svg";
 import SosuImage from "../../assets/images/Speakers/SosuAlfred.svg";
@@ -94,7 +94,7 @@ const SpeakersSection = () => {
   };
 
   // Function to directly select a speaker
-  const selectSpeaker = (index) => {
+  const selectSpeaker = (index : number) => {
     setActiveIndex(index);
   };
 
@@ -222,7 +222,7 @@ const SpeakersSection = () => {
           </div>
         </div>
       </div>
-      <div className='mt-5 flex items-center justify-center'>
+      <div className='mt-10 flex items-center justify-center'>
         <Link to='/speakers'>
           <button className='bg-purple-300 text-gray-800 p-3 rounded-3xl flex gap-2 items-center'>
             See all Speakers
