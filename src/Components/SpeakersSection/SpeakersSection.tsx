@@ -94,7 +94,7 @@ const SpeakersSection = () => {
   };
 
   // Function to directly select a speaker
-  const selectSpeaker = (index) => {
+  const selectSpeaker = (index : number) => {
     setActiveIndex(index);
   };
 
