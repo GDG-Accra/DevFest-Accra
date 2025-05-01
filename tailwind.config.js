@@ -8,6 +8,7 @@ export default {
       extend: {
         fontFamily: {
           sans: ['"Nota Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+          inter: ['Inter', 'sans-serif'],
         },
       },
     },
