@@ -6,9 +6,9 @@ import { AboutSection } from '../Components/AboutSection/AboutSection'
 
 const Homepage = () => {
   return (
-    <div className="flex flex-col items-center justify-center w-full bg-[#F9F9F9]">
-       <SpeakersSection/>
+    <div>
        <AboutSection />
+       <SpeakersSection/>
     </div>
   )
 }
