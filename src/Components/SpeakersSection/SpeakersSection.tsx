@@ -4,7 +4,8 @@ import OkaiImage from "../../assets/images/Speakers/OkaiAbena.svg";
 import SosuImage from "../../assets/images/Speakers/SosuAlfred.svg";
 import OdameteyImage from "../../assets/images/Speakers/ShadrackOdametey.svg";
 import shape from "../../assets/images/Speakers/shape.svg";
-import { RiMicLine } from "react-icons/ri";
+import { Link } from "react-router-dom";
+// import { RiMicLine } from "react-icons/ri";
 
 // Simple arrow components to replace lucide-react dependency
 const ChevronLeft = () => (
@@ -98,7 +99,7 @@ const SpeakersSection = () => {
   };
 
   return (
-    <div className='w-full py-16 px-8 relative overflow-hidden'>
+    <div className='w-full py-10 px-8 relative overflow-hidden'>
       {/* Header section */}
       <div className='text-center mb-12'>
         <h2 className='text-5xl font-bold mb-4 flex items-center justify-center'>
@@ -109,7 +110,7 @@ const SpeakersSection = () => {
             </div>
           </span>
         </h2>
-        <p className='text-xl text-gray-700 max-w-3xl mx-auto'>
+        <p className='text-xl text-gray-700 max-w-xl mx-auto'>
           Introducing the innivators and Visionaries leading the charge in
           development and technology
         </p>
@@ -221,11 +222,34 @@ const SpeakersSection = () => {
           </div>
         </div>
       </div>
-      <div className='mt-10 flex items-center justify-center'>
-        <button className='bg-purple-300 text-white p-3 rounded-3xl flex gap-2 items-center'>
-          See all Speakers
-          <RiMicLine  className="text-xl"/>
-        </button>
+      <div className='mt-5 flex items-center justify-center'>
+        <Link to='/speakers'>
+          <button className='bg-purple-300 text-gray-800 p-3 rounded-3xl flex gap-2 items-center'>
+            See all Speakers
+            {/* <RiMicLine  className="text-2xl"/> */}
+            <svg
+              xmlns='http://www.w3.org/2000/svg'
+              width='24'
+              height='24'
+              fill='none'
+            >
+              <path
+                stroke='#0A0A0A'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='1.5'
+                d='M12 19c3.31 0 6-2.69 6-6V8c0-3.31-2.69-6-6-6S6 4.69 6 8v5c0 3.31 2.69 6 6 6'
+              ></path>
+              <path
+                stroke='#0A0A0A'
+                stroke-linecap='round'
+                stroke-linejoin='round'
+                stroke-width='1.5'
+                d='M3 11v2a9 9 0 0 0 18 0v-2M9.11 7.48a8 8 0 0 1 5.5 0M10.03 10.48c1.2-.33 2.47-.33 3.67 0'
+              ></path>
+            </svg>
+          </button>
+        </Link>
       </div>
     </div>
   );
