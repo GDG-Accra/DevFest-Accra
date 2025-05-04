@@ -1,7 +1,12 @@
+
 import SpeakersSection from "../Components/SpeakersSection/SpeakersSection";
 import { AboutSection } from "../Components/AboutSection/AboutSection";
 import ThrowbackSection from "../Components/ThrowbackSection/ThrowbackSection";
 import DevFestLandingPage from "./DevFestLandingPage/DevFestLandingPage";
+        import { BeFirst } from '../Components/BeFirst/BeFirst'
+
+
+
 
 const Homepage = () => {
   return (
@@ -10,6 +15,7 @@ const Homepage = () => {
       <AboutSection />
       <ThrowbackSection />
       <SpeakersSection />
+        <BeFirst />
     </div>
   );
 };
