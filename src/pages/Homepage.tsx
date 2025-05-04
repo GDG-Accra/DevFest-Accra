@@ -1,18 +1,17 @@
-
-import SpeakersSection from '../Components/SpeakersSection/SpeakersSection'
-import { AboutSection } from '../Components/AboutSection/AboutSection'
-import ThrowbackSection from '../Components/ThrowbackSection/ThrowbackSection'
-
-
+import SpeakersSection from "../Components/SpeakersSection/SpeakersSection";
+import { AboutSection } from "../Components/AboutSection/AboutSection";
+import ThrowbackSection from "../Components/ThrowbackSection/ThrowbackSection";
+import DevFestLandingPage from "./DevFestLandingPage/DevFestLandingPage";
 
 const Homepage = () => {
   return (
     <div>
-       <AboutSection />
-       <ThrowbackSection/>
-       <SpeakersSection/>
+      <DevFestLandingPage />
+      <AboutSection />
+      <ThrowbackSection />
+      <SpeakersSection />
     </div>
-  )
-}
+  );
+};
 
-export default Homepage
+export default Homepage;
