@@ -1,12 +1,10 @@
-
-import SpeakersSection from "../Components/SpeakersSection/SpeakersSection";
-import { AboutSection } from "../Components/AboutSection/AboutSection";
-import ThrowbackSection from "../Components/ThrowbackSection/ThrowbackSection";
+import React from "react";
+import SpeakersSection from '../Components/SpeakersSection/SpeakersSection'
+import { AboutSection } from '../Components/AboutSection/AboutSection'
+import ThrowbackSection from '../Components/ThrowbackSection/ThrowbackSection'
+import { BeFirst } from '../Components/BeFirst/BeFirst'
 import DevFestLandingPage from "./DevFestLandingPage/DevFestLandingPage";
-        import { BeFirst } from '../Components/BeFirst/BeFirst'
-
-
-
+import FAQSection from "../Components/FAQSection/FAQSection";
 
 const Homepage = () => {
   return (
@@ -16,6 +14,7 @@ const Homepage = () => {
       <ThrowbackSection />
       <SpeakersSection />
         <BeFirst />
+      <FAQSection />
     </div>
   );
 };
