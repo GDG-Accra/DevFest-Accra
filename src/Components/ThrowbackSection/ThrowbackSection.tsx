@@ -1,4 +1,3 @@
-import React from 'react';
 import ThrowbackImage from '../../assets/images/Throwback/throwbackImage.svg';
 import Shape from '../../assets/images/Speakers/shape.svg'
 import { CiImageOn } from 'react-icons/ci';
@@ -6,10 +5,10 @@ import { IoPlayCircleOutline } from 'react-icons/io5';
 
 const ThrowbackSection = () => {
   return (
-    <div className="bg-white py-12 px-4 md:px-8 max-w-6xl mx-auto">
+    <div className="bg-white md:py-10 py-5 px-4 md:px-8 max-w-6xl mx-auto">
       {/* Top badge */}
       <div className="flex justify-center mb-10">
-        <div className="bg-white rounded-xl shadow-md px-6 py-3 flex flex-col items-center">
+        <div className="bg-white rounded-full shadow-md px-6 py-3 flex flex-col items-center">
           <div className="uppercase text-gray-700 text-sm font-medium">THROWBACK</div>
           <div className="flex items-center gap-1 mt-1">
             <div className="h-4 w-4 bg-green-500 rounded-full"></div>
@@ -91,20 +90,20 @@ const ThrowbackSection = () => {
         </div>
       </div>
 
-      {/* Action buttons */}
-      <div className="flex flex-col md:flex-row w-full max-w-md mx-auto">
-      {/* Play highlights button - yellow/orange button */}
-      <button className="bg-yellow-500 text-gray-800 py-4 px-6 rounded-full font-semibold text-lg w-full flex justify-center items-center gap-1">
-        <span>Play highlights</span>
-        <IoPlayCircleOutline className='text-gray-800 text-2xl' />
-      </button>
+      {/* Action buttons - FIXED for better display on large screens */}
+      <div className="flex flex-col md:flex-row justify-center gap-4 md:gap-6 w-full max-w-3xl mx-auto mt-12">
+        {/* Play highlights button - yellow/orange button */}
+        <button className="bg-yellow-500 text-gray-800 py-4 px-6 rounded-full font-semibold text-lg flex justify-center items-center gap-2 transition hover:bg-yellow-600">
+          <span>Play highlights</span>
+          <IoPlayCircleOutline className="text-gray-800 text-2xl" />
+        </button>
 
-      {/* DevFest Lagos photos button - outlined button */}
-      <button className="bg-transparent border-2 border-gray-300 text-gray-800 py-4 px-6 rounded-full font-semibold text-lg w-full flex justify-center items-center gap-1">
-        <span>DevFest Accra 24 photos</span>
-        <CiImageOn className='text-gray-800 text-2xl' />
-      </button>
-    </div>
+        {/* DevFest Lagos photos button - outlined button */}
+        <button className="bg-transparent border-2 border-gray-300 text-gray-800 py-4 px-6 rounded-full font-semibold text-lg flex justify-center items-center gap-2 transition hover:bg-gray-100">
+          <span>DevFest Accra 24 photos</span>
+          <CiImageOn className="text-gray-800 text-2xl" />
+        </button>
+      </div>
     </div>
   );
 };
