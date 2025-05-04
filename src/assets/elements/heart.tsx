@@ -2,7 +2,11 @@ export const Heart = ({ className }: { className: string }) => {
   return (
     <div className={className}>
       <svg
-        className="w-[80px] h-[60px] md:w-[95px] md:h-[80px] lg:w-[100px] lg:h-[90px] xl:w-[116px] xl:h-[97px] 2xl:w-[232px] 2xl:h-[194px]"
+        className="w-[80px] h-[60px] md:w-[95px] 
+          md:h-[80px] 
+          lg:w-[100px] lg:h-[90px] 
+          xl:w-[116px] xl:h-[97px] 
+          2xl:w-[130px] 2xl:h-[100px]"
         width="100%"
         height="100%"
         viewBox="0 0 96 97"
