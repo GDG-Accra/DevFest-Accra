@@ -9,6 +9,7 @@ export default {
         fontFamily: {
           sans: ['"Nota Sans"', 'ui-sans-serif', 'system-ui', 'sans-serif'],
           inter: ['Inter', 'sans-serif'],
+          nunito: ['"Nunito Sans"', 'sans-serif'],
         },
       },
     },

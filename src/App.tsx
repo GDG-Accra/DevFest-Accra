@@ -2,6 +2,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import HomePage from './pages/Homepage';
 import Speakers from './Components/SpeakersSection/Speakers';
+import "@fontsource/nunito-sans";
+import "@fontsource/inter";
 
 const App: React.FC = () => {
   return (
