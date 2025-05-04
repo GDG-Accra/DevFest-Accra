@@ -160,34 +160,36 @@ const SpeakersSection = () => {
             speakers[activeIndex]?.color || "bg-gray-100"
           } rounded-3xl p-6`}
         >
-          <div className='flex h-full items-center justify-center relative'>
+          <div className='flex h-full items-center justify-center'>
             {speakers &&
               speakers.length > 0 &&
               [-1, 0, 1].map((offset) => {
                 const speakerIndex =
                   (activeIndex + offset + speakers.length) % speakers.length;
 
-                // Calculate position and styling based on offset
-                let positionClass = "absolute";
-                let scaleClass = "scale-75 opacity-70";
-                let zIndex = "z-10";
-                let leftClass = "";
+                // IMPROVED POSITIONING LOGIC
+                let positionClasses = "";
+                let scaleClass = "";
+                let zIndex = "";
 
                 if (offset === -1) {
-                  leftClass = "left-0";
+                  positionClasses = "absolute left-8 transform";
+                  scaleClass = "scale-75 opacity-70";
+                  zIndex = "z-10";
                 } else if (offset === 0) {
-                  positionClass = "absolute transform translate-y-0";
+                  positionClasses = "absolute left-1/2 transform -translate-x-1/2";
                   scaleClass = "scale-100";
                   zIndex = "z-20";
-                  leftClass = "left-1/2 transform -translate-x-1/2";
                 } else if (offset === 1) {
-                  leftClass = "right-0";
+                  positionClasses = "absolute right-8 transform";
+                  scaleClass = "scale-75 opacity-70";
+                  zIndex = "z-10";
                 }
 
                 return (
                   <div
                     key={speakerIndex}
-                    className={`${positionClass} ${leftClass} ${scaleClass} ${zIndex} transition-all duration-300 ease-in-out`}
+                    className={`${positionClasses} ${scaleClass} ${zIndex} transition-all duration-300 ease-in-out`}
                   >
                     <div className='w-48 h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg'>
                       <img
