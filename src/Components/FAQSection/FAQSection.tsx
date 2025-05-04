@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Plus, Minus } from "lucide-react";
-import LinkImg from "../../assets/images/FAQs/Link.png";
+import LinkGIF from "../../assets/images/FAQs/link.gif";
 
 interface FAQItem {
 	question: string;
@@ -98,7 +98,11 @@ const FAQSection = () => {
 			<div className="flex justify-center mt-16">
 				<button className="bg-[#4285F4] text-[#FDFDFD] font-bold font-inter text-xl px-8 py-4 rounded-xl flex items-center gap-2 hover:bg-blue-600 transition-colors">
 					More Question
-					<img src={LinkImg} alt="" className="bg-white rounded-full p-1 w-7" />
+					<img
+						src={LinkGIF}
+						alt="rotating link gif"
+						className="bg-white rounded-full p-1 w-7"
+					/>
 				</button>
 			</div>
 		</section>
