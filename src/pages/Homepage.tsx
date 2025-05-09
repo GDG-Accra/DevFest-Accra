@@ -1,10 +1,11 @@
 import React from "react";
-import SpeakersSection from '../Components/SpeakersSection/SpeakersSection'
-import { AboutSection } from '../Components/AboutSection/AboutSection'
-import ThrowbackSection from '../Components/ThrowbackSection/ThrowbackSection'
-import { BeFirst } from '../Components/BeFirst/BeFirst'
+import SpeakersSection from '../components/SpeakersSection/SpeakersSection'
+import { AboutSection } from '../components/AboutSection/AboutSection'
+import ThrowbackSection from '../components/ThrowbackSection/ThrowbackSection'
+import { BeFirst } from '../components/BeFirst/BeFirst'
 import DevFestLandingPage from "./DevFestLandingPage/DevFestLandingPage";
-import FAQSection from "../Components/FAQSection/FAQSection";
+import FAQSection from "../components/FAQSection/FAQSection";
+import PartnersSection from "../components/PartnersSection.tsx/Partner";
 
 const Homepage = () => {
   return (
@@ -13,6 +14,7 @@ const Homepage = () => {
       <AboutSection />
       <ThrowbackSection />
       <SpeakersSection />
+      <PartnersSection/>
         <BeFirst />
       <FAQSection />
     </div>
