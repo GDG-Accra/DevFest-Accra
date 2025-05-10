@@ -6,6 +6,8 @@ import { BeFirst } from "../Components/BeFirst/BeFirst";
 import DevFestLandingPage from "./DevFestLandingPage/DevFestLandingPage";
 import FAQSection from "../Components/FAQSection/FAQSection";
 import EventDetails from "../Components/EventDetails/EventDetails";
+import PartnersSection from "../components/PartnersSection.tsx/Partner";
+
 
 const Homepage = () => {
   return (
@@ -16,6 +18,8 @@ const Homepage = () => {
       <ThrowbackSection />
       <SpeakersSection />
       <BeFirst />
+      <PartnersSection/>
+        <BeFirst />
       <FAQSection />
     </div>
   );
