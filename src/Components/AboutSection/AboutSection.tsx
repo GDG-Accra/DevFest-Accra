@@ -40,7 +40,7 @@ export const AboutSection = () => {
       >
         <p
           className="text-base leading-normal font-normal text-[#444444] lg:max-w-[50%]
-            sm:text-lg
+            sm:text-[18px]
             md:text-[20px]
             lg:text-[24px]
             2xl:text-[30px]
