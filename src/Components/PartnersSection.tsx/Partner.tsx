@@ -10,50 +10,62 @@ import SlashLogo from "../../assets/images/Partners/logos/slash.svg";
 
 const Partners: React.FC = () => {
   return (
-    <section className="text-center py-16 px-4 bg-white">
+    <section className='text-center py-16 px-4 bg-white'>
+     <h2 className="text-xl md:text-2xl text-gray-500 font-medium uppercase mb-2">
+  Partners
+</h2>
 
-      <h2 className="text-2xl text-gray-500 font-medium uppercase mb-2"> {/* Increased font size */}
-        Partners
-      </h2>
-     
-        <div className="relative max-w-5xl mx-auto mb-4">
-          <img
-            src={HashLogo}
-            alt="Hash Logo"
-            className="absolute -left-32 top-[40%] -translate-y-1/2 h-24 sm:h-22"
-           
-          />
+<div className="relative max-w-5xl mx-auto mb-4">
+  <img
+    src={HashLogo}
+    alt="Hash Logo"
+    className="absolute hidden md:block md:-left-32 top-[40%] -translate-y-1/2
+               h-8 sm:h-12 md:h-24"
+  />
 
-          <h1 className="text-4xl font-bold text-center">
-            Powered by the Ones Who Believe <br /> — Our Partners and Sponsors.
-          </h1>
-        </div>
-      <p className="text-lg text-gray-600 max-w-xl mx-auto mb-10"> {/* Increased font size */}
-        DevFest Accra 2024 set the stage—but in 2025, we’re turning it all the
-        way up, thanks to their incredible support.
-      </p>
+  <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center">
+    Powered by the Ones Who Believe  
+    <br /> — Our Partners and Sponsors.
+  </h1>
+</div>
 
+<p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl mx-auto mb-10">
+  DevFest Accra 2024 set the stage—but in 2025, we're turning it all the
+  way up, thanks to their incredible support.
+</p>
 
-      <section className="py-16 px-4 bg-white text-center">
- 
-  <div className="grid grid-cols-2 md:grid-cols-3 gap-8 justify-items-center mb-10">
-    <img src={GDGLogo} alt="GDG" className="h-48" />
-    <img src={ATULibraryLogo} alt="ATU Library" className="h-48" />
-    <img src={GamersHiveLogo} alt="Gamers Hive" className="h-48" />
-  </div>
+      
+      {/* Logos section with responsive grid */}
+      <section className="max-w-5xl mx-auto">
 
-  <div className="flex flex-col items-center gap-8 md:flex-row md:justify-center">
-    <img src={InfobipLogo} alt="Infobip" className="h-48" />
-    <img src={GDGLogo} alt="GDG Duplicate" className="h-48" />
+  <div className="grid grid-cols-2 md:grid-cols-3 gap-8 place-items-center">
+    {/* 1 */}
+    <div className="flex items-center justify-center p-4 h-32 md:h-40 lg:h-48 w-full max-w-xs">
+      <img src={GDGLogo} alt="GDG" className="max-h-full w-full object-contain" />
+    </div>
+    {/* 2 */}
+    <div className="flex items-center justify-center p-4 h-32 md:h-40 lg:h-48 w-full max-w-xs">
+      <img src={ATULibraryLogo} alt="ATU Library" className="max-h-full w-full object-contain" />
+    </div>
+    {/* 3 */}
+    <div className="flex items-center justify-center p-4 h-32 md:h-40 lg:h-48 w-full max-w-xs">
+      <img src={GamersHiveLogo} alt="Gamers Hive" className="max-h-full w-full object-contain" />
+    </div>
+    {/* 4 */}
+    <div className="flex items-center justify-center p-4 h-32 md:h-40 lg:h-48 w-full max-w-xs">
+      <img src={InfobipLogo} alt="Infobip" className="max-h-full w-full object-contain" />
+    </div>
+    {/* 5 — span two cols on small, go back to one col on md+ */}
+    <div className="col-span-2 md:col-span-1 flex items-center justify-center p-4 h-32 md:h-40 lg:h-48 w-full max-w-xs">
+      <img src={GDGLogo} alt="GDG Duplicate" className="max-h-full w-full object-contain" />
+    </div>
   </div>
 </section>
-<div className="w-full flex justify-end mt-[-130px]">
-          <img src={SlashLogo} alt="Slash Logo" className="h-24 sm:h-22 m-0" />
-        </div>
 
-
- 
-
+      
+      <div className='w-full flex justify-end mt-6 md:mt-[-110px]'>
+        <img src={SlashLogo} alt='Slash Logo' className='h-16 md:h-24 m-0' />
+      </div>
     </section>
   );
 };
