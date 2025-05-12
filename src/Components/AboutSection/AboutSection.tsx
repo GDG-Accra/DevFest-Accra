@@ -4,7 +4,7 @@ import { Heart } from "../../assets/elements/heart";
 
 export const AboutSection = () => {
   return (
-    <section className='container mx-auto px-4 py-12 sm:py-16 md:py-24 lg:py-40 relative'>
+    <section className='container mx-auto px-4 py-12 sm:py-16 md:py-24 lg:py-40 relative mt-20 lg:mt-0 md:mt-0'>
       <div className='flex flex-col md:flex-row gap-8'>
         {/* Text content on the left */}
         <div className='md:w-1/2 px-2 sm:px-4 md:px-6 lg:px-10'>
