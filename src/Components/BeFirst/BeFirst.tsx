@@ -1,107 +1,99 @@
-import BeFirstImage from "../../assets/images/BeFirst/BeFirstImage.svg";
+// import BeFirstImage from "../../assets/images/BeFirst/BeFirstImage.svg";
 import LinkRotate from "../../assets/images/BeFirst/link.gif";
+
+// import { ArrowRight } from 'lucide-react';
+import BefirstImage from "../../assets/images/BeFirst/BeImage.svg";
+import { Link } from "react-router-dom";
 
 export const BeFirst = () => {
   return (
-    <section
-      className="flex flex-col lg:flex-row gap-4 p-6 items-center justify-center
-        sm:gap-5 sm:p-8
-        md:gap-6 md:p-10
-        lg:gap-8 lg:p-12
-        xl:gap-[43px] xl:p-16
-        bg-[#C3ECF6]"
-    >
-      <img
-        src={BeFirstImage}
-        alt="Be first to know!"
-        className="w-full max-w-[500px] h-auto rounded-lg object-contain
-          sm:max-w-[600px] sm:h-[400px]
-          md:max-w-[700px] md:h-[450px]
-          lg:w-[62.5%] lg:max-w-none lg:h-auto
-          xl:w-[62.5%]
-          2xl:w-[794px] 2xl:h-[550px] 2xl:rounded-[15px]
-          3xl:w-[900px] 3xl:h-[640px]"
-      />
-      <div
-        className="flex flex-col gap-4 w-full justify-between
-            sm:gap-5
-            md:gap-6
-            lg:gap-8
-            2xl:w-[443px] 2xl:h-[550px] 2xl:gap-[58px]
-            3xl:w-[500px] 3xl:h-[640px] 3xl:gap-[65px]"
-      >
-        <div
-          className="flex flex-col gap-1
-          md:gap-2
-          lg:gap-3
-          2xl:gap-[4px]
-          3xl:gap-[6px]"
-        >
-          <p
-            className="text-base text-left text-[#1E1E1E] font-nunito
-                sm:text-lg
-                md:text-[20px]
-                lg:text-[24px]
-                2xl:text-[30px]
-                3xl:text-[36px]"
-          >
-            GDG ACCRA
-          </p>
-          <h2
-            className="text-2xl font-bold text-[#1E1E1E] font-inter leading-normal
-                sm:text-3xl
-                md:text-[32px]
-                lg:text-[40px]
-                2xl:text-[50px]
-                3xl:text-[60px] 3xl:leading-relaxed"
-          >
-            Be the First to Know!
-          </h2>
+    <div className='bg-sky-100 p-6 md:p-10 flex items-center justify-center'>
+      <div className='max-w-6xl w-full mx-auto flex flex-col md:flex-row gap-8 rounded-xl overflow-hidden'>
+        {/* Left side image section */}
+        <div className='md:w-1/2 bg-white p-4 md:p-8 flex items-center justify-center relative'>
+          <div className='absolute top-6 left-6 bg-white/80 backdrop-blur-sm px-3 py-1 rounded-full text-gray-700 font-medium text-sm'>
+            @DevFest
+          </div>
+
+          {/* DevFest logo */}
+          <div className='absolute top-6 right-6'>
+            <div className='flex items-center gap-1'>
+              <div className='h-4 w-4 bg-blue-500 rounded-sm'></div>
+              <div className='h-4 w-4 bg-red-400 rounded-sm'></div>
+              <div className='h-4 w-4 bg-yellow-400 rounded-sm'></div>
+              <div className='h-4 w-4 bg-green-400 rounded-sm'></div>
+            </div>
+          </div>
+
+          {/* Event image */}
+          <div className='w-full h-72 rounded-lg flex items-center justify-center relative overflow-hidden'>
+            <img
+              src={BefirstImage}
+              alt='DevFest event participants'
+              className='w-full h-full object-cover'
+            />
+
+            {/* Event tags/buttons at the bottom of the image */}
+            <div className='absolute -bottom-5 left-1/2 -translate-x-1/2 flex items-center gap-3'>
+              <div className='bg-white py-2 px-6 rounded-full shadow-md flex items-center gap-2'>
+                <div className='flex'>
+                  <div className='h-4 w-4 bg-blue-500 rounded-sm'></div>
+                  <div className='h-4 w-4 bg-red-400 rounded-sm -ml-1'></div>
+                  <div className='h-4 w-4 bg-yellow-400 rounded-sm -ml-1'></div>
+                  <div className='h-4 w-4 bg-green-400 rounded-sm -ml-1'></div>
+                </div>
+                <span className='font-semibold text-gray-700'>DevFest</span>
+                <span className='text-xs bg-gray-800 text-white rounded-full px-2 py-0.5'>
+                  Accra
+                </span>
+              </div>
+
+              <div className='bg-white/90 backdrop-blur-sm py-2 px-4 rounded-full shadow-md'>
+                <span className='text-gray-700'>GDG Accra</span>
+              </div>
+            </div>
+          </div>
         </div>
-        <p
-          className="text-base text-[#444444] font-inter leading-normal
-            sm:text-lg
-            md:text-[20px]
-            lg:text-[24px]
-            2xl:text-[30px]
-            3xl:text-[36px]"
-        >
-          Stay updated on all our activities, events, and webinars. Get the
-          inside scoop on everything happening in the GDG Accra community.
-        </p>
-        <button
-          className="flex items-center justify-center w-full bg-[#4285F4] backdrop-blur-[24.3px] rounded-lg px-4 py-3 gap-2
-                sm:px-5 sm:py-4
-                md:rounded-xl md:w-[250px]
-                lg:w-[280px]
-                xl:w-[290px]
-                2xl:w-[303px] 2xl:h-[76px] 2xl:px-[20px] 2xl:py-[22px] 2xl:rounded-[15px] 2xl:gap-[10px]
-                3xl:w-[350px] 3xl:h-[90px] 3xl:px-[24px] 3xl:py-[26px]"
-        >
-          <span
-            className="text-base font-bold text-[#FDFDFD] font-inter
+
+        {/* Right side content section */}
+        <div className='md:w-1/2 p-6 md:p-10 flex flex-col justify-center'>
+          <div className='text-gray-700 font-medium mb-2'>GDG ACCRA</div>
+          <h1 className='text-4xl md:text-5xl font-bold text-gray-900 mb-6'>
+            Be the First to Know!
+          </h1>
+
+          <p className='text-gray-700 mb-8'>
+            Stay updated on all our activities, events, and webinars. Get the
+            inside scoop on everything happening in the GDG Accra community.
+          </p>
+          <Link to='/'>
+            <button className='bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 lg:px-10 rounded-md flex items-center justify-center gap-2 shadow-md w-full md:w-auto'>
+              <span
+                className='text-base font-bold text-[#FDFDFD] font-inter
                 sm:text-lg
                 md:text-[18px]
                 lg:text-[20px]
                 2xl:text-[24px]
-                3xl:text-[28px]"
-          >
-            Let&apos;s Go
-          </span>
-          <div
-            className="bg-white rounded-full p-[2px] w-[20px] h-[20px]
+                3xl:text-[28px]'
+              >
+                Let&apos;s Go
+              </span>
+              <div
+                className='bg-white rounded-full p-[2px] w-[20px] h-[20px]
                 sm:p-[3px] sm:w-[24px] sm:h-[24px]
                 2xl:w-[32px] 2xl:h-[32px]
-                3xl:w-[38px] 3xl:h-[38px]"
-          >
-            <img
-              src={LinkRotate}
-              alt="icon"
-              className="w-full h-full object-contain"
-            />
-          </div>
-        </button>
+                3xl:w-[38px] 3xl:h-[38px]'
+              >
+                <img
+                  src={LinkRotate}
+                  alt='icon'
+                  className='w-full h-full object-contain'
+                />
+              </div>
+            </button>
+          </Link>
+        </div>
       </div>
-    </section>
+    </div>
   );
 };
