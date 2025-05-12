@@ -3,7 +3,7 @@ import Calendar from "../../assets/images/EventDetails/Calendar.png";
 
 const EventDetails = () => {
   return (
-    <div className="bg-white rounded-tl-[60px] shadow-md p-6 max-w-3xl ml-auto">
+    <div className="bg-white rounded-tl-[60px] shadow-xl p-6 max-w-3xl ml-auto mt-[30px]">
       <div className="flex flex-col md:flex-row md:items-center justify-center md:justify-around space-y-6 md:space-y-0 md:space-x-8">
         {/* Location */}
         <div className="flex items-center space-x-4">

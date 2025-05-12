@@ -17,10 +17,10 @@ const Homepage = () => {
       <AboutSection />
       <ThrowbackSection />
       <SpeakersSection />
-      <BeFirst />
       <PartnersSection/>
-        <BeFirst />
       <FAQSection />
+        <BeFirst />
+     
     </div>
   );
 };
