@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import LinkGIF from "../../assets/images/FAQs/link.gif";
 
