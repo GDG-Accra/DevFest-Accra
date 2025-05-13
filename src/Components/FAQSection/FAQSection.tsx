@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import LinkGIF from "../../assets/images/FAQs/link.gif";
+import { Link } from "react-router-dom";
 
 interface FAQItem {
 	question: string;
@@ -41,16 +42,17 @@ const faqs: FAQItem[] = [
 ];
 
 const FAQSection = () => {
-	const [activeId, setActiveId] = useState<number | null>(0);
+	// Initially no FAQ is open
+	const [activeId, setActiveId] = useState<number | null>(null);
 
 	const toggleFAQ = (id: number) => {
-		const isOpen = activeId === id;
-
-		setActiveId(isOpen ? null : id);
+		// Toggle the current item only
+		setActiveId(activeId === id ? null : id);
 	};
 
 	return (
-		<section className=" w-full max-w-7xl mx-auto py-32 px-16">
+		<section className="w-full max-w-7xl mx-auto py-20 px-16">
+			{/*   */}
 			<div className="text-center mb-16">
 				<h2 className="max-w-xl mx-auto text-xl text-[#1E1E1E] mb-2 md:mb-4 font-sans">
 					FAQs
@@ -95,15 +97,21 @@ const FAQSection = () => {
 					</div>
 				))}
 			</div>
-			<div className="flex justify-center mt-16">
-				<button className="bg-[#4285F4] text-[#FDFDFD] font-bold font-inter text-xl px-8 py-4 rounded-xl flex items-center gap-2 hover:bg-blue-600 transition-colors">
-					More Question
-					<img
-						src={LinkGIF}
-						alt="rotating link gif"
-						className="bg-white rounded-full p-1 w-7"
-					/>
-				</button>
+			<div className="flex justify-center mt-12">
+				<Link to="/">
+					<button className="bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 px-10 rounded-md flex items-center justify-center gap-2 shadow-md">
+						<span className="text-base font-medium text-white font-inter">
+							More Questions
+						</span>
+						<div className="bg-white rounded-full p-1 w-5 h-5">
+							<img
+								src={LinkGIF}
+								alt="icon"
+								className="w-full h-full object-contain"
+							/>
+						</div>
+					</button>
+				</Link>
 			</div>
 		</section>
 	);
