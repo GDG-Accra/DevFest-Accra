@@ -99,10 +99,10 @@ const SpeakersSection = () => {
   };
 
   return (
-    <div className='w-full py-10 px-8 relative overflow-hidden'>
+    <div className='w-full py-10 px-8 relative overflow-hidden mt-20 lg:mt-0'>
       {/* Header section */}
       <div className='text-center mb-12'>
-        <h2 className='text-5xl font-bold mb-4 flex items-center justify-center'>
+        <h2 className='text-4xl lg:text-5xl font-bold mb-4 flex items-center justify-center'>
           Our Inspiring Speakers
           <span className='lg:ml-4 '>
             <div className='flex'>
@@ -226,7 +226,7 @@ const SpeakersSection = () => {
       </div>
       <div className='mt-10 flex items-center justify-center'>
         <Link to='/speakers'>
-          <button className='bg-purple-300 text-gray-800 p-3 rounded-3xl flex gap-2 items-center'>
+          <button className='bg-blue-300 hover:bg-blue-500 text-gray-800  p-3 rounded-lg flex gap-2 items-center'>
             See all Speakers
             {/* <RiMicLine  className="text-2xl"/> */}
             <svg

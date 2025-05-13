@@ -67,9 +67,9 @@ export const BeFirst = () => {
             inside scoop on everything happening in the GDG Accra community.
           </p>
           <Link to='/'>
-            <button className='bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 lg:px-10 rounded-md flex items-center justify-center gap-2 shadow-md w-full md:w-auto'>
+            <button className='bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 px-10 rounded-md flex items-center justify-center gap-2 shadow-md w-full md:w-auto'>
               <span
-                className='text-base font-bold text-[#FDFDFD] font-inter
+                className='text-base font-medium text-[#FDFDFD] font-inter
                 sm:text-lg
                 md:text-[18px]
                 lg:text-[20px]

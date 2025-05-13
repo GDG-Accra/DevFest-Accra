@@ -7,6 +7,7 @@ import DevFestLandingPage from "./DevFestLandingPage/DevFestLandingPage";
 import FAQSection from "../Components/FAQSection/FAQSection";
 import EventDetails from "../Components/EventDetails/EventDetails";
 import PartnersSection from "../components/PartnersSection.tsx/Partner";
+import DPGenerator from "../Components/DPGenerator/DPGenerator";
 
 
 const Homepage = () => {
@@ -20,6 +21,7 @@ const Homepage = () => {
       <PartnersSection/>
       <FAQSection />
         <BeFirst />
+        <DPGenerator/>
      
     </div>
   );

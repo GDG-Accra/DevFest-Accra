@@ -72,3 +72,37 @@ const ThrowbackSection = () => {
 };
 
 export default ThrowbackSection;
+
+
+const faqs: FAQItem[] = [
+  {
+    question: "What is DevFest Accra?",
+    answer:
+      "It's a community-run developer festival in Accra, bringing together tech enthusiasts for both virtual and in-person sessions.",
+  },
+  {
+    question: "When and where will DevFest Accra 2025 take place?",
+    answer:
+      "The in-person event will be held on [Insert Date Here] at [Insert Venue Here]. Details for the virtual sessions will be announced soon.",
+  },
+  {
+    question: "How can I register for DevFest Accra?",
+    answer:
+      "Is there a cost to attend? You can register via a link on this website. Attendance is free for both virtual and in-person events!",
+  },
+  {
+    question: "What kind of talks and workshops can I expect at DevFest Accra?",
+    answer:
+      "Expect sessions on various Google technologies and other relevant tech topics in both talk and workshop formats.",
+  },
+  {
+    question: "How can I become a speaker for DevFest Accra?",
+    answer:
+      "If you're interested in speaking, please apply through this link: [Insert Speaker Application Link Here].",
+  },
+  {
+    question: "How can I become a sponsor for DevFest Accra?",
+    answer:
+      "Information on sponsoring opportunities and how to get involved is available on a dedicated section of this website.",
+  },
+];
