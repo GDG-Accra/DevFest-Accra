@@ -87,33 +87,33 @@ const Footer = () => {
             <div className='flex flex-wrap gap-3 md:gap-2'>
               <a
                 href='#'
-                className='bg-gray-800 p-2 rounded-full hover:bg-gray-500 transition flex items-center justify-center'
+                className='bg-[#FFE7A5] p-2 rounded-full hover:bg-gray-500 transition flex items-center justify-center'
               >
-                <Twitter size={16} className='md:w-5 md:h-5 text-gray-300' />
+                <Twitter size={16} className='md:w-5 md:h-5 text-gray-700' />
               </a>
               <a
                 href='#'
-                className='bg-gray-800 p-2 rounded-full hover:bg-gray-500 transition flex items-center justify-center'
+                className='bg-[#CCF6C5] p-2 rounded-full hover:bg-gray-500 transition flex items-center justify-center'
               >
-                <Instagram size={16} className='md:w-5 md:h-5 text-gray-300' />
+                <Instagram size={16} className='md:w-5 md:h-5 text-gray-700' />
               </a>
               <a
                 href='#'
-                className='bg-gray-800 p-2 rounded-full hover:bg-gray-500 transition flex items-center justify-center'
+                className='bg-[#C3ECF6] p-2 rounded-full hover:bg-gray-500 transition flex items-center justify-center'
               >
-                <Facebook size={16} className='md:w-5 md:h-5  text-gray-300' />
+                <Facebook size={16} className='md:w-5 md:h-5  text-gray-700' />
               </a>
               <a
                 href='#'
-                className='bg-gray-800 p-2 rounded-full hover:bg-gray-500 transition flex items-center justify-center'
+                className='bg-[#F8D8D8] p-2 rounded-full hover:bg-gray-500 transition flex items-center justify-center'
               >
-                <Youtube size={16} className='md:w-5 md:h-5  text-gray-300' />
+                <Youtube size={16} className='md:w-5 md:h-5  text-gray-700' />
               </a>
               <a
                 href='#'
-                className='bg-gray-800 p-2 rounded-full hover:bg-gray-500 transition flex items-center justify-center'
+                className='bg-[#ff7daf] p-2 rounded-full hover:bg-gray-500 transition flex items-center justify-center'
               >
-                <Linkedin size={16} className='md:w-5 md:h-5  text-gray-300' />
+                <Linkedin size={16} className='md:w-5 md:h-5  text-gray-700' />
               </a>
             </div>
           </div>
@@ -133,7 +133,7 @@ const Footer = () => {
           <div className='mr-3 mb-2 md:mb-0'>
             <img src={DFShapeLogo} alt="" className="w-20 h-20 lg:w-40 lg:h-40" />
           </div>
-          <h2 className='text-4xl md:text-5xl lg:text-8xl font-bold'>
+          <h2 className='text-4xl md:text-6xl lg:text-8xl font-bold'>
             DevFest Accra 2025
           </h2>
           <img src={ShapeImageFooter} alt="" className="lg:hidden md:hidden block " />
