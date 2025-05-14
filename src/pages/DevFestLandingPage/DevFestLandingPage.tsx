@@ -36,7 +36,7 @@ const DevFestLandingPage = () => {
         {/* Main Heading */}
         <div className='text-center mt-10 relative'>
           <h1 className='text-7xl md:text-9xl font-bold mb-2'>DevFest Accra</h1>
-          <div className='absolute top-0 right-[19%] md:right-12 lg:right-[14%] -mt-1'>
+          <div className='absolute top-0 right-[19%] md:right-[26%] lg:right-[14%] -mt-1'>
             <span className='md:text-3xl text-2xl font-bold'>2025</span>
           </div>
         </div>
