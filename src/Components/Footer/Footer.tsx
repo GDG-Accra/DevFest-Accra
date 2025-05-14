@@ -136,11 +136,11 @@ const Footer = () => {
           <h2 className='text-4xl md:text-5xl lg:text-8xl font-bold'>
             DevFest Accra 2025
           </h2>
-          <img src={ShapeImageFooter} alt="" className="lg:hidden block " />
+          <img src={ShapeImageFooter} alt="" className="lg:hidden md:hidden block " />
         </div>
        
       </div>
-      <img src={ShapeImageFooterLG} alt="" className="hidden lg:block " />
+      <img src={ShapeImageFooterLG} alt="" className="hidden lg:block md:block " />
     </footer>
   );
 };
