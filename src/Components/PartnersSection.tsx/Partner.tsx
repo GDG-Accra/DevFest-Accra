@@ -19,7 +19,7 @@ const Partners: React.FC = () => {
         <img
           src={HashLogo}
           alt='Hash Logo'
-          className='absolute md:-left-32 top-[40%] -translate-y-1/2
+          className='absolute md:-left-16 lg:-left-32 top-[40%] -translate-y-1/2
                h-10 lg:h-24 md:ml-20'
         />
 
@@ -76,7 +76,7 @@ const Partners: React.FC = () => {
       </section>
 
       <div className='lg:w-full  flex justify-end mt-6 md:mt-[-110px]'>
-        <img src={SlashLogo} alt='Slash Logo' className='h-10 md:h-20 m-0 md:mr-20' />
+        <img src={SlashLogo} alt='Slash Logo' className='h-10 md:h-12 lg:h-20 m-0 lg:mr-20' />
       </div>
     </section>
   );
