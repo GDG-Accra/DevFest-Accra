@@ -5,9 +5,9 @@ import { Heart } from "../../assets/elements/heart";
 export const AboutSection = () => {
   return (
     <section className='container mx-auto px-4 py-12 sm:py-16 md:py-24 lg:py-40 relative mt-20 lg:mt-0 md:mt-0'>
-      <div className='flex flex-col md:flex-row gap-8'>
+      <div className='flex flex-col md:flex-col lg:flex-row gap-8'>
         {/* Text content on the left */}
-        <div className='md:w-1/2 px-2 sm:px-4 md:px-6 lg:px-10'>
+        <div className='lg:w-1/2 px-2 sm:px-4 md:px-6 lg:px-10'>
           <div className='flex mb-6'>
             <h1 className='text-4xl md:text-5xl font-bold'>
               About <br /> DevFest Accra
@@ -27,7 +27,7 @@ export const AboutSection = () => {
         </div>
         
         {/* Image and heart on the right */}
-        <div className='md:w-1/2 relative md:mt-0 flex justify-center md:pr-5'>
+        <div className='lg:w-1/2 relative md:mt-0 flex justify-center md:pr-5'>
           <div className='relative w-4/5 md:w-full'>
             <img
               src={AboutImage}
