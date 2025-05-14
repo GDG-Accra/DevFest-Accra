@@ -8,6 +8,7 @@ import FAQSection from "../Components/FAQSection/FAQSection";
 import EventDetails from "../Components/EventDetails/EventDetails";
 import PartnersSection from "../components/PartnersSection.tsx/Partner";
 import DPGenerator from "../Components/DPGenerator/DPGenerator";
+import Footer from "../Components/Footer/Footer";
 
 
 const Homepage = () => {
@@ -22,6 +23,7 @@ const Homepage = () => {
       <FAQSection />
         <BeFirst />
         <DPGenerator/>
+        <Footer/>
      
     </div>
   );
