@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Volume2, Users, Menu, X } from 'lucide-react';
 import { TbMessage2Question } from 'react-icons/tb';
+import DFLogo from '../../assets/images/Logos/DFLogo-Accra.svg'
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -37,7 +38,7 @@ const Navbar: React.FC = () => {
       <div className="flex items-center">
         <div className="flex items-center">
           {/* DevFest logo as an image */}
-          <img src="/path-to-your-devfest-logo.png" alt="DevFest" className="h-8" />
+          <img src={DFLogo} alt="DevFest" className="h-10 mt-2 lg:mt-0" />
         </div>
       </div>
 
