@@ -88,7 +88,7 @@ const ThrowbackSection = () => {
 
       {/* Mobile Image Carousel (for small screens) */}
       <div className="sm:hidden flex overflow-x-auto space-x-3 pb-4 px-4">
-        {[1, 2, 3, 4, 5].map((item) => (
+        {[1,2,3,4,5].map((item) => (
           <div
             key={item}
             className="flex-shrink-0 w-64 h-64 rounded-[30px] overflow-hidden"
