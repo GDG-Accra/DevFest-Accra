@@ -49,25 +49,41 @@ const ThrowbackSection = () => {
       {/* Image gallery */}
       <div className="hidden sm:flex justify-center gap-3 mb-10 overflow-x-auto">
         {/* Images with staggered layout for larger screens */}
-        {Array.from({ length: totalParts }).map((_, idx) => {
-          const objectPercent = (idx / (totalParts - 1)) * 100; // Even distribution
-          const width =
-            idx === Math.floor(totalParts / 2) ? "w-[20%]" : "w-[16%]";
-          const marginTop = idx % 2 === 0 ? "mt-20" : "mt-0";
-
-          return (
-            <div
-              key={idx}
-              className={`${width} h-[450px] ${marginTop} rounded-[30px] overflow-hidden`}
-            >
-              <img
-                src={ThrowbackImage}
-                alt={`part-${idx + 1}`}
-                className={`w-full h-full object-cover object-[${objectPercent}%]`}
-              />
-            </div>
-          );
-        })}
+        <div className="w-[16%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
+          <img
+            src={ThrowbackImage}
+            alt="part-1"
+            className="w-full h-full object-cover object-[0%]"
+          />
+        </div>
+        <div className="w-[16%] h-[450px] mt-0 rounded-[30px] overflow-hidden">
+          <img
+            src={ThrowbackImage}
+            alt="part-2"
+            className="w-full h-full object-cover object-[25%]"
+          />
+        </div>
+        <div className="w-[20%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
+          <img
+            src={ThrowbackImage}
+            alt="part-3"
+            className="w-full h-full object-cover object-[50%]"
+          />
+        </div>
+        <div className="w-[16%] h-[450px] mt-0 rounded-[30px] overflow-hidden">
+          <img
+            src={ThrowbackImage}
+            alt="part-4"
+            className="w-full h-full object-cover object-[75%]"
+          />
+        </div>
+        <div className="w-[16%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
+          <img
+            src={ThrowbackImage}
+            alt="part-5"
+            className="w-full h-full object-cover object-[100%]"
+          />
+        </div>
       </div>
 
       {/* Mobile Image Carousel (for small screens) */}
