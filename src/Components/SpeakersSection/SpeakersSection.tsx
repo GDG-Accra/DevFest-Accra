@@ -117,9 +117,9 @@ const SpeakersSection = () => {
       </div>
 
       {/* Speakers carousel */}
-      <div className='flex flex-col md:flex-row justify-between items-center max-w-6xl mx-auto relative'>
+      <div className='flex flex-col md:flex-col lg:flex-row justify-between items-center max-w-6xl mx-auto relative'>
         {/* Navigation arrows and active speaker info */}
-        <div className='flex flex-col items-start mb-8 md:mb-0 w-full md:w-1/3'>
+        <div className='flex flex-col items-start md:items-center lg:items-start mb-8 lg:mb-0 w-full lg:w-1/3 text-left md:text-center lg:text-left'>
           <div className='flex items-center mb-6'>
             <button
               onClick={prevSpeaker}
@@ -156,7 +156,7 @@ const SpeakersSection = () => {
 
         {/* Image carousel */}
         <div
-          className={`relative w-full md:w-2/3 h-80 ${
+          className={`relative w-full lg:w-2/3 h-80 ${
             speakers[activeIndex]?.color || "bg-gray-100"
           } rounded-3xl p-6`}
         >
