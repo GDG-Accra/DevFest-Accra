@@ -1,4 +1,3 @@
-import React from "react";
 import SpeakersSection from "../Components/SpeakersSection/SpeakersSection";
 import { AboutSection } from "../Components/AboutSection/AboutSection";
 import ThrowbackSection from "../Components/ThrowbackSection/ThrowbackSection";
@@ -6,10 +5,9 @@ import { BeFirst } from "../Components/BeFirst/BeFirst";
 import DevFestLandingPage from "./DevFestLandingPage/DevFestLandingPage";
 import FAQSection from "../Components/FAQSection/FAQSection";
 import EventDetails from "../Components/EventDetails/EventDetails";
-import PartnersSection from "../components/PartnersSection.tsx/Partner";
 import DPGenerator from "../Components/DPGenerator/DPGenerator";
 import Footer from "../Components/Footer/Footer";
-
+import PartnersSection from "../Components/PartnersSection/PartnersSection";
 
 const Homepage = () => {
   return (
@@ -19,12 +17,11 @@ const Homepage = () => {
       <AboutSection />
       <ThrowbackSection />
       <SpeakersSection />
-      <PartnersSection/>
+      <PartnersSection />
       <FAQSection />
-        <BeFirst />
-        <DPGenerator/>
-        <Footer/>
-     
+      <BeFirst />
+      <DPGenerator />
+      <Footer />
     </div>
   );
 };
