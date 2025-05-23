@@ -7,7 +7,7 @@ import InfobipLogo from "../../assets/images/Partners/logos/infobib.svg";
 import HashLogo from "../../assets/images/Partners/logos/hash.svg";
 import SlashLogo from "../../assets/images/Partners/logos/slash.svg";
 
-const Partners: React.FC = () => {
+const PartnersSection: React.FC = () => {
   return (
     <section className='text-center py-16 px-4 bg-white'>
       
@@ -82,4 +82,4 @@ const Partners: React.FC = () => {
   );
 };
 
-export default Partners;
+export default PartnersSection;
