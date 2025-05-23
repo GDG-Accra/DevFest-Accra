@@ -1,11 +1,16 @@
 import ThrowbackImage from "../../assets/images/Throwback/throwbackImage.svg";
+import ThrowbackImage1 from "../../assets/images/Throwback/throwbackImage.svg";
+import ThrowbackImage2 from "../../assets/images/Throwback/throwbackImage.svg";
+import ThrowbackImage3 from "../../assets/images/Throwback/throwbackImage.svg";
+import ThrowbackImage4 from "../../assets/images/Throwback/throwbackImage.svg";
+import ThrowbackImage5 from "../../assets/images/Speakers/OkaiAbena.svg";
 import Shape from "../../assets/images/Speakers/shape.svg";
 import { CiImageOn } from "react-icons/ci";
 import { IoPlayCircleOutline } from "react-icons/io5";
 import { Link } from "react-router-dom";
 
 const ThrowbackSection = () => {
-  const totalParts = 5; // change to 4 or any other number for different splits
+  // const totalParts = 5; // change to 4 or any other number for different splits
   return (
     <div className="bg-white max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       {/* Top badge */}
@@ -45,7 +50,6 @@ const ThrowbackSection = () => {
         </p>
       </div>
 
-      {/* Image gallery */}
       {/* Image gallery */}
       <div className="hidden sm:flex justify-center gap-3 mb-10 overflow-x-auto">
         {/* Images with staggered layout for larger screens */}
@@ -88,19 +92,25 @@ const ThrowbackSection = () => {
 
       {/* Mobile Image Carousel (for small screens) */}
       <div className="sm:hidden flex overflow-x-auto space-x-3 pb-4 px-4">
-        {[1,2,3,4,5].map((item) => (
-          <div
-            key={item}
-            className="flex-shrink-0 w-64 h-64 rounded-[30px] overflow-hidden"
-          >
-            <img
-              src={ThrowbackImage}
-              alt={`Mobile image ${item}`}
-              className="w-full h-full object-cover"
-            />
-          </div>
-        ))}
-      </div>
+  {[
+    { id: 1, src: ThrowbackImage1, alt: "DevFest Accra 2024 - Opening Session" },
+    { id: 2, src: ThrowbackImage2, alt: "DevFest Accra 2024 - Tech Talks" },
+    { id: 3, src: ThrowbackImage3, alt: "DevFest Accra 2024 - Networking" },
+    { id: 4, src: ThrowbackImage4, alt: "DevFest Accra 2024 - Workshops" },
+    { id: 5, src: ThrowbackImage5, alt: "DevFest Accra 2024 - Community" }
+  ].map((image) => (
+    <div
+      key={image.id}
+      className="flex-shrink-0 w-64 h-64 rounded-[30px] overflow-hidden"
+    >
+      <img
+        src={image.src}
+        alt={image.alt}
+        className="w-full h-full object-cover object-[0%]"
+      />
+    </div>
+  ))}
+</div>
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mx-auto mt-8 sm:mt-12 mb-8">
