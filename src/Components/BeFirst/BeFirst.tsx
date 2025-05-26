@@ -66,7 +66,7 @@ export const BeFirst = () => {
             Stay updated on all our activities, events, and webinars. Get the
             inside scoop on everything happening in the GDG Accra community.
           </p>
-          <Link to='/'>
+          <Link to='https://gdg.community.dev/gdg-accra/'>
             <button className='bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 px-10 rounded-md flex items-center justify-center gap-2 shadow-md w-full md:w-auto'>
               <span
                 className='text-base font-medium text-[#FDFDFD] font-inter
