@@ -114,7 +114,7 @@ const ThrowbackSection = () => {
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mx-auto mt-8 sm:mt-12 mb-8">
-        <Link to="/" className="w-full sm:w-auto">
+        <Link to="https://www.youtube.com/@gdgaccra" className="w-full sm:w-auto">
           <button className="w-full bg-blue-500 text-white py-3 sm:py-4 px-6 rounded-lg font-semibold text-base sm:text-lg flex items-center justify-center gap-2 transition hover:bg-blue-600">
             <span>Play highlights</span>
             <IoPlayCircleOutline className="text-white text-xl sm:text-2xl" />
