@@ -5,7 +5,7 @@ import "@fontsource/nunito-sans";
 import "@fontsource/inter";
 import FAQs from "./pages/FAQsPage/ FAQs";
 import Speakers from "./pages/SpeakersPage/Speakers";
-import Team from "./pages/TeamPage/Team";
+import TeamPage from "./pages/TeamPage/TeamPage";
 
 const App: React.FC = () => {
   return (
@@ -20,7 +20,7 @@ const App: React.FC = () => {
         <Route path='/devfest/faqs' element={<FAQs />} />
 
         {/* Teams section  */}
-        <Route path='/devfest/teams' element={<Team />} />
+        <Route path='/devfest/teams' element={<TeamPage />} />
 
         {/* DP section  */}
       </Routes>
