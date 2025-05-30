@@ -33,7 +33,7 @@ const Navbar: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <nav className="relative z-10 flex items-center justify-between px-10 py-3 md:mt-10 bg-opacity-90 ">
+    <nav className="relative z-10 flex items-center justify-between lg:px-10 lg:py-3 mt-5 bg-opacity-90 ">
       {/* Left side with DevFest Logo and Year  shadow-sm*/}
       <div className="flex items-center">
         <div className="flex items-center">
