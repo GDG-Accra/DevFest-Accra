@@ -1,14 +1,15 @@
 import { BeFirst } from "../../Components/BeFirst/BeFirst";
 import FAQSection from "../../Components/FAQSection/FAQSection";
 import Footer from "../../Components/Footer/Footer";
-import Team from "./Team";
+// import Team from "./Team";
 import codeLeft from "../../assets/images/TeamImages/codeLeft.svg";
 import codeRight from "../../assets/images/TeamImages/codeRight.svg";
+import Speakers from "./Speakers";
 
-const TeamPage = () => {
+const SpeakerPage = () => {
   return (
     <div>
-      <Team />
+      <Speakers />
       <div className="relative overflow-hidden">
         <img
           src={codeLeft}
@@ -30,4 +31,4 @@ const TeamPage = () => {
   );
 };
 
-export default TeamPage;
+export default SpeakerPage;

@@ -60,20 +60,20 @@ const DPGenerator = () => {
         </div>
       </div>
 
-      <Link to="/">
-					<button className="bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 px-10 rounded-md flex items-center justify-center gap-2 shadow-md">
-						<span className="text-base font-medium text-white font-inter">
-                        Create DP Now
-						</span>
-						<div className="bg-white rounded-full p-1 w-5 h-5">
-							<img
-								src={LinkRotate}
-								alt="icon"
-								className="w-full h-full object-contain"
-							/>
-						</div>
-					</button>
-				</Link>
+      <Link to='/devfest/dp-generator'>
+        <button className='bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 px-10 rounded-md flex items-center justify-center gap-2 shadow-md'>
+          <span className='text-base font-medium text-white font-inter'>
+            Create DP Now
+          </span>
+          <div className='bg-white rounded-full p-1 w-5 h-5'>
+            <img
+              src={LinkRotate}
+              alt='icon'
+              className='w-full h-full object-contain'
+            />
+          </div>
+        </button>
+      </Link>
     </div>
   );
 };
