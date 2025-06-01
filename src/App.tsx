@@ -6,6 +6,7 @@ import "@fontsource/inter";
 import FAQs from "./pages/FAQsPage/ FAQs";
 import Speakers from "./pages/SpeakersPage/Speakers";
 import TeamPage from "./pages/TeamPage/TeamPage";
+import DPPage from "./pages/DPPaage/DPPage";
 
 const App: React.FC = () => {
   return (
@@ -23,6 +24,7 @@ const App: React.FC = () => {
         <Route path='/devfest/teams' element={<TeamPage />} />
 
         {/* DP section  */}
+        <Route path='/devfest/dp-generator' element={<DPPage/>} />
       </Routes>
     </div>
   );

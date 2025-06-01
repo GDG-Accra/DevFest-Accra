@@ -2,6 +2,8 @@ import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import BGImage from "../../assets/images/LandingPageImage/bgImage.svg";
 import Navbar from "../../Components/Navbar/Navbar";
+import Footer from "../../Components/Footer/Footer";
+import DPGenerator from "../../Components/DPGenerator/DPGenerator";
 
 interface FAQItem {
   question: string;
@@ -148,19 +150,19 @@ const FAQ = () => {
       <Navbar />
 
       {/* Main FAQs Content */}
-      <section className='w-full max-w-7xl mx-auto py-20 lg:px-16 px-5 relative'>
+      <section className='w-full max-w-7xl mx-auto mt-20 lg:px-16 px-5 relative'>
         {/* Red Background Glow... */}
         <div className='absolute w-[600px] h-[400px] top-3/4 left-1/2 -translate-x-1/2 -translate-y-1/2 -rotate-12 bg-red-100 opacity-30 rounded-full blur-3xl z-[-1]' />
 
         {/* page heading... */}
         <div className='text-center mb-16'>
-          <h2 className='max-w-xl mx-auto text-xl text-[#1E1E1E] mb-2 md:mb-4 font-sans'>
+          {/* <h2 className='max-w-xl mx-auto text-xl text-[#1E1E1E] mb-2 md:mb-4 font-sans'>
             FAQs
-          </h2>
+          </h2> */}
           <h3 className='text-4xl md:text-5xl font-bold text-[#1E1E1E] mb-4 font-inter'>
             Questions We Get Asked
           </h3>
-          <p className='max-w-xl mx-auto text-xl text-[#444444] mb-2 font-inter'>
+          <p className='text-gray-700 max-w-2xl mx-auto'>
             Find answers about registration, event details, and what to <br />
             expect on the day.
           </p>
@@ -200,6 +202,8 @@ const FAQ = () => {
           ))}
         </div>
       </section>
+	  <DPGenerator/>
+	  <Footer/>
     </section>
   );
 };
