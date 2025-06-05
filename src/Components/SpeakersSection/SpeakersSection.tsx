@@ -110,7 +110,7 @@ const SpeakersSection = () => {
             </div>
           </span>
         </h2>
-        <p className='text-xl text-gray-700 max-w-xl mx-auto'>
+        <p className='text-base sm:text-lg md:text-xl text-gray-600  max-w-xl mx-auto'>
           Introducing the innivators and Visionaries leading the charge in
           development and technology
         </p>
