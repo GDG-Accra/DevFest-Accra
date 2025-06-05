@@ -15,7 +15,7 @@ const DPGenerator = () => {
           <br />
           Make Your DP!
         </h1>
-        <p className='text-lg text-gray-700 max-w-2xl mx-auto'>
+        <p className='text-base sm:text-lg md:text-xl text-gray-600  max-w-2xl mx-auto'>
           Let the world know you're all in for DevFest 2025 — no matter what.
           Create your own super cool DP and rep the community in style!
         </p>

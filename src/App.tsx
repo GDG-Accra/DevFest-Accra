@@ -4,12 +4,9 @@ import HomePage from "./pages/Homepage";
 import "@fontsource/nunito-sans";
 import "@fontsource/inter";
 import FAQs from "./pages/FAQsPage/ FAQs";
-import Speakers from "./pages/SpeakersPage/Speakers";
-import TeamPage from "./pages/TeamPage/TeamPage";
 import DPPage from "./pages/DPPaage/DPPage";
-import DPForm from "./pages/DPPaage/DPForm";
-
-
+import SpeakerPage from "./pages/SpeakersPage/SpeakerPage";
+import TeamPage from "./pages/TeamPage/TeamPage";
 
 const App: React.FC = () => {
   return (
@@ -18,7 +15,7 @@ const App: React.FC = () => {
          {/* Home section  */}
         <Route path='/' element={<HomePage />} />
         {/* Speaaker section  */}
-        <Route path='/devfest/speakers' element={<Speakers />} />
+        <Route path='/devfest/speakers' element={<SpeakerPage />} />
 
         {/* FAQs section  */}
         <Route path='/devfest/faqs' element={<FAQs />} />
@@ -28,10 +25,6 @@ const App: React.FC = () => {
 
         {/* DP section  */}
         <Route path='/devfest/dp-generator' element={<DPPage/>} />
-
-       {/* DP section  */}
-        <Route path='/devfest/dp-generator' element={<DPForm/>} />
-
       </Routes>
     </div>
   );
