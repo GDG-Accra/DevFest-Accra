@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Linkedin, Twitter, Instagram } from "lucide-react";
 import BGImage from "../../assets/images/LandingPageImage/bgImage.svg";
 import firstSpeaker from "../../assets/images/Logos/DFShapeLogo.svg";
@@ -14,9 +14,12 @@ interface Speaker {
   instagram: string;
   image: string;
   variant: "blue" | "green" | "yellow";
+  bio: string;
 }
 
 const Speakers: React.FC = () => {
+  const [flippedCards, setFlippedCards] = useState<Set<number>>(new Set());
+
   const speakers: Speaker[] = [
     {
       id: 1,
@@ -28,6 +31,7 @@ const Speakers: React.FC = () => {
       instagram: "#",
       image: firstSpeaker,
       variant: "blue",
+      bio: "Shadrack is a passionate community leader with over 8 years of experience in building and scaling tech communities across Africa. He has helped launch multiple successful developer programs and mentored hundreds of developers in their career journey.",
     },
     {
       id: 2,
@@ -39,6 +43,7 @@ const Speakers: React.FC = () => {
       instagram: "#",
       image: firstSpeaker,
       variant: "green",
+      bio: "Shadrack is a passionate community leader with over 8 years of experience in building and scaling tech communities across Africa. He has helped launch multiple successful developer programs and mentored hundreds of developers in their career journey.",
     },
     {
       id: 3,
@@ -50,6 +55,7 @@ const Speakers: React.FC = () => {
       instagram: "#",
       image: firstSpeaker,
       variant: "yellow",
+      bio: "Shadrack is a passionate community leader with over 8 years of experience in building and scaling tech communities across Africa. He has helped launch multiple successful developer programs and mentored hundreds of developers in their career journey.",
     },
   ];
 
@@ -61,6 +67,18 @@ const Speakers: React.FC = () => {
     } else {
       return "bg-gray-500 text-white";
     }
+  };
+
+  const handleCardClick = (speakerId: number) => {
+    setFlippedCards((prev) => {
+      const newSet = new Set(prev);
+      if (newSet.has(speakerId)) {
+        newSet.delete(speakerId);
+      } else {
+        newSet.add(speakerId);
+      }
+      return newSet;
+    });
   };
 
   return (
@@ -84,7 +102,8 @@ const Speakers: React.FC = () => {
           {/* Header */}
           <div className='text-center mb-10 mt-20'>
             <h1 className='text-4xl md:text-5xl font-bold text-[#1E1E1E] mb-4'>
-              Get To Know Our DevFest Accra <br />2025 Speakers
+              Get To Know Our DevFest Accra <br />
+              2025 Speakers
             </h1>
             <p className='text-gray-700 max-w-2xl mx-auto'>
               From industry experts to rising tech stars, meet the brilliant
@@ -96,48 +115,104 @@ const Speakers: React.FC = () => {
           <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 px-4'>
             {speakers.map((speaker) => (
               <div key={speaker.id} className='relative'>
-                {/* Speaker Card */}
-                <div className='bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-200'>
-                  {/* Speaker Image */}
-                  <div className='flex justify-center pt-4 pb-3'>
-                    <div className='w-40 h-40 rounded-md overflow-hidden shadow-md'>
-                      <img
-                        src={speaker.image}
-                        alt={`${speaker.name}`}
-                        className='w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300'
-                      />
+                {/* Card Container with flip animation */}
+                <div
+                  className='relative w-full h-80 cursor-pointer'
+                  style={{ perspective: "1000px" }}
+                  onClick={() => handleCardClick(speaker.id)}
+                >
+                  <div
+                    className={`relative w-full h-full transition-transform duration-700 ${
+                      flippedCards.has(speaker.id) ? "rotate-y-180" : ""
+                    }`}
+                    style={{
+                      transformStyle: "preserve-3d",
+                      transform: flippedCards.has(speaker.id)
+                        ? "rotateY(180deg)"
+                        : "rotateY(0deg)",
+                    }}
+                  >
+                    {/* Front Side */}
+                    <div
+                      className='absolute inset-0 w-full h-full backface-hidden'
+                      style={{ backfaceVisibility: "hidden" }}
+                    >
+                      <div className='bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-200 h-full'>
+                        {/* Speaker Image */}
+                        <div className='flex justify-center pt-4 pb-3'>
+                          <div className='w-40 h-40 rounded-md overflow-hidden shadow-md'>
+                            <img
+                              src={speaker.image}
+                              alt={`${speaker.name}`}
+                              className='w-full h-full object-cover object-top hover:scale-105 transition-transform duration-300'
+                            />
+                          </div>
+                        </div>
+
+                        {/* Card Content */}
+                        <div className='px-4 py-4'>
+                          <h3 className='text-lg font-semibold text-gray-900 mb-3'>
+                            {speaker.name}
+                          </h3>
+
+                          {/* Social Media Icons */}
+                          <div className='flex space-x-3'>
+                            <a
+                              href={speaker.linkedin}
+                              className='p-2 rounded-full bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-600 transition-colors duration-200'
+                              aria-label={`${speaker.name}'s LinkedIn`}
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <Linkedin size={18} />
+                            </a>
+                            <a
+                              href={speaker.twitter}
+                              className='p-2 rounded-full bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-400 transition-colors duration-200'
+                              aria-label={`${speaker.name}'s Twitter`}
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <Twitter size={18} />
+                            </a>
+                            <a
+                              href={speaker.instagram}
+                              className='p-2 rounded-full bg-gray-100 hover:bg-pink-100 text-gray-600 hover:text-pink-600 transition-colors duration-200'
+                              aria-label={`${speaker.name}'s Instagram`}
+                              onClick={(e) => e.stopPropagation()}
+                            >
+                              <Instagram size={18} />
+                            </a>
+                          </div>
+                          <div className='mt-4 text-center text-xs text-gray-500'>
+                            Click to flip back
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Card Content */}
-                  <div className='px-4 py-4'>
-                    <h3 className='text-lg font-semibold text-gray-900 mb-3'>
-                      {speaker.name}
-                    </h3>
-
-                    {/* Social Media Icons */}
-                    <div className='flex space-x-3'>
-                      <a
-                        href={speaker.linkedin}
-                        className='p-2 rounded-full bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-600 transition-colors duration-200'
-                        aria-label={`${speaker.name}'s LinkedIn`}
-                      >
-                        <Linkedin size={18} />
-                      </a>
-                      <a
-                        href={speaker.twitter}
-                        className='p-2 rounded-full bg-gray-100 hover:bg-blue-100 text-gray-600 hover:text-blue-400 transition-colors duration-200'
-                        aria-label={`${speaker.name}'s Twitter`}
-                      >
-                        <Twitter size={18} />
-                      </a>
-                      <a
-                        href={speaker.instagram}
-                        className='p-2 rounded-full bg-gray-100 hover:bg-pink-100 text-gray-600 hover:text-pink-600 transition-colors duration-200'
-                        aria-label={`${speaker.name}'s Instagram`}
-                      >
-                        <Instagram size={18} />
-                      </a>
+                    {/* Back Side */}
+                    <div
+                      className='absolute inset-0 w-full h-full backface-hidden'
+                      style={{
+                        backfaceVisibility: "hidden",
+                        transform: "rotateY(180deg)",
+                      }}
+                    >
+                      <div className='bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden hover:shadow-md transition-shadow duration-200 h-full p-6 flex flex-col justify-center'>
+                        <h3 className='text-xl font-semibold text-gray-900 mb-4 text-center'>
+                          About {speaker.name}
+                        </h3>
+                        <p className='text-gray-700 text-sm leading-relaxed mb-4'>
+                          {speaker.bio}
+                        </p>
+                        <div className='text-center'>
+                          <span className='inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium'>
+                            {speaker.topic}
+                          </span>
+                        </div>
+                        <div className='mt-4 text-center text-xs text-gray-500'>
+                          Click to flip back
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
