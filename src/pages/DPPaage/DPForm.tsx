@@ -6,11 +6,12 @@ import {Input} from "../../Components/DPForm/Input"
 import { Button } from "../../Components/DPForm/Button";
 import { CardContent } from "../../Components/DPForm/CardContent";
 
+
 const hooks = [
   "Teching it easy!",
-  "Code. Coffee. Repeat.",
+  "Code. Coffee. Repeat!",
   "Debugging life, one line at a time.",
-  "Powered by caffeine ",
+  "Powered by caffeine",
   "Catch me at DevFest!",
 ];
 
@@ -25,6 +26,10 @@ const DPForm: React.FC = () => {
     const file = e.target.files?.[0];
     if (!file) return;
 
+    processImage(file);
+  };
+
+  const processImage = (file: File) => {
     const img = new Image();
     img.src = URL.createObjectURL(file);
     img.onload = () => {
@@ -33,8 +38,14 @@ const DPForm: React.FC = () => {
         return;
       }
       setImage(file);
-      setImageURL(URL.createObjectURL(file));
+      setImageURL(img.src);
     };
+  };
+
+  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
+    e.preventDefault();
+    const file = e.dataTransfer.files?.[0];
+    if (file) processImage(file);
   };
 
   const generateRandomHook = () => {
@@ -70,7 +81,11 @@ const DPForm: React.FC = () => {
 
         <div>
           <label className="block font-semibold">Upload Image</label>
-          <div className="border-dashed border-2 rounded-2xl p-4 text-center cursor-pointer">
+          <div
+            className="border-dashed border-2 rounded-2xl p-4 text-center cursor-pointer"
+            onDragOver={(e) => e.preventDefault()}
+            onDrop={handleDrop}
+          >
             <UploadCloud className="mx-auto mb-2" size={32} />
             <p>Drag and drop to upload or browse</p>
             <Input
