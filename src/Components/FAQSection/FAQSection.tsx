@@ -60,9 +60,9 @@ const FAQSection = () => {
         <h3 className='text-4xl md:text-5xl font-bold text-[#1E1E1E] mb-4 font-inter'>
           Questions We Get Asked
         </h3>
-        <p className='max-w-xl mx-auto text-xl text-[#444444] mb-2 font-inter'>
-          Find answers about registration, event details, and what to <br />
-          expect on the day.
+        <p className='max-w-xl mx-auto text-base sm:text-lg md:text-xl text-gray-600  mb-2 '>
+          Find answers about registration, event details, and what to expect on
+          the day.
         </p>
       </div>
       <div className='grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8'>
