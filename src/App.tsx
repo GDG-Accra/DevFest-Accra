@@ -7,6 +7,9 @@ import FAQs from "./pages/FAQsPage/ FAQs";
 import Speakers from "./pages/SpeakersPage/Speakers";
 import TeamPage from "./pages/TeamPage/TeamPage";
 import DPPage from "./pages/DPPaage/DPPage";
+import DPForm from "./pages/DPPaage/DPForm";
+
+
 
 const App: React.FC = () => {
   return (
@@ -25,6 +28,10 @@ const App: React.FC = () => {
 
         {/* DP section  */}
         <Route path='/devfest/dp-generator' element={<DPPage/>} />
+
+       {/* DP section  */}
+        <Route path='/devfest/dp-generator' element={<DPForm/>} />
+
       </Routes>
     </div>
   );
