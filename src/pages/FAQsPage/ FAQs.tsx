@@ -162,8 +162,8 @@ const FAQ = () => {
           <h3 className='text-4xl md:text-5xl font-bold text-[#1E1E1E] mb-4'>
             Questions We Get Asked
           </h3>
-          <p className='text-gray-700 max-w-2xl mx-auto'>
-            Find answers about registration, event details, and what to <br />
+          <p className='text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto'>
+            Find answers about registration, event details, and what to
             expect on the day.
           </p>
         </div>
