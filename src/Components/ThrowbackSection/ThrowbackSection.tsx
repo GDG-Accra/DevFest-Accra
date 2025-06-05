@@ -121,7 +121,7 @@ const ThrowbackSection = () => {
           </button>
         </Link>
 
-        <Link to="/" className="w-full sm:w-auto">
+        <Link to="https://photos.google.com/share/AF1QipMD7yxbMSrutUXdO-8Y1QGyiZWaHKgvUAt2d_hyR-gzgCBwVJ96KJaitm9JXs3azw?key=ZmMwdl9mY2xiRFlYV1pNNThqNmVSRFJwWm5IYWl3" className="w-full sm:w-auto">
           <button className="w-full bg-transparent border-2 border-gray-300 text-gray-800 py-3 sm:py-4 px-6 rounded-lg font-semibold text-base sm:text-lg flex items-center justify-center gap-2 transition hover:bg-gray-100">
             <span>DevFest Accra 24 photos</span>
             <CiImageOn className="text-gray-800 text-xl sm:text-2xl" />

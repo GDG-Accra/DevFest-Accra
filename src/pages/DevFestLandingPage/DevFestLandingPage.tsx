@@ -70,7 +70,7 @@ const DevFestLandingPage = () => {
           />
           <Link to='https://gdg.community.dev/gdg-accra/'>
             <button className='px-8 py-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 hover:text-gray-300 transition-colors duration-300 flex gap-2 items-center'>
-              Join Now
+              Register Now
               <img src={ShapeImage} alt='icon link' className='rotate-360' />
             </button>
           </Link>
