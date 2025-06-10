@@ -5,12 +5,27 @@ import DFLogo from "../../assets/images/Logos/DFLogo-Accra.svg";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [activeItem, setActiveItem] = useState("");
   const menuRef = useRef<HTMLDivElement>(null);
   const buttonRef = useRef<HTMLButtonElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+  // Set active item based on current path
+  useEffect(() => {
+    const currentPath = window.location.pathname;
+    if (currentPath.includes('/speakers')) {
+      setActiveItem('speakers');
+    } else if (currentPath.includes('/teams')) {
+      setActiveItem('teams');
+    } else if (currentPath.includes('/faqs')) {
+      setActiveItem('faqs');
+    } else {
+      setActiveItem('');
+    }
+  }, []);
 
   // Close menu when clicking outside
   useEffect(() => {
@@ -32,6 +47,27 @@ const Navbar: React.FC = () => {
     };
   }, [isMenuOpen]);
 
+  const handleMenuClick = (item: string) => {
+    setActiveItem(item);
+    setIsMenuOpen(false);
+  };
+
+  const getMenuItemClasses = (item: string) => {
+    const baseClasses = "flex items-center transition duration-200 relative";
+    const activeClasses = "text-[#57CAFF]";
+    const inactiveClasses = "text-gray-800 hover:text-gray-600";
+    
+    return `${baseClasses} ${activeItem === item ? activeClasses : inactiveClasses}`;
+  };
+
+  const getIconClasses = (item: string) => {
+    return `mr-1 h-5 w-5 ${activeItem === item ? "text-[#57CAFF]" : ""}`;
+  };
+
+  const getMobileIconClasses = (item: string) => {
+    return `mr-2 h-5 w-5 ${activeItem === item ? "text-[#57CAFF]" : ""}`;
+  };
+
   return (
     <nav className='relative z-10 flex items-center justify-between lg:px-10 lg:py-3 mt-5 bg-opacity-90 '>
       {/* Left side with DevFest Logo and Year  shadow-sm*/}
@@ -48,26 +84,38 @@ const Navbar: React.FC = () => {
       <div className='hidden md:flex items-center space-x-6'>
         <a
           href='/devfest/speakers'
-          className='flex items-center text-gray-800 hover:text-gray-600 transition duration-200'
+          className={getMenuItemClasses('speakers')}
+          onClick={() => handleMenuClick('speakers')}
         >
-          <Volume2 className='mr-1 h-5 w-5' />
+          <Volume2 className={getIconClasses('speakers')} />
           <span className='font-medium'>Speakers</span>
+          {activeItem === 'speakers' && (
+            <div className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-[#57CAFF] rounded-full shadow-[0_0_8px_rgba(87,202,255,0.6)]"></div>
+          )}
         </a>
 
         <a
           href='/devfest/teams'
-          className='flex items-center text-gray-800 hover:text-gray-600 transition duration-200'
+          className={getMenuItemClasses('teams')}
+          onClick={() => handleMenuClick('teams')}
         >
-          <Users className='mr-1 h-5 w-5' />
+          <Users className={getIconClasses('teams')} />
           <span className='font-medium'>Team</span>
+          {activeItem === 'teams' && (
+            <div className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-[#57CAFF] rounded-full shadow-[0_0_8px_rgba(87,202,255,0.6)]"></div>
+          )}
         </a>
 
         <a
           href='/devfest/faqs'
-          className='flex items-center text-gray-800 hover:text-gray-600 transition duration-200'
+          className={getMenuItemClasses('faqs')}
+          onClick={() => handleMenuClick('faqs')}
         >
-          <TbMessage2Question className='mr-1 h-5 w-5' />
+          <TbMessage2Question className={getIconClasses('faqs')} />
           <span className='font-medium'>FAQs</span>
+          {activeItem === 'faqs' && (
+            <div className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-[#57CAFF] rounded-full shadow-[0_0_8px_rgba(87,202,255,0.6)]"></div>
+          )}
         </a>
       </div>
 
@@ -107,29 +155,38 @@ const Navbar: React.FC = () => {
       >
         <a
           href='/devfest/speakers'
-          className='flex items-center text-gray-800 hover:text-gray-600 transition duration-200'
-          onClick={toggleMenu}
+          className={getMenuItemClasses('speakers')}
+          onClick={() => handleMenuClick('speakers')}
         >
-          <Volume2 className='mr-2 h-5 w-5' />
+          <Volume2 className={getMobileIconClasses('speakers')} />
           <span className='font-medium'>Speakers</span>
+          {activeItem === 'speakers' && (
+            <div className="absolute right-2 w-2 h-2 bg-[#57CAFF] rounded-full shadow-[0_0_6px_rgba(87,202,255,0.8)]"></div>
+          )}
         </a>
 
         <a
           href='/devfest/teams'
-          className='flex items-center text-gray-800 hover:text-gray-600 transition duration-200'
-          onClick={toggleMenu}
+          className={getMenuItemClasses('teams')}
+          onClick={() => handleMenuClick('teams')}
         >
-          <Users className='mr-2 h-5 w-5' />
+          <Users className={getMobileIconClasses('teams')} />
           <span className='font-medium'>Team</span>
+          {activeItem === 'teams' && (
+            <div className="absolute right-2 w-2 h-2 bg-[#57CAFF] rounded-full shadow-[0_0_6px_rgba(87,202,255,0.8)]"></div>
+          )}
         </a>
 
         <a
           href='/devfest/faqs'
-          className='flex items-center text-gray-800 hover:text-gray-600 transition duration-200'
-          onClick={toggleMenu}
+          className={getMenuItemClasses('faqs')}
+          onClick={() => handleMenuClick('faqs')}
         >
-          <TbMessage2Question className='mr-2 h-5 w-5' />
+          <TbMessage2Question className={getMobileIconClasses('faqs')} />
           <span className='font-medium'>FAQs</span>
+          {activeItem === 'faqs' && (
+            <div className="absolute right-2 w-2 h-2 bg-[#57CAFF] rounded-full shadow-[0_0_6px_rgba(87,202,255,0.8)]"></div>
+          )}
         </a>
       </div>
     </nav>
