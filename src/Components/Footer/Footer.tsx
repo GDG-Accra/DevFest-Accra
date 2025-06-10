@@ -32,19 +32,19 @@ const Footer = () => {
         <div className='flex flex-col space-y-3 md:space-y-4'>
         
           <a
-            href='#'
+            href='/devfest/speakers'
             className='hover:text-gray-500 transition text-sm md:text-base'
           >
             Speakers
           </a>
           <a
-            href='#'
+            href='/devfest/faqs'
             className='hover:text-gray-500 transition text-sm md:text-base'
           >
             FAQs
           </a>
           <a
-            href='#'
+            href='/devfest/dp-generator'
             className='hover:text-gray-500 transition text-sm md:text-base'
           >
             DP Generator
@@ -61,13 +61,13 @@ const Footer = () => {
           </a>
          
           <a
-            href='#'
+            href='https://policies.google.com/privacy'
             className='hover:text-gray-500 transition text-sm md:text-base'
           >
            Privacy Policy
           </a>
           <a
-            href='#'
+            href='https://linktr.ee/gdgaccra'
             className='hover:text-gray-500 transition text-sm md:text-base'
           >
             Join the Community
@@ -77,7 +77,7 @@ const Footer = () => {
         {/* Column 3 - Full width on mobile, normal on desktop */}
         <div className='flex flex-col space-y-3 md:space-y-4 col-span-2 sm:col-span-2 md:col-span-1 mt-4 md:mt-0'>
           <a
-            href='#'
+            href='https://linktr.ee/gdgaccra'
             className='hover:text-gray-500 transition text-sm md:text-base'
           >
             Contact Us
@@ -118,12 +118,12 @@ const Footer = () => {
             </div>
           </div>
          
-          <a
+          {/* <a
             href='#'
             className='hover:text-gray-500 transition text-sm md:text-base'
           >
             Community Guidelines
-          </a>
+          </a> */}
         </div>
       </div>
 
