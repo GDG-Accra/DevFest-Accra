@@ -25,22 +25,15 @@ export const AboutSection = () => {
             of Ghana's technology community.
           </p>
         </div>
-        
+
         {/* Image and heart on the right */}
         <div className='lg:w-1/2 relative md:mt-5 lg:mt-0 flex justify-center md:pr-5'>
           <div className='relative w-4/5 lg:w-full'>
-            <img
-              src={AboutImage}
-              alt='About Image'
-              className='w-full h-auto'
-            />
-            <Heart
-              className='absolute right-0 bottom-0 sm:right-2 md:right-3 lg:right-10 2xl:-right-3'
-            />
+            <img src={AboutImage} alt='About Image' className='w-full h-auto' />
+            <Heart className='absolute right-0 bottom-0 sm:right-2 md:right-3 lg:right-10 2xl:-right-3' />
           </div>
         </div>
       </div>
-
     </section>
   );
 };
