@@ -116,7 +116,7 @@ const DPForm: React.FC = () => {
           </div>
 
           <div>
-            <label className="block font-semibold mb-3">Hook Line</label>
+            <label className="block font-semibold mb-3">Hook</label>
             <div className="flex gap-2">
               <Input
                 placeholder="Optional one-liner"
