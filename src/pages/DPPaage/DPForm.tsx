@@ -12,6 +12,7 @@ const hooks = [
   "Debugging life, one line at a time.",
   "Powered by caffeine",
   "Catch me at DevFest!",
+ "Techie by choice and purpose. peace out!",
 ];
 
 const DPForm: React.FC = () => {
