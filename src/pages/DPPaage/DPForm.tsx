@@ -2,10 +2,9 @@ import React, { useState, useRef, ChangeEvent } from "react";
 import { Wand2, UploadCloud } from "lucide-react";
 import html2canvas from "html2canvas";
 
-import {Input} from "../../Components/DPForm/Input"
+import { Input } from "../../Components/DPForm/Input";
 import { Button } from "../../Components/DPForm/Button";
 import { CardContent } from "../../Components/DPForm/CardContent";
-
 
 const hooks = [
   "Teching it easy!",
@@ -21,22 +20,30 @@ const DPForm: React.FC = () => {
   const [image, setImage] = useState<File | null>(null);
   const [imageURL, setImageURL] = useState("");
   const previewRef = useRef<HTMLDivElement | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
 
   const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (!file) return;
-
     processImage(file);
   };
 
   const processImage = (file: File) => {
+    const allowedTypes = ["image/jpeg", "image/png", "image/gif", "image/svg+xml"];
+    if (!allowedTypes.includes(file.type)) {
+      alert("Only JPG, PNG, GIF, or SVG images are allowed.");
+      return;
+    }
+
     const img = new Image();
     img.src = URL.createObjectURL(file);
+
     img.onload = () => {
-      if (Math.abs(img.width - img.height) > 100) {
-        alert("Please upload an image with a square resolution.");
+      if (img.width > 800 || img.height > 400) {
+        alert("Please upload an image with a maximum resolution of 800 x 400 pixels.");
         return;
       }
+
       setImage(file);
       setImageURL(img.src);
     };
@@ -46,6 +53,10 @@ const DPForm: React.FC = () => {
     e.preventDefault();
     const file = e.dataTransfer.files?.[0];
     if (file) processImage(file);
+  };
+
+  const handleBoxClick = () => {
+    fileInputRef.current?.click();
   };
 
   const generateRandomHook = () => {
@@ -62,72 +73,74 @@ const DPForm: React.FC = () => {
     link.click();
   };
 
+  const isFormComplete = name && hook && image;
+
   return (
     <div className="grid md:grid-cols-2 gap-4 p-6 md:p-10 bg-white min-h-screen">
-      {/* Left Panel: Form */}
       <div className="space-y-6">
-        <div>
-          <label className="block font-semibold">Full Name</label>
-          <Input
-            placeholder="Your Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            className="rounded-2xl"
-          />
-          <p className="text-sm text-muted-foreground">
-            Nickname, first name, how you want it
-          </p>
-        </div>
+        <label className="block font-bold text-3xl border-b-2 border-black pb-4">Input your details</label>
 
-        <div>
-          <label className="block font-semibold">Upload Image</label>
-          <div
-            className="border-dashed border-2 rounded-2xl p-4 text-center cursor-pointer"
-            onDragOver={(e) => e.preventDefault()}
-            onDrop={handleDrop}
+        {/* Form Section */}
+        <div className="space-y-6">
+          <div>
+            <label className="block font-semibold mb-3">Full Name</label>
+            <Input
+              placeholder="Your Name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              className="rounded-2xl h-14 text-lg"
+            />
+          </div>
+
+          <div>
+            <label className="block font-semibold mb-3">Upload Image</label>
+            <div
+              className="border-dashed border-2 rounded-2xl p-12 h-64 flex flex-col justify-center text-center cursor-pointer hover:border-blue-500 transition-all"
+              onClick={handleBoxClick}
+              onDrop={handleDrop}
+              onDragOver={(e) => e.preventDefault()}
+            >
+              <UploadCloud className="mx-auto mb-2" size={40} />
+              <p className="text-sm">
+                Click or drag and drop your profile picture<br />
+                SVG, PNG, JPG or GIF (max. 800 x 400 px)
+              </p>
+              <input
+                type="file"
+                ref={fileInputRef}
+                accept="image/*"
+                style={{ display: "none" }}
+                onChange={handleImageUpload}
+              />
+            </div>
+          </div>
+
+          <div>
+            <label className="block font-semibold mb-3">Hook</label>
+            <div className="flex gap-2">
+              <Input
+                placeholder="Optional one-liner"
+                value={hook}
+                onChange={(e) => setHook(e.target.value)}
+                className="rounded-2xl h-14 text-lg"
+              />
+              <Button type="button" onClick={generateRandomHook} variant="outline" className="h-14">
+                <Wand2 size={20} />
+              </Button>
+            </div>
+          </div>
+
+          <Button
+            disabled={!isFormComplete}
+            onClick={handleDownload}
+            className="w-full rounded-2xl h-14 text-lg"
           >
-            <UploadCloud className="mx-auto mb-2" size={32} />
-            <p>Drag and drop to upload or browse</p>
-            <Input
-              type="file"
-              accept="image/*"
-              onChange={handleImageUpload}
-              className="mt-2"
-            />
-          </div>
-          <p className="text-sm text-muted-foreground">
-            Preferably in a square resolution
-          </p>
+            Generate
+          </Button>
         </div>
-
-        <div>
-          <label className="block font-semibold">Hook Line</label>
-          <div className="flex gap-2">
-            <Input
-              placeholder="Optional one-liner"
-              value={hook}
-              onChange={(e) => setHook(e.target.value)}
-              className="rounded-2xl"
-            />
-            <Button type="button" onClick={generateRandomHook} variant="outline">
-              <Wand2 size={18} />
-            </Button>
-          </div>
-          <p className="text-sm text-muted-foreground">
-            Press the wand if you’re not creative enough 😂
-          </p>
-        </div>
-
-        <Button
-          disabled={!name || !image}
-          onClick={handleDownload}
-          className="w-full rounded-2xl"
-        >
-          Generate
-        </Button>
       </div>
 
-      {/* Right Panel: Preview */}
+      {/* Preview Panel */}
       <div className="flex items-center justify-center">
         <div
           ref={previewRef}
