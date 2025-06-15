@@ -51,44 +51,44 @@ const ThrowbackSection = () => {
       </div>
 
       {/* Image gallery */}
-      <div className="hidden sm:flex justify-center gap-3 mb-10 overflow-x-auto">
-        {/* Images with staggered layout for larger screens */}
-        <div className="w-[16%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
-          <img
-            src={ThrowbackImage}
-            alt="part-1"
-            className="w-full h-full object-cover object-[15%]"
-          />
-        </div>
-        <div className="w-[16%] h-[450px] mt-0 rounded-[30px] overflow-hidden">
-          <img
-            src={ThrowbackImage2}
-            alt="part-2"
-            className="w-full h-full object-cover object-cover"
-          />
-        </div>
-        <div className="w-[20%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
-          <img
-            src={ThrowbackImage3}
-            alt="part-3"
-            className="w-full h-full object-cover object-cover"
-          />
-        </div>
-        <div className="w-[16%] h-[450px] mt-0 rounded-[30px] overflow-hidden">
-          <img
-            src={ThrowbackImage4}
-            alt="part-4"
-            className="w-full h-full object-cover object-cover"
-          />
-        </div>
-        <div className="w-[16%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
-          <img
-            src={ThrowbackImage5}
-            alt="part-5"
-            className="w-full h-full object-cover object-cover"
-          />
-        </div>
-      </div>
+<div className="hidden sm:flex justify-center gap-3 mb-10 overflow-x-auto">
+  {/* Images with staggered layout for larger screens */}
+  <div className="w-[16%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
+    <img
+      src={ThrowbackImage}
+      alt="part-1"
+      className="w-full h-full object-cover object-[10%]"
+    />
+  </div>
+  <div className="w-[16%] h-[450px] mt-0 rounded-[35px] overflow-hidden">
+    <img
+      src={ThrowbackImage}
+      alt="part-2"
+      className="w-full h-full object-cover object-[30%]"
+    />
+  </div>
+  <div className="w-[20%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
+    <img
+      src={ThrowbackImage}
+      alt="part-3"
+      className="w-full h-full object-cover object-center"
+    />
+  </div>
+  <div className="w-[16%] h-[450px] mt-0 rounded-[30px] overflow-hidden">
+    <img
+      src={ThrowbackImage}
+      alt="part-4"
+      className="w-full h-full object-cover object-[70%]"
+    />
+  </div>
+  <div className="w-[16%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
+    <img
+      src={ThrowbackImage}
+      alt="part-5"
+      className="w-full h-full object-cover object-[90%]"
+    />
+  </div>
+</div>
 
       {/* Mobile Image Carousel (for small screens) */}
       <div className="sm:hidden flex overflow-x-auto space-x-3 pb-4 px-4">
