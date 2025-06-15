@@ -1,9 +1,9 @@
 import ThrowbackImage from "../../assets/images/Throwback/throwbackImage.svg";
-import ThrowbackImage1 from "../../assets/images/Throwback/throwbackImage.svg";
-import ThrowbackImage2 from "../../assets/images/Throwback/throwbackImage.svg";
-import ThrowbackImage3 from "../../assets/images/Throwback/throwbackImage.svg";
-import ThrowbackImage4 from "../../assets/images/Throwback/throwbackImage.svg";
-import ThrowbackImage5 from "../../assets/images/Speakers/OkaiAbena.svg";
+// import ThrowbackImage1 from "../../assets/images/Throwback/throwbackImageone.jpg";
+import ThrowbackImage2 from "../../assets/images/Throwback/throwbackImagetwo.jpg";
+import ThrowbackImage3 from "../../assets/images/Throwback/throwbackImagethree.jpg";
+import ThrowbackImage4 from "../../assets/images/Throwback/throwbackImagefour.jpg";
+import ThrowbackImage5 from "../../assets/images/Throwback/throwbackImagefive.png";
 import Shape from "../../assets/images/Speakers/shape.svg";
 import { CiImageOn } from "react-icons/ci";
 import { IoPlayCircleOutline } from "react-icons/io5";
@@ -57,35 +57,35 @@ const ThrowbackSection = () => {
           <img
             src={ThrowbackImage}
             alt="part-1"
-            className="w-full h-full object-cover object-[0%]"
+            className="w-full h-full object-cover object-[15%]"
           />
         </div>
         <div className="w-[16%] h-[450px] mt-0 rounded-[30px] overflow-hidden">
           <img
-            src={ThrowbackImage}
+            src={ThrowbackImage2}
             alt="part-2"
-            className="w-full h-full object-cover object-[25%]"
+            className="w-full h-full object-cover object-cover"
           />
         </div>
         <div className="w-[20%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
           <img
-            src={ThrowbackImage}
+            src={ThrowbackImage3}
             alt="part-3"
-            className="w-full h-full object-cover object-[50%]"
+            className="w-full h-full object-cover object-cover"
           />
         </div>
         <div className="w-[16%] h-[450px] mt-0 rounded-[30px] overflow-hidden">
           <img
-            src={ThrowbackImage}
+            src={ThrowbackImage4}
             alt="part-4"
-            className="w-full h-full object-cover object-[75%]"
+            className="w-full h-full object-cover object-cover"
           />
         </div>
         <div className="w-[16%] h-[450px] mt-20 rounded-[30px] overflow-hidden">
           <img
-            src={ThrowbackImage}
+            src={ThrowbackImage5}
             alt="part-5"
-            className="w-full h-full object-cover object-[100%]"
+            className="w-full h-full object-cover object-cover"
           />
         </div>
       </div>
@@ -93,7 +93,7 @@ const ThrowbackSection = () => {
       {/* Mobile Image Carousel (for small screens) */}
       <div className="sm:hidden flex overflow-x-auto space-x-3 pb-4 px-4">
   {[
-    { id: 1, src: ThrowbackImage1, alt: "DevFest Accra 2024 - Opening Session" },
+    { id: 1, src: ThrowbackImage, alt: "DevFest Accra 2024 - Opening Session" },
     { id: 2, src: ThrowbackImage2, alt: "DevFest Accra 2024 - Tech Talks" },
     { id: 3, src: ThrowbackImage3, alt: "DevFest Accra 2024 - Networking" },
     { id: 4, src: ThrowbackImage4, alt: "DevFest Accra 2024 - Workshops" },
