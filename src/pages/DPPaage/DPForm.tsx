@@ -19,6 +19,8 @@ const DPForm: React.FC = () => {
   const [hook, setHook] = useState("");
   const [image, setImage] = useState<File | null>(null);
   const [imageURL, setImageURL] = useState("");
+  const [generatedImageURL, setGeneratedImageURL] = useState<string | null>(null);
+
   const previewRef = useRef<HTMLDivElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement>(null);
 
@@ -64,12 +66,19 @@ const DPForm: React.FC = () => {
     setHook(random);
   };
 
-  const handleDownload = async () => {
+  // Only generate the canvas and set it in state
+  const handleGenerate = async () => {
     if (!previewRef.current) return;
     const canvas = await html2canvas(previewRef.current);
+    const dataUrl = canvas.toDataURL();
+    setGeneratedImageURL(dataUrl); // store image URL for manual download
+  };
+
+  const handleDownloadClick = () => {
+    if (!generatedImageURL) return;
     const link = document.createElement("a");
     link.download = `${name}_devfest_dp.png`;
-    link.href = canvas.toDataURL();
+    link.href = generatedImageURL;
     link.click();
   };
 
@@ -80,7 +89,6 @@ const DPForm: React.FC = () => {
       <div className="space-y-6">
         <label className="block font-bold text-3xl border-b-2 border-black pb-4">Input your details</label>
 
-        {/* Form Section */}
         <div className="space-y-6">
           <div>
             <label className="block font-semibold mb-3">Full Name</label>
@@ -95,16 +103,28 @@ const DPForm: React.FC = () => {
           <div>
             <label className="block font-semibold mb-3">Upload Image</label>
             <div
-              className="border-dashed border-2 rounded-2xl p-12 h-64 flex flex-col justify-center text-center cursor-pointer hover:border-blue-500 transition-all"
+              className="border-dashed border-2 rounded-2xl p-12 h-64 flex flex-col justify-center text-center cursor-pointer hover:border-blue-500 transition-all relative"
               onClick={handleBoxClick}
               onDrop={handleDrop}
               onDragOver={(e) => e.preventDefault()}
             >
-              <UploadCloud className="mx-auto mb-2" size={40} />
-              <p className="text-sm">
-                Click or drag and drop your profile picture<br />
-                SVG, PNG, JPG or GIF (max. 800 x 400 px)
-              </p>
+              {imageURL ? (
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <img
+                    src={imageURL}
+                    alt="Preview"
+                    className="w-24 h-24 rounded-full object-cover border-2 border-white shadow"
+                  />
+                </div>
+              ) : (
+                <>
+                  <UploadCloud className="mx-auto mb-2" size={40} />
+                  <p className="text-sm">
+                    Click or drag and drop your profile picture<br />
+                    SVG, PNG, JPG or GIF (max. 800 x 400 px)
+                  </p>
+                </>
+              )}
               <input
                 type="file"
                 ref={fileInputRef}
@@ -132,8 +152,8 @@ const DPForm: React.FC = () => {
 
           <Button
             disabled={!isFormComplete}
-            onClick={handleDownload}
-            className="w-full rounded-2xl h-14 text-lg"
+            onClick={handleGenerate}
+            className={`w-full rounded-2xl h-14 text-lg ${!isFormComplete ? "opacity-50 cursor-not-allowed" : ""}`}
           >
             Generate
           </Button>
@@ -141,7 +161,7 @@ const DPForm: React.FC = () => {
       </div>
 
       {/* Preview Panel */}
-      <div className="flex items-center justify-center">
+      <div className="flex flex-col items-center justify-center">
         <div
           ref={previewRef}
           className="w-full max-w-sm rounded-2xl shadow-lg p-6 bg-gradient-to-br from-yellow-400 via-green-400 to-blue-400 text-center"
@@ -162,6 +182,15 @@ const DPForm: React.FC = () => {
             {hook && <p className="mt-1 text-white italic drop-shadow-md">{hook}</p>}
           </CardContent>
         </div>
+
+        {/* Show download button if image has been generated */}
+        {generatedImageURL && (
+          <div className="text-center mt-4">
+            <Button onClick={handleDownloadClick} className="rounded-2xl h-12 px-6">
+              Download Image
+            </Button>
+          </div>
+        )}
       </div>
     </div>
   );
