@@ -1,3 +1,4 @@
+
 import React, { useState, useRef, ChangeEvent } from "react";
 import { Wand2, UploadCloud } from "lucide-react";
 import html2canvas from "html2canvas";
@@ -5,6 +6,7 @@ import html2canvas from "html2canvas";
 import { Input } from "../../Components/DPForm/Input";
 import { Button } from "../../Components/DPForm/Button";
 import { CardContent } from "../../Components/DPForm/CardContent";
+import DPImage from "../../assets/images/DP/DPImage.png";
 
 const hooks = [
   "Teching it easy!",
@@ -66,12 +68,11 @@ const DPForm: React.FC = () => {
     setHook(random);
   };
 
-  // Only generate the canvas and set it in state
   const handleGenerate = async () => {
     if (!previewRef.current) return;
     const canvas = await html2canvas(previewRef.current);
     const dataUrl = canvas.toDataURL();
-    setGeneratedImageURL(dataUrl); // store image URL for manual download
+    setGeneratedImageURL(dataUrl);
   };
 
   const handleDownloadClick = () => {
@@ -85,8 +86,9 @@ const DPForm: React.FC = () => {
   const isFormComplete = name && hook && image;
 
   return (
-    <div className="grid md:grid-cols-2 gap-4 p-6 md:p-10 bg-white min-h-screen">
-      <div className="space-y-6">
+    <div className="grid md:grid-cols-2 gap-4 min-h-screen">
+      {/* Form Section */}
+      <div className="space-y-6 p-6 md:p-10 bg-white">
         <label className="block font-bold text-3xl border-b-2 border-black pb-4">Input your details</label>
 
         <div className="space-y-6">
@@ -161,12 +163,17 @@ const DPForm: React.FC = () => {
       </div>
 
       {/* Preview Panel */}
-      <div className="flex flex-col items-center justify-center">
-        <div
-          ref={previewRef}
-          className="w-full max-w-sm rounded-2xl shadow-lg p-6 bg-gradient-to-br from-yellow-400 via-green-400 to-blue-400 text-center"
-        >
-          <CardContent className="flex flex-col items-center">
+      <div className="relative w-full h-full flex items-center justify-center">
+        <div ref={previewRef} className="relative w-full h-full">
+          {/* Frame Image - fills background */}
+          <img
+            src={DPImage}
+            alt="Frame"
+            className="absolute inset-0 w-full h-full object-cover z-0"
+          />
+
+          {/* Overlay Content */}
+          <CardContent className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4">
             {imageURL ? (
               <img
                 src={imageURL}
@@ -178,19 +185,19 @@ const DPForm: React.FC = () => {
                 <UploadCloud size={32} className="text-gray-500" />
               </div>
             )}
-            <h2 className="text-2xl font-bold mt-4 text-white drop-shadow-md">{name}</h2>
-            {hook && <p className="mt-1 text-white italic drop-shadow-md">{hook}</p>}
+            <h2 className="text-2xl font-bold mt-4 text-black drop-shadow-md">{name}</h2>
+            {hook && <p className="mt-1 text-black italic drop-shadow-md">{hook}</p>}
           </CardContent>
-        </div>
 
-        {/* Show download button if image has been generated */}
-        {generatedImageURL && (
-          <div className="text-center mt-4">
-            <Button onClick={handleDownloadClick} className="rounded-2xl h-12 px-6">
-              Download Image
-            </Button>
-          </div>
-        )}
+          {/* Download Button */}
+          {generatedImageURL && (
+            <div className="text-center mt-4 absolute bottom-6 left-1/2 transform -translate-x-1/2 z-20">
+              <Button onClick={handleDownloadClick} className="rounded-2xl h-12 px-6">
+                Download Image
+              </Button>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );
