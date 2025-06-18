@@ -5,7 +5,6 @@ import html2canvas from "html2canvas";
 
 import { Input } from "../../Components/DPForm/Input";
 import { Button } from "../../Components/DPForm/Button";
-import { CardContent } from "../../Components/DPForm/CardContent";
 import DPImage from "../../assets/images/DP/DPImage.png";
 
 const hooks = [
@@ -163,31 +162,15 @@ const DPForm: React.FC = () => {
       </div>
 
       {/* Preview Panel */}
-      <div className="relative w-full h-full flex items-center justify-center">
+      <div className="w-full space-y-6 p-5 md:p-20 pr-14">
+
         <div ref={previewRef} className="relative w-full h-full">
           {/* Frame Image - fills background */}
           <img
             src={DPImage}
             alt="Frame"
-            className="absolute inset-0 w-full h-full object-cover z-0"
+            className="absolute inset-0 w-full h-full top-[30px] object-contain rotate-[9deg] z-0 hidden md:block"
           />
-
-          {/* Overlay Content */}
-          <CardContent className="absolute inset-0 z-10 flex flex-col items-center justify-center px-4">
-            {imageURL ? (
-              <img
-                src={imageURL}
-                alt="Uploaded Preview"
-                className="w-40 h-40 rounded-full object-cover border-4 border-white shadow-md"
-              />
-            ) : (
-              <div className="w-40 h-40 rounded-full bg-gray-200 flex items-center justify-center">
-                <UploadCloud size={32} className="text-gray-500" />
-              </div>
-            )}
-            <h2 className="text-2xl font-bold mt-4 text-black drop-shadow-md">{name}</h2>
-            {hook && <p className="mt-1 text-black italic drop-shadow-md">{hook}</p>}
-          </CardContent>
 
           {/* Download Button */}
           {generatedImageURL && (
