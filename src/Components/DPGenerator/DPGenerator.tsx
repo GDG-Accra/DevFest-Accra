@@ -32,7 +32,7 @@ const DPGenerator = () => {
               className='w-64 shadow-lg rounded-lg'
             />
           </div>
-          <div className='transform -rotate-3'>
+          <div className='transform -rotate-3 hidden '>
             <img
               src={DPImage}
               alt='DevFest DP Template 2'
@@ -50,7 +50,7 @@ const DPGenerator = () => {
               className='w-80 lg:w-96 shadow-lg rounded-lg transition-transform duration-300 hover:scale-105'
             />
           </div>
-          <div className='absolute transform translate-x-20 lg:translate-x-28 -rotate-6 z-0 hover:z-20'>
+          <div className=' absolute transform translate-x-20 lg:translate-x-28 -rotate-6 z-0 hover:z-20'>
             <img
               src={DPImage}
               alt='DevFest DP Template 2'
