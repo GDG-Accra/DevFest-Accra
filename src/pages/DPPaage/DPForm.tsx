@@ -86,7 +86,7 @@ const DPForm: React.FC = () => {
   const isFormComplete = name && hook && image;
 
   return (
-    <div className="grid md:grid-cols-2 gap-4 min-h-screen">
+    <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 min-h-screen py-0">
       {/* Form Section */}
       <div className="space-y-6 p-6 md:p-10 bg-white">
         <label className="block font-bold text-3xl border-b-2 border-black pb-4">Input your details</label>
@@ -170,7 +170,7 @@ const DPForm: React.FC = () => {
           <img
             src={DPImage}
             alt="Frame"
-            className="absolute inset-0 w-full h-full top-[30px] object-contain rotate-[9deg] z-0 hidden md:block"
+            className="absolute inset-0 w-full h-full top-[30px] object-contain rotate-[9deg] z-0 hidden lg:block"
           />
 
           {/* Download Button */}
