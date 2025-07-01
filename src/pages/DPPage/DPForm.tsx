@@ -100,6 +100,11 @@ const DPForm: React.FC = () => {
       alert("There was an error generating your image. Please try again.");
     } finally {
       setIsDownloading(false);
+      setShowTemplate(false);
+      setName("");
+      setHook("");
+      setImage(null);
+      setImageURL("");
     }
   };
 
