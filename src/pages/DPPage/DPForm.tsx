@@ -1,6 +1,7 @@
 import React, { useState, useRef, ChangeEvent } from "react";
+import { toPng } from "html-to-image";
 import { Wand2, UploadCloud } from "lucide-react";
-import html2canvas from "html2canvas";
+import download from "downloadjs";
 
 import { Input } from "../../Components/DPForm/Input";
 import { Button } from "../../Components/DPForm/Button";
@@ -21,7 +22,6 @@ const DPForm: React.FC = () => {
   const [hook, setHook] = useState("");
   const [image, setImage] = useState<File | null>(null);
   const [imageURL, setImageURL] = useState("");
-  const [, setGeneratedImageURL] = useState<string | null>(null);
   const [showTemplate, setShowTemplate] = useState(false);
   const [isDownloading, setIsDownloading] = useState(false);
 
@@ -87,46 +87,19 @@ const DPForm: React.FC = () => {
   };
 
   const handleDownloadClick = async () => {
-    const dpCardElement = document.getElementById("dp-card-only");
+    const dpCardElement = document.getElementById("dp-card");
     if (!dpCardElement) return;
 
     setIsDownloading(true);
 
     try {
-      const canvas = await html2canvas(dpCardElement, {
-        useCORS: true,
-        allowTaint: true,
-        backgroundColor: null,
-        scale: 2,
-        logging: false,
-        imageTimeout: 0,
-        onclone: clonedDoc => {
-          const clonedElement = clonedDoc.getElementById("dp-template");
-          if (clonedElement) {
-            clonedElement.style.width = "1024px";
-            clonedElement.style.height = "900px";
-          }
-        }
-      });
-
-      const dataUrl = canvas.toDataURL("image/png", 1.0);
-      setGeneratedImageURL(dataUrl);
-
-      const link = document.createElement("a");
-      link.download = `${name}_devfest_dp.png`;
-      link.href = dataUrl;
-      link.click();
+      const dataUrl = await toPng(dpCardElement);
+      download(dataUrl, `devfest-dp-${name}.png`, "image/png");
     } catch (error) {
       console.error("Error generating image:", error);
       alert("There was an error generating your image. Please try again.");
     } finally {
       setIsDownloading(false);
-      setGeneratedImageURL(null);
-      setShowTemplate(false);
-      setName("");
-      setHook("");
-      setImage(null);
-      setImageURL("");
     }
   };
 

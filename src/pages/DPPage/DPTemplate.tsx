@@ -1,9 +1,11 @@
 import React from "react";
-import { Button } from "../../Components/DPForm/Button";
 import { Download } from "lucide-react";
+
+import { Button } from "../../Components/DPForm/Button";
 import DFShapeLogo from "../../assets/DPTemplate/DFShapeLogo.svg";
 import shape from "../../assets/DPTemplate/shape.svg";
 import slash from "../../assets/DPTemplate/slash.svg";
+import DFLogoAccraPNG from "../../assets/images/Logos/_DF25-Accra.png";
 
 interface DPTemplateProps {
   name: string;
@@ -29,7 +31,7 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
       </div>
 
       <div
-        id="dp-card-only"
+        id="dp-card"
         className="relative w-[1024px] h-[900px] mx-auto mb-8 overflow-hidden bg-white shadow-lg rounded-2xl"
       >
         {/* Decorative elements */}
@@ -94,15 +96,14 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
           </div>
 
           {/* DevFest Logo Section - Middle Center */}
-          <div className="col-span-4 border-white border-r-4 border-t-0 border-b-4 row-span-2 bg-[#80C994] flex flex-col items-center justify-center">
-            <div className="flex items-center gap-2 text-6xl font-bold text-gray-800">
-              <span className="text-6xl text-yellow-500">{"{"}</span>
-              <span>DevFest</span>
-              <span className="text-6xl text-yellow-500">{"}"}</span>
-            </div>
-            <div className="px-4 py-1 mt-2 font-medium text-gray-800 bg-white rounded-full">
-              Accra
-            </div>
+          <div className="col-span-4 border-white border-r-4 border-t-0 border-b-4 row-span-2 bg-[#80C994] flex flex-col items-center justify-center p-4">
+            {/* PNG image for better download compatibility */}
+            <img
+              src={DFLogoAccraPNG}
+              alt="DevFest Accra Logo"
+              className="w-full max-w-[250px] h-auto"
+              crossOrigin="anonymous"
+            />
           </div>
 
           {/* Date & Venue Section - Right */}
