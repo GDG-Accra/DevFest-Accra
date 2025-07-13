@@ -24,51 +24,51 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
   isDownloading = false
 }) => {
   return (
-    <main className="flex flex-col items-center max-w-6xl px-6 py-8 mx-auto">
-      <div className="mb-12 text-center">
+    <main className="flex flex-col items-center max-w-6xl px-4 py-6 mx-auto">
+      <div className="mb-8 text-center">
         <div className="mb-2 text-gray-600">Viola ✨</div>
-        <h1 className="text-4xl font-bold text-gray-800">Here's your DP</h1>
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">Here's your DP</h1>
       </div>
 
       <div
         id="dp-card"
-        className="relative w-[1024px] h-[900px] mx-auto mb-8 overflow-hidden bg-white shadow-lg rounded-2xl"
+        className="relative w-full max-w-[1024px] aspect-[1024/900] mx-auto mb-6 overflow-hidden bg-white shadow-lg rounded-xl"
       >
         {/* Decorative elements */}
         <img
           src={DFShapeLogo}
           alt="DevFest Shape"
-          className="absolute z-10 w-20 h-20 top-8 right-12 rotate-12"
+          className="absolute z-10 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 top-2 sm:top-4 lg:top-6 xl:top-8 right-3 sm:right-6 lg:right-8 xl:right-12 rotate-12"
         />
         <img
           src={shape}
           alt="Shape"
-          className="absolute z-10 w-20 h-20 top-10 left-16"
+          className="absolute z-10 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 top-3 sm:top-5 lg:top-8 xl:top-10 left-4 sm:left-8 lg:left-12 xl:left-16"
         />
         <div className="grid w-full h-full grid-cols-12 grid-rows-6">
           {/* Quote Section - Top Left */}
-          <div className="col-span-5 rounded-lg border-white border-4 row-span-3 bg-[#FFE7A5] p-6 flex flex-col justify-center relative">
-            <div className="absolute top-4 left-4">
-              <div className="w-6 h-6 border-2 rotate-12 border-[#FF7F7F] rounded-sm"></div>
+          <div className="col-span-5 rounded-lg border-white border-2 sm:border-4 row-span-3 bg-[#FFE7A5] p-2 sm:p-3 lg:p-4 xl:p-6 flex flex-col justify-center relative">
+            <div className="absolute top-1 sm:top-2 lg:top-3 xl:top-4 left-1 sm:left-2 lg:left-3 xl:left-4">
+              <div className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 border-2 rotate-12 border-[#FF7F7F] rounded-sm"></div>
             </div>
-            <div className="absolute flex gap-1 top-4 right-4">
-              <div className="w-4 h-4 border-2 border-[#80C994] rounded-full"></div>
-              <div className="w-4 h-4 border-2 border-[#FF7F7F] rounded-full"></div>
-              <div className="w-4 h-4 border-2 border-[#6B9BD1] rounded-full"></div>
+            <div className="absolute flex gap-1 top-1 sm:top-2 lg:top-3 xl:top-4 right-1 sm:right-2 lg:right-3 xl:right-4">
+              <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 border-2 border-[#80C994] rounded-full"></div>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 border-2 border-[#FF7F7F] rounded-full"></div>
+              <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 border-2 border-[#6B9BD1] rounded-full"></div>
             </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold leading-tight text-gray-800">
+            <div className="text-center px-1">
+              <div className="text-sm sm:text-lg lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-tight text-gray-800">
                 {hook}
               </div>
             </div>
-            <div className="absolute bottom-4 right-4">
-              <img src={slash} alt="Slash" className="w-20 h-20 rotate-12" />
+            <div className="absolute bottom-1 sm:bottom-2 lg:bottom-3 xl:bottom-4 right-1 sm:right-2 lg:right-3 xl:right-4">
+              <img src={slash} alt="Slash" className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rotate-12" />
             </div>
           </div>
 
           {/* Avatar Section - Top Right */}
-          <div className="col-span-7  row-span-3 border-white border-r-4 border-t-4 bg-[#80C994] flex items-center justify-center">
-            <div className="p-3 rotate-[9deg] bg-white rounded-lg w-96 h-80">
+          <div className="col-span-7 row-span-3 border-white border-r-2 border-t-2 sm:border-r-4 sm:border-t-4 bg-[#80C994] flex items-center justify-center">
+            <div className="p-1 sm:p-2 lg:p-3 rotate-[9deg] bg-white rounded-lg w-32 h-28 sm:w-48 sm:h-40 lg:w-64 lg:h-52 xl:w-80 xl:h-64 2xl:w-96 2xl:h-80">
               <div
                 className="relative w-full h-full overflow-hidden"
                 style={{
@@ -88,39 +88,39 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
           </div>
 
           {/* Name Section - Middle Left */}
-          <div className="col-span-5 rounded-lg border-white border-t-0 border-b-4 border-l-4 border-r-4 row-span-2 bg-[#FF7F7F] flex flex-col items-center justify-center text-white">
-            <div className="text-4xl font-bold leading-tight text-center uppercase">
+          <div className="col-span-5 rounded-lg border-white border-t-0 border-b-2 border-l-2 border-r-2 sm:border-b-4 sm:border-l-4 sm:border-r-4 row-span-2 bg-[#FF7F7F] flex flex-col items-center justify-center text-white px-1">
+            <div className="text-sm sm:text-lg lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-tight text-center uppercase">
               {name}
             </div>
-            <div className="mt-2 text-lg font-medium">WILL BE AT</div>
+            <div className="mt-1 text-xs sm:text-sm lg:text-base xl:text-lg font-medium">WILL BE AT</div>
           </div>
 
           {/* DevFest Logo Section - Middle Center */}
-          <div className="col-span-4 border-white border-r-4 border-t-0 border-b-4 row-span-2 bg-[#80C994] flex flex-col items-center justify-center p-4">
+          <div className="col-span-4 border-white border-r-2 border-t-0 border-b-2 sm:border-r-4 sm:border-b-4 row-span-2 bg-[#80C994] flex flex-col items-center justify-center p-1 sm:p-2 lg:p-3 xl:p-4">
             {/* PNG image for better download compatibility */}
             <img
               src={DFLogoAccraPNG}
               alt="DevFest Accra Logo"
-              className="w-full max-w-[250px] h-auto"
+              className="w-full max-w-[80px] sm:max-w-[120px] lg:max-w-[160px] xl:max-w-[200px] 2xl:max-w-[250px] h-auto"
               crossOrigin="anonymous"
             />
           </div>
 
           {/* Date & Venue Section - Right */}
-          <div className="relative col-span-3 rounded-lg row-span-2 border-white border-t-4 border-r-4 border-b-4 border-l-0 bg-[#6B9BD1] text-white p-4 flex flex-col justify-center">
-            <div className="mb-1 text-lg text-blue-200">Date</div>
-            <div className="mb-3 text-2xl font-bold">15 - 16th Nov</div>
-            <div className="mb-1 text-lg text-blue-200">Venue</div>
-            <div className="text-2xl font-bold leading-tight">
+          <div className="relative col-span-3 rounded-lg row-span-2 border-white border-t-2 border-r-2 border-b-2 border-l-0 sm:border-t-4 sm:border-r-4 sm:border-b-4 bg-[#6B9BD1] text-white p-1 sm:p-2 lg:p-3 xl:p-4 flex flex-col justify-center overflow-hidden">
+            <div className="mb-0.5 text-xs sm:text-sm lg:text-base xl:text-lg text-blue-200">Date</div>
+            <div className="mb-1 sm:mb-2 text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-xl font-bold leading-tight">15 - 16th Nov</div>
+            <div className="mb-0.5 text-xs sm:text-sm lg:text-base xl:text-lg text-blue-200">Venue</div>
+            <div className="text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-xl font-bold leading-tight break-words">
               Landmark Event Center
             </div>
-            <div className="absolute flex gap-1 top-4 -rotate-12 right-4">
-              <div className="w-4 h-4 border-2 border-[#FF7F7F] rounded-full"></div>
+            <div className="absolute flex gap-1 top-1 sm:top-2 lg:top-3 xl:top-4 -rotate-12 right-1 sm:right-2 lg:right-3 xl:right-4">
+              <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 border-2 border-[#FF7F7F] rounded-full"></div>
             </div>
           </div>
 
           {/* City Skyline Section - Bottom */}
-          <div className="col-span-12 border-white border-l-4 border-r-4 border-b-4 rounded-lg row-span-1 bg-[#F4D03F] relative overflow-hidden">
+          <div className="col-span-12 border-white border-l-2 border-r-2 border-b-2 sm:border-l-4 sm:border-r-4 sm:border-b-4 rounded-lg row-span-1 bg-[#F4D03F] relative overflow-hidden">
             <div className="absolute bottom-0 left-0 right-0 z-0 h-full">
               <svg viewBox="0 0 800 100" className="w-full h-full">
                 <path
@@ -135,7 +135,7 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
         </div>
       </div>
 
-      <div className="flex justify-center w-full gap-4 mb-12">
+      <div className="flex justify-center w-full gap-4 mb-8">
         <Button
           onClick={() => onDownload && onDownload()}
           disabled={isDownloading}
