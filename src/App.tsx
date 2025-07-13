@@ -7,13 +7,17 @@ import FAQs from "./pages/FAQsPage/ FAQs";
 import DPPage from "./pages/DPPage/DPPage";
 import SpeakerPage from "./pages/SpeakersPage/SpeakerPage";
 import TeamPage from "./pages/TeamPage/TeamPage";
+// import MainPage from "./pages/MainPage/MainPage";
+
 
 const App: React.FC = () => {
   return (
     <div>
       <Routes>
+
         {/* Home section  */}
         <Route path="/" element={<HomePage />} />
+
         {/* Speaaker section  */}
         <Route path="/devfest/speakers" element={<SpeakerPage />} />
 
