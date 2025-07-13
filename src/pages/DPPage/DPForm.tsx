@@ -217,7 +217,7 @@ const DPForm: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center lg:w-1/2  hidden lg:block">
+            <div className="flex items-center justify-center lg:w-1/2  hidden lg:blockd">
               <div className="relative w-full h-[500px] flex items-center justify-center">
                 <img
                   src={DPImage}
