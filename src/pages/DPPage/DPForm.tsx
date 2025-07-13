@@ -51,7 +51,7 @@ const DPForm: React.FC = () => {
 
     img.onload = () => {
       // TODO: Add image size validation - I commented this because most of my images for testing are above 800 x 400
-      // NOTE: I also this the image is not being stored or hosted we can all images above 800 x 400
+      // NOTE: and also since the image is not being stored or hosted I am thinking we can allow images above 800 x 400
 
       // if (img.width > 800 || img.height > 400) {
       //   alert(
@@ -100,6 +100,11 @@ const DPForm: React.FC = () => {
       alert("There was an error generating your image. Please try again.");
     } finally {
       setIsDownloading(false);
+      setShowTemplate(false);
+      setName("");
+      setHook("");
+      setImage(null);
+      setImageURL("");
     }
   };
 
