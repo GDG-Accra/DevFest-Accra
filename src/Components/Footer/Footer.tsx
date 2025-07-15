@@ -1,4 +1,4 @@
-import { assets } from "@/assets/assets";
+import { assets } from "../../assets/assets";
 import { Twitter, Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
 
 const Footer = () => {

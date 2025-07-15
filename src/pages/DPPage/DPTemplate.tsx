@@ -3,7 +3,7 @@ import { Download } from "lucide-react";
 
 import { Button } from "../../Components/DPForm/Button";
 import DFLogoAccraPNG from "../../assets/images/Logos/_DF25-Accra.png";
-import { assets } from "@/assets/assets";
+import { assets } from "../../assets/assets";
 
 interface DPTemplateProps {
   name: string;
