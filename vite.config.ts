@@ -7,4 +7,9 @@ export default defineConfig({
   resolve: {
     alias: {},
   },
+  server: {
+    allowedHosts: [
+      "gdg-accra-devfest-website-xwgzaw-b29891-168-231-85-156.traefik.me",
+    ],
+  },
 });
