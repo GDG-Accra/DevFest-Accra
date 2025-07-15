@@ -217,15 +217,16 @@ const DPForm: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center lg:w-1/2">
+            <div className="flex items-center justify-center lg:w-1/2  hidden lg:blockd">
               <div className="relative w-full h-[500px] flex items-center justify-center">
                 <img
                   src={DPImage}
                   alt="Frame"
-                  className="absolute inset-0 w-full h-full object-contain rotate-[9deg] z-0 hidden lg:block top-1/4"
+                  className="absolute inset-0 w-full h-full object-contain rotate-[9deg] z-0 top-1/4"
                 />
               </div>
             </div>
+
           </div>
         </div>
       )}

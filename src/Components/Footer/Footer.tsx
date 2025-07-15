@@ -1,8 +1,7 @@
 import { Twitter, Instagram, Facebook, Youtube, Linkedin } from "lucide-react";
 import DFShapeLogo from '../../assets/images/Logos/DFShapeLogo.svg'
-// import BGImage from '../../assets/images/LandingPageImage/bgImage.svg'
-import ShapeImageFooter from '../../assets/images/Footer/shapeImageFooter.svg'
-import ShapeImageFooterLG from '../../assets/images/Footer/shapeImageFooterLG.svg'
+import ShapeImageFooter from '../../assets/images/footer/shapeImageFooter.svg';
+import ShapeImageFooterLG from '../../assets/images/footer/shapeImageFooterLG.svg';
 
 const Footer = () => {
   return (
