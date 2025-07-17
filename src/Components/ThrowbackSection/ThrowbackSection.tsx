@@ -115,16 +115,16 @@ const ThrowbackSection = () => {
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6 mx-auto mt-8 sm:mt-12 mb-8">
         <Link to="https://www.youtube.com/@gdgaccra" className="w-full sm:w-auto">
-          <button className="w-full bg-blue-500 text-white py-3 sm:py-4 px-6 rounded-lg font-semibold text-base sm:text-lg flex items-center justify-center gap-2 transition hover:bg-blue-600">
+          <button className= "px-8 py-4 bg-blue-500 text-white font-semibold border-2 rounded-lg shadow-md hover:bg-blue-600 hover:text-gray-300 transition-colors duration-300 flex gap-2 items-center">
             <span>Play highlights</span>
             <IoPlayCircleOutline className="text-white text-xl sm:text-2xl" />
           </button>
         </Link>
 
         <Link to="https://photos.google.com/share/AF1QipMD7yxbMSrutUXdO-8Y1QGyiZWaHKgvUAt2d_hyR-gzgCBwVJ96KJaitm9JXs3azw?key=ZmMwdl9mY2xiRFlYV1pNNThqNmVSRFJwWm5IYWl3" className="w-full sm:w-auto">
-          <button className="w-full bg-transparent border-2 border-gray-300 text-gray-800 py-3 sm:py-4 px-6 rounded-lg font-semibold text-base sm:text-lg flex items-center justify-center gap-2 transition hover:bg-gray-100">
+          <button className= "px-8 py-4 bg-transparent text-gray-800 font-semibold border-2 border-gray-300 rounded-lg shadow-md hover:bg-gray-100 hover:text-gray-300 transition-colors duration-300 flex gap-2 items-center">
             <span>DevFest Accra 24 photos</span>
-            <CiImageOn className="text-gray-800 text-xl sm:text-2xl" />
+            <CiImageOn className="text-gray-800 text-xl sm:text-2xl"/>
           </button>
         </Link>
       </div>

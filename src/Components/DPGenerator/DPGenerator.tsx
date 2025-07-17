@@ -61,7 +61,7 @@ const DPGenerator = () => {
       </div>
 
       <Link to='/devfest/dp-generator'>
-        <button className='bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 px-10 rounded-md flex items-center justify-center gap-2 shadow-md'>
+        <button className='px-8 py-4 bg-blue-500 text-white font-semibold border-2 rounded-lg shadow-md hover:bg-blue-600 hover:text-gray-300 transition-colors duration-300 flex gap-2 items-center'>
           <span className='text-base font-medium text-white font-inter'>
             Create DP Now
           </span>

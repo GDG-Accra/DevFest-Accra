@@ -226,7 +226,7 @@ const SpeakersSection = () => {
       </div>
       <div className='mt-10 flex items-center justify-center'>
         <Link to='/devfest/speakers'>
-          <button className='bg-blue-300 hover:bg-blue-500 text-gray-800  p-3 rounded-lg flex gap-2 items-center'>
+          <button className='px-8 py-4 bg-blue-500 text-white font-semibold border-2 rounded-lg shadow-md hover:bg-blue-600 hover:text-gray-300 transition-colors duration-300 flex gap-2 items-center'>
             See all Speakers
             {/* <RiMicLine  className="text-2xl"/> */}
             <svg
