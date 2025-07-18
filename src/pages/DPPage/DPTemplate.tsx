@@ -2,10 +2,8 @@ import React from "react";
 import { Download } from "lucide-react";
 
 import { Button } from "../../Components/DPForm/Button";
-import DFShapeLogo from "../../assets/DPTemplate/DFShapeLogo.svg";
-import shape from "../../assets/DPTemplate/shape.svg";
-import slash from "../../assets/DPTemplate/slash.svg";
 import DFLogoAccraPNG from "../../assets/images/Logos/_DF25-Accra.png";
+import { assets } from "../../assets/assets";
 
 interface DPTemplateProps {
   name: string;
@@ -21,13 +19,15 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
   hook,
   imageURL,
   onDownload,
-  isDownloading = false
+  isDownloading = false,
 }) => {
   return (
     <main className="flex flex-col items-center max-w-6xl px-4 py-6 mx-auto">
       <div className="mb-8 text-center">
         <div className="mb-2 text-gray-600">Viola ✨</div>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">Here's your DP</h1>
+        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">
+          Here's your DP
+        </h1>
       </div>
 
       <div
@@ -36,12 +36,12 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
       >
         {/* Decorative elements */}
         <img
-          src={DFShapeLogo}
+          src={assets.logos.dfShapeLogo}
           alt="DevFest Shape"
           className="absolute z-10 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 top-2 sm:top-4 lg:top-6 xl:top-8 right-3 sm:right-6 lg:right-8 xl:right-12 rotate-12"
         />
         <img
-          src={shape}
+          src={assets.logos.shape}
           alt="Shape"
           className="absolute z-10 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 top-3 sm:top-5 lg:top-8 xl:top-10 left-4 sm:left-8 lg:left-12 xl:left-16"
         />
@@ -62,7 +62,11 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
               </div>
             </div>
             <div className="absolute bottom-1 sm:bottom-2 lg:bottom-3 xl:bottom-4 right-1 sm:right-2 lg:right-3 xl:right-4">
-              <img src={slash} alt="Slash" className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rotate-12" />
+              <img
+                src={assets.logos.slash}
+                alt="Slash"
+                className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rotate-12"
+              />
             </div>
           </div>
 
@@ -74,7 +78,7 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
                 style={{
                   clipPath:
                     "polygon(0% 15%, 15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%)",
-                  borderRadius: "0"
+                  borderRadius: "0",
                 }}
               >
                 {/* User's uploaded image */}
@@ -92,7 +96,9 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
             <div className="text-sm sm:text-lg lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-tight text-center uppercase">
               {name}
             </div>
-            <div className="mt-1 text-xs sm:text-sm lg:text-base xl:text-lg font-medium">WILL BE AT</div>
+            <div className="mt-1 text-xs sm:text-sm lg:text-base xl:text-lg font-medium">
+              WILL BE AT
+            </div>
           </div>
 
           {/* DevFest Logo Section - Middle Center */}
@@ -108,9 +114,15 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
 
           {/* Date & Venue Section - Right */}
           <div className="relative col-span-3 rounded-lg row-span-2 border-white border-t-2 border-r-2 border-b-2 border-l-0 sm:border-t-4 sm:border-r-4 sm:border-b-4 bg-[#6B9BD1] text-white p-1 sm:p-2 lg:p-3 xl:p-4 flex flex-col justify-center overflow-hidden">
-            <div className="mb-0.5 text-xs sm:text-sm lg:text-base xl:text-lg text-blue-200">Date</div>
-            <div className="mb-1 sm:mb-2 text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-xl font-bold leading-tight">15 - 16th Nov</div>
-            <div className="mb-0.5 text-xs sm:text-sm lg:text-base xl:text-lg text-blue-200">Venue</div>
+            <div className="mb-0.5 text-xs sm:text-sm lg:text-base xl:text-lg text-blue-200">
+              Date
+            </div>
+            <div className="mb-1 sm:mb-2 text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-xl font-bold leading-tight">
+              15 - 16th Nov
+            </div>
+            <div className="mb-0.5 text-xs sm:text-sm lg:text-base xl:text-lg text-blue-200">
+              Venue
+            </div>
             <div className="text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-xl font-bold leading-tight break-words">
               Landmark Event Center
             </div>
