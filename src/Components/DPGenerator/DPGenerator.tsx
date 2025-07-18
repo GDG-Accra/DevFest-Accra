@@ -1,8 +1,13 @@
+import { useEffect } from "react";
 import DPImage from "../../assets/images/DP/DPImage.png";
 import LinkRotate from "../../assets/images/BeFirst/link.gif";
 import { Link } from "react-router-dom";
 
 const DPGenerator = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className='flex flex-col items-center justify-center py-8 px-4 max-w-4xl mx-auto text-center mt-10 md:mt-20'>
       {/* Header Section */}
