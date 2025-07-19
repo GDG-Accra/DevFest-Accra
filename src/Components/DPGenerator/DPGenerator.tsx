@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import DPImage from "../../assets/images/DP/DPImage.png";
-import LinkRotate from "../../assets/images/BeFirst/link.gif";
 import { Link } from "react-router-dom";
+import { assets } from "../../assets/assets";
 
 const DPGenerator = () => {
   useEffect(() => {
@@ -72,7 +72,7 @@ const DPGenerator = () => {
           </span>
           <div className='bg-white rounded-full p-1 w-5 h-5'>
             <img
-              src={LinkRotate}
+              src={assets.gifs.faqLinkGif}
               alt='icon'
               className='w-full h-full object-contain'
             />
