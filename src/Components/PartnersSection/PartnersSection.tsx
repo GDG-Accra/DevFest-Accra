@@ -11,7 +11,7 @@ const PartnersSection: React.FC = () => {
   return (
     <section className='text-center py-16 px-4 bg-white'>
       
-      <h2 className="max-w-xl mx-auto text-xl text-[#1E1E1E] mb-2 md:mb-4 font-sans uppercase">
+      <h2 className="max-w-xl mx-auto text-gray-700 mb-2 md:mb-4 uppercase">
       Partners
 				</h2>
 
@@ -23,7 +23,7 @@ const PartnersSection: React.FC = () => {
                h-10 lg:h-24 md:ml-20'
         />
 
-        <h1 className='text-3xl sm:text-3xl md:text-4xl font-bold text-center'>
+        <h1 className='text-4xl lg:text-5xl font-bold  text-center'>
           Powered by the Ones Who Believe
           <br className=""/> — Our Partners and Sponsors.
         </h1>

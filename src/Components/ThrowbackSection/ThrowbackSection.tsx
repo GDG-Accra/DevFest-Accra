@@ -16,7 +16,7 @@ const ThrowbackSection = () => {
       {/* Top badge */}
       <div className="flex justify-center mb-6 sm:mb-10">
         <div className="bg-white rounded-full shadow-md px-4 sm:px-6 py-2 sm:py-3 flex flex-col items-center">
-          <div className="uppercase text-gray-700 text-xs sm:text-sm font-medium">
+          <div className="uppercase text-gray-700">
             THROWBACK
           </div>
           <div className="flex items-center gap-1 mt-1">
@@ -28,11 +28,11 @@ const ThrowbackSection = () => {
       </div>
       {/* Title section */}
       <div className="text-center mb-8">
-        <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">
+        <h2 className="text-4xl lg:text-5xl font-bold  text-gray-900 mb-2">
           Throwback to DevFest Accra '24:
         </h2>
         <div className="flex items-center justify-center">
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 md:mr-3">
+          <h2 className="text-4xl lg:text-5xl font-bold  text-gray-900 md:mr-3">
             Vibes and Tech All the Way
           </h2>
           <div className="flex">
@@ -43,7 +43,7 @@ const ThrowbackSection = () => {
 
       {/* Description */}
       <div className="text-center mb-8 sm:mb-10 max-w-3xl mx-auto">
-        <p className="text-base sm:text-lg text-gray-700">
+        <p className="text-base sm:text-lg md:text-xl text-gray-700">
           Remember the energy? The pictures, the jollof, the pure tech vibes?
           Last year, we turned up and showed out. From inspiring sessions to
           unforgettable connections, DevFest Accra 2024 was everything and more.

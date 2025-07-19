@@ -58,11 +58,11 @@ export const BeFirst = () => {
         {/* Right side content section */}
         <div className='md:w-1/2 p-6 md:p-10 flex flex-col justify-center'>
           <div className='text-gray-700 font-medium mb-2'>GDG ACCRA</div>
-          <h1 className='text-4xl md:text-5xl font-bold text-gray-900 mb-6'>
+          <h1 className='text-4xl lg:text-5xl font-bold  text-gray-900 mb-6'>
             Be the First to Know!
           </h1>
 
-          <p className='text-gray-700 mb-8'>
+          <p className='text-gray-700 mb-8 text-base sm:text-lg md:text-xl'>
             Stay updated on all our activities, events, and webinars. Get the
             inside scoop on everything happening in the GDG Accra community.
           </p>

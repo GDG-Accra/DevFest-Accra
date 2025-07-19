@@ -27,7 +27,7 @@ const DevFestLandingPage = () => {
         {/* GDG Accra Presents Badge */}
         <div className='text-center mb-3'>
           <div className='inline-block px-6 py-2 bg-white rounded-full shadow-md'>
-            <span className='font-semibold text-gray-800 tracking-wide'>
+            <span className='text-gray-700 tracking-wide'>
               GDG ACCRA PRESENTS
             </span>
           </div>
@@ -43,7 +43,7 @@ const DevFestLandingPage = () => {
 
         {/* Description Text */}
         <div className='max-w-3xl mx-auto text-center mt-5 md:mt-16 md:mb-16'>
-          <p className='md:text-xl text-lg'>
+          <p className='text-base sm:text-lg md:text-xl'>
             Join us at DevFest Accra 2025 on [Loading...] for Accra's largest
             tech celebration of the year! This event is your gateway to the
             latest in AI, Android, Cloud, Web, and more. Don't miss out on this!

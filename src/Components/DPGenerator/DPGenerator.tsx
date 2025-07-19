@@ -15,7 +15,7 @@ const DPGenerator = () => {
         <p className='max-w-xl mx-auto text-xl text-[#1E1E1E] mb-2 md:mb-4 font-sans'>
           DP GENERATOR
         </p>
-        <h1 className='text-4xl md:text-5xl font-bold mb-3'>
+        <h1 className='text-4xl lg:text-5xl font-bold  mb-3'>
           DevFest Accra '25 Vibes?
           <br />
           Make Your DP!

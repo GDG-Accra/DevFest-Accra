@@ -99,10 +99,10 @@ const SpeakersSection = () => {
   };
 
   return (
-    <div className='w-full py-10 px-8 relative overflow-hidden mt-20 lg:mt-0'>
+    <div className='w-full py-10 px-8 relative overflow-hidden mt-10 lg:mt-0'>
       {/* Header section */}
       <div className='text-center mb-12'>
-        <h2 className='text-4xl lg:text-5xl font-bold mb-4 flex items-center justify-center'>
+        <h2 className='text-4xl lg:text-5xl font-bold  mb-4 flex items-center justify-center'>
           Our Inspiring Speakers
           <span className='lg:ml-4 '>
             <div className='flex'>
@@ -148,7 +148,7 @@ const SpeakersSection = () => {
             {speakers[activeIndex]?.title || "Speaker Title"}
           </div>
 
-          <p className='text-gray-700 leading-relaxed'>
+          <p className='text-gray-700 md:text-xl text-sm'>
             {speakers[activeIndex]?.description ||
               "Speaker description goes here."}
           </p>

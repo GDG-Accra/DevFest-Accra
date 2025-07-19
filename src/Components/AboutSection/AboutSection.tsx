@@ -9,12 +9,12 @@ export const AboutSection = () => {
         {/* Text content on the left */}
         <div className='lg:w-1/2 px-2 sm:px-4 md:px-6 lg:px-10'>
           <div className='flex mb-6'>
-            <h1 className='text-4xl md:text-5xl font-bold'>
+            <h1 className='text-4xl lg:text-5xl font-bold '>
               About <br /> DevFest Accra
             </h1>
             <Code className='w-6 md:ml-2' />
           </div>
-          <p className='text-lg md:text-xl text-gray-700 text-justify'>
+          <p className='text-base sm:text-lg md:text-xl text-gray-700 text-justify'>
             DevFest Accra brings this global experience to Ghana, uniting local
             developers, designers, and industry experts in an environment that
             fosters learning and innovation. It serves as a platform for
