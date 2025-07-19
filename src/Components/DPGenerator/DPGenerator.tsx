@@ -72,7 +72,7 @@ const DPGenerator = () => {
           </span>
           <div className='bg-white rounded-full p-1 w-5 h-5'>
             <img
-              src={assets.gifs.faqLinkGif}
+              src={assets.gif.linkRotateGif}
               alt='icon'
               className='w-full h-full object-contain'
             />

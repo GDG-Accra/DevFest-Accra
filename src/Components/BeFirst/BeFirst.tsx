@@ -82,7 +82,7 @@ export const BeFirst = () => {
                 3xl:w-[38px] 3xl:h-[38px]"
               >
                 <img
-                  src={assets.gifs.faqLinkGif}
+                  src={assets.gif.linkRotateGif}
                   alt="icon"
                   className="w-full h-full object-contain"
                 />
