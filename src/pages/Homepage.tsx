@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import SpeakersSection from "../Components/SpeakersSection/SpeakersSection";
 import { AboutSection } from "../Components/AboutSection/AboutSection";
 import ThrowbackSection from "../Components/ThrowbackSection/ThrowbackSection";
