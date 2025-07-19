@@ -128,7 +128,7 @@ const SpeakersSection = () => {
             >
               <ChevronLeft />
             </button>
-            <h3 className='text-2xl font-bold flex-1 text-left'>
+            <h3 className='text-2xl font-bold flex-1 text-center'>
               {speakers[activeIndex]?.name || "Speaker"}
             </h3>
             <button

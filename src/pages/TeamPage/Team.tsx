@@ -100,7 +100,7 @@ const Team: React.FC = () => {
     },
   ];
 
-  const filters = ["All", "Organizers", "Product", "Designers", "Content"];
+  const filters = ["All", "Organizers", "Product", "Designers | Developers", "Content"];
 
   const filteredMembers =
     activeFilter === "All"
@@ -137,10 +137,10 @@ const Team: React.FC = () => {
         <div className='max-w-7lx mx-auto'>
           {/* Header */}
           <div className='text-center mb-10 mt-20'>
-            <h1 className='text-6xl md:text-5xl font-bold text-gray-900 mb-4'>
+            <h1 className='text-4xl lg:text-5xl font-bold text-gray-900 mb-4'>
               Get To Know The Team
             </h1>
-            <p className='text-gray-700 max-w-2xl mx-auto'>
+            <p className='text-base sm:text-lg md:text-xl text-gray-600 max-w-2xl mx-auto'>
               Meet the passionate minds working behind the scenes to make
               DevFest Accra 2025 unforgettable.
             </p>

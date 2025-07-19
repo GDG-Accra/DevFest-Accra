@@ -101,7 +101,8 @@ const Speakers: React.FC = () => {
         <div className='max-w-7xl mx-auto'>
           {/* Header */}
           <div className='text-center mb-10 mt-20'>
-            <h1 className='text-4xl md:text-5xl font-bold text-[#1E1E1E] mb-4'>
+            
+            <h1 className='text-4xl lg:text-5xl font-bold text-[#1E1E1E] mb-4'>
               Get To Know Our DevFest Accra <br />
               2025 Speakers
             </h1>

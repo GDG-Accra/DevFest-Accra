@@ -1,9 +1,7 @@
-// import { FiExternalLink } from "react-icons/fi";
-// import { useState } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "../../Components/Navbar/Navbar";
 import BGImage from "../../assets/images/LandingPageImage/bgImage.svg";
-import ShapeImage from "../../assets/images/LandingPageImage/shape.svg";
+import { assets } from "../../assets/assets";
 
 const DevFestLandingPage = () => {
   // const [isHovering, setIsHovering] = useState(false);
@@ -52,26 +50,18 @@ const DevFestLandingPage = () => {
 
         {/* Join Now Button */}
         <div className='p-8 flex justify-center'>
-          <style
-            dangerouslySetInnerHTML={{
-              __html: `
-          @keyframes rotate360 {
-            0% { transform: rotate(0deg); }
-            40% { transform: rotate(360deg); }
-            50% { transform: rotate(360deg); }
-            90% { transform: rotate(720deg); }
-            100% { transform: rotate(720deg); }
-          }
-          .rotate-360 {
-            animation: rotate360 6s linear infinite;
-          }
-        `,
-            }}
-          />
           <Link to='https://gdg.community.dev/gdg-accra/'>
-            <button className='px-8 py-4 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 hover:text-gray-300 transition-colors duration-300 flex gap-2 items-center'>
-              Register Now
-              <img src={ShapeImage} alt='icon link' className='rotate-360' />
+            <button className='bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 px-10 rounded-md flex items-center justify-center gap-2 shadow-md'>
+              <span className='text-base font-medium text-white font-inter'>
+                Register Now
+              </span>
+              <div className='bg-white rounded-full p-1 w-5 h-5'>
+                <img
+                  src={assets.gifs.faqLinkGif}
+                  alt='icon'
+                  className='w-full h-full object-contain'
+                />
+              </div>
             </button>
           </Link>
         </div>
