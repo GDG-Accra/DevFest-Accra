@@ -117,23 +117,23 @@ const SpeakersSection = () => {
       </div>
 
       {/* Speakers carousel */}
-      <div className='flex flex-col md:flex-col lg:flex-row justify-between items-center max-w-6xl mx-auto relative'>
+      <div className='flex flex-col md:flex-col lg:flex-row justify-between items-center max-w-6xl mx-auto relative gap-20'>
         {/* Navigation arrows and active speaker info */}
-        <div className='flex flex-col items-start md:items-center lg:items-start mb-8 lg:mb-0 w-full lg:w-1/3 text-left md:text-center lg:text-left'>
-          <div className='flex items-center mb-6'>
+        <div className='flex flex-col items-start mb-8 lg:mb-0 w-full lg:w-1/3 text-left'>
+          <div className='flex items-center mb-6 w-full justify-start'>
             <button
               onClick={prevSpeaker}
-              className='p-2 rounded-full hover:bg-gray-100'
+              className='p-2 rounded-full hover:bg-gray-100 flex-shrink-0 w-10 h-10 flex items-center justify-center mr-2'
               aria-label='Previous speaker'
             >
               <ChevronLeft />
             </button>
-            <h3 className='text-2xl font-bold mx-4'>
+            <h3 className='text-2xl font-bold flex-1 text-left'>
               {speakers[activeIndex]?.name || "Speaker"}
             </h3>
             <button
               onClick={nextSpeaker}
-              className='p-2 rounded-full hover:bg-gray-100'
+              className='p-2 rounded-full hover:bg-gray-100 flex-shrink-0 w-10 h-10 flex items-center justify-center ml-2'
               aria-label='Next speaker'
             >
               <ChevronRight />
@@ -141,14 +141,14 @@ const SpeakersSection = () => {
           </div>
 
           <div
-            className={`px-4 py-2 rounded-full mb-4 ${
+            className={`px-4 py-2 rounded-full mb-6 ${
               speakers[activeIndex]?.textColor || "text-gray-600"
             } ${speakers[activeIndex]?.color || "bg-gray-100"}`}
           >
             {speakers[activeIndex]?.title || "Speaker Title"}
           </div>
 
-          <p className='text-gray-700'>
+          <p className='text-gray-700 leading-relaxed'>
             {speakers[activeIndex]?.description ||
               "Speaker description goes here."}
           </p>
@@ -224,6 +224,7 @@ const SpeakersSection = () => {
           </div>
         </div>
       </div>
+      
       <div className='mt-10 flex items-center justify-center'>
         <Link to='/devfest/speakers'>
           <button className='bg-blue-300 hover:bg-blue-500 text-gray-800  p-3 rounded-lg flex gap-2 items-center'>
@@ -240,7 +241,7 @@ const SpeakersSection = () => {
                 stroke-linecap='round'
                 stroke-linejoin='round'
                 stroke-width='1.5'
-                d='M12 19c3.31 0 6-2.69 6-6V8c0-3.31-2.69-6-6-6S6 4.69 6 8v5c0 3.31 2.69 6 6 6'
+                d='M12 19c3.31 0 6-2.69 6 6V8c0-3.31-2.69-6-6-6S6 4.69 6 8v5c0 3.31 2.69 6 6 6'
               ></path>
               <path
                 stroke='#0A0A0A'
