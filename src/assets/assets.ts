@@ -4,4 +4,7 @@ export const assets = {
     shape: "/src/assets/DPTemplate/shape.svg",
     slash: "/src/assets/DPTemplate/slash.svg",
   },
+  gifs: {
+    faqLinkGif: "/src/assets/images/FAQs/link.gif",
+  }
 };
