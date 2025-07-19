@@ -12,7 +12,7 @@ const PartnersSection: React.FC = () => {
     <section className='text-center py-16 px-4 bg-white'>
       
       <h2 className="max-w-xl mx-auto text-gray-700 mb-2 md:mb-4 uppercase">
-      Partners
+      Sponsors | Partners
 				</h2>
 
       <div className='relative max-w-5xl mx-auto mb-4'>
@@ -25,7 +25,7 @@ const PartnersSection: React.FC = () => {
 
         <h1 className='text-4xl lg:text-5xl font-bold  text-center'>
           Powered by the Ones Who Believe
-          <br className=""/> — Our Partners and Sponsors.
+          <br/> — Our Sponsors and Partners.
         </h1>
       </div>
 
@@ -36,7 +36,7 @@ const PartnersSection: React.FC = () => {
 
       {/* Logos section with responsive grid */}
       <section className='max-w-5xl mx-auto'>
-        <div className='grid grid-cols-2 md:grid-cols-3 gap-8 place-items-center'>
+        <div className='grid grid-cols-2 md:grid-cols-4 gap-8 place-items-center'>
           {/* 1 */}
           <div className='flex items-center justify-center p-4 h-32 md:h-40 lg:h-48 w-full max-w-xs'>
             <img
@@ -71,6 +71,13 @@ const PartnersSection: React.FC = () => {
             />
           </div>
           
+           <div className='flex items-center justify-center p-4 h-32 md:h-40 lg:h-48 w-full max-w-xs'>
+            <img
+              src={InfobipLogo}
+              alt='Infobip'
+              className='max-h-full w-full object-contain'
+            />
+          </div>
         
         </div>
       </section>
