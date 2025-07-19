@@ -5,7 +5,7 @@ import SosuImage from "../../assets/images/Speakers/SosuAlfred.svg";
 import OdameteyImage from "../../assets/images/Speakers/ShadrackOdametey.svg";
 import shape from "../../assets/images/Speakers/shape.svg";
 import { Link } from "react-router-dom";
-// import { RiMicLine } from "react-icons/ri";
+import { RiMicLine } from "react-icons/ri";
 
 // Simple arrow components to replace lucide-react dependency
 const ChevronLeft = () => (
