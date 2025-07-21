@@ -12,7 +12,7 @@ const EventDetails = () => {
           </div>
           <div>
             <p className="text-sm text-gray-500">Where</p>
-            <p className="text-lg font-medium">Loading...</p>
+            <p className="text-lg font-medium">ISSER Conference Hall - University of Ghana, Legon</p>
           </div>
         </div>
 
@@ -23,7 +23,7 @@ const EventDetails = () => {
           </div>
           <div>
             <p className="text-sm text-gray-500">When</p>
-            <p className="text-lg font-medium">Loading...</p>
+            <p className="text-lg font-medium">Saturday, 4th October 2025</p>
           </div>
         </div>
       </div>

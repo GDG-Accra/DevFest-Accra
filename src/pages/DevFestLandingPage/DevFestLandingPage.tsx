@@ -42,7 +42,7 @@ const DevFestLandingPage = () => {
         {/* Description Text */}
         <div className='max-w-3xl mx-auto text-center mt-5 md:mt-16 md:mb-16'>
           <p className='text-base sm:text-lg md:text-xl'>
-            Join us at DevFest Accra 2025 on [Loading...] for Accra's largest
+            Join us at DevFest Accra 2025 on 4th October 2025 for Accra's largest
             tech celebration of the year! This event is your gateway to the
             latest in AI, Android, Cloud, Web, and more. Don't miss out on this!
           </p>
