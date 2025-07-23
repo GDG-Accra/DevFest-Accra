@@ -14,7 +14,7 @@ const hooks = [
   "Debugging life, one line at a time.",
   "Powered by caffeine",
   "Catch me at DevFest!",
-  "Techie by choice and purpose. peace out!"
+  "Techie by choice and purpose. peace out!",
 ];
 
 const DPForm: React.FC = () => {
@@ -39,7 +39,7 @@ const DPForm: React.FC = () => {
       "image/jpeg",
       "image/png",
       "image/gif",
-      "image/svg+xml"
+      "image/svg+xml",
     ];
     if (!allowedTypes.includes(file.type)) {
       alert("Only JPG, PNG, GIF, or SVG images are allowed.");
@@ -142,7 +142,7 @@ const DPForm: React.FC = () => {
                   <Input
                     placeholder="Your Name"
                     value={name}
-                    onChange={e => setName(e.target.value)}
+                    onChange={(e) => setName(e.target.value)}
                     className="text-lg rounded-2xl h-14"
                   />
                 </div>
@@ -155,7 +155,7 @@ const DPForm: React.FC = () => {
                     className="relative flex flex-col justify-center h-64 p-12 text-center transition-all border-2 border-dashed cursor-pointer rounded-2xl hover:border-blue-500"
                     onClick={handleBoxClick}
                     onDrop={handleDrop}
-                    onDragOver={e => e.preventDefault()}
+                    onDragOver={(e) => e.preventDefault()}
                   >
                     {imageURL ? (
                       <div className="absolute inset-0 flex items-center justify-center">
@@ -191,7 +191,7 @@ const DPForm: React.FC = () => {
                     <Input
                       placeholder="Optional one-liner"
                       value={hook}
-                      onChange={e => setHook(e.target.value)}
+                      onChange={(e) => setHook(e.target.value)}
                       className="text-lg rounded-2xl h-14"
                     />
                     <Button
@@ -217,7 +217,7 @@ const DPForm: React.FC = () => {
               </div>
             </div>
 
-            <div className="flex items-center justify-center lg:w-1/2  hidden lg:blockd">
+            <div className="hidden lg:w-1/2 lg:block items-center justify-center ">
               <div className="relative w-full h-[500px] flex items-center justify-center">
                 <img
                   src={DPImage}
@@ -226,7 +226,6 @@ const DPForm: React.FC = () => {
                 />
               </div>
             </div>
-
           </div>
         </div>
       )}
