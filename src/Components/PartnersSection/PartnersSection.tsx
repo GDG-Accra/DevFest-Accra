@@ -25,7 +25,7 @@ const PartnersSection: React.FC = () => {
 
         <h1 className='text-4xl lg:text-5xl font-bold  text-center'>
           Powered by the Ones Who Believe
-          <br/> — Our Sponsors and Partners.
+          <br/>Our Sponsors and Partners.
         </h1>
       </div>
 
