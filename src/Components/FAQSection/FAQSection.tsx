@@ -51,8 +51,7 @@ const FAQSection = () => {
   };
 
   return (
-    <section className='w-full max-w-7xl mx-auto py-20 lg:px-16 px-5 '>
-      {/*   */}
+    <section className='w-full max-w-7xl mx-auto md:py-20 lg:px-16 px-5 '>
       <div className='text-center mb-16'>
         <h2 className='max-w-xl mx-auto text-xl text-[#1E1E1E] mb-2 md:mb-4 font-sans'>
           FAQs
