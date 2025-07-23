@@ -30,7 +30,7 @@ const PartnersSection: React.FC = () => {
       </div>
 
       <p className='text-base sm:text-lg md:text-xl text-gray-600 max-w-xl mx-auto mb-10'>
-        DevFest Accra 2024 set the stage—but in 2025, we're turning it all the
+        DevFest Accra 2024 set the stage; but in 2025, we're turning it all the
         way up, thanks to their incredible support.
       </p>
 
