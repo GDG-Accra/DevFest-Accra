@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BeFirst } from "../../Components/BeFirst/BeFirst";
 import FAQSection from "../../Components/FAQSection/FAQSection";
 import Footer from "../../Components/Footer/Footer";
@@ -7,6 +8,10 @@ import codeRight from "../../assets/images/TeamImages/codeRight.svg";
 import Speakers from "./Speakers";
 
 const SpeakerPage = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0); // Scrolls to the top of the page
+  }, []);
+
   return (
     <div>
       <Speakers />

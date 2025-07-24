@@ -10,33 +10,33 @@ import { Link } from "react-router-dom";
 // Simple arrow components to replace lucide-react dependency
 const ChevronLeft = () => (
   <svg
-    xmlns='http://www.w3.org/2000/svg'
-    width='24'
-    height='24'
-    viewBox='0 0 24 24'
-    fill='none'
-    stroke='currentColor'
-    strokeWidth='2'
-    strokeLinecap='round'
-    strokeLinejoin='round'
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   >
-    <path d='M15 18l-6-6 6-6' />
+    <path d="M15 18l-6-6 6-6" />
   </svg>
 );
 
 const ChevronRight = () => (
   <svg
-    xmlns='http://www.w3.org/2000/svg'
-    width='24'
-    height='24'
-    viewBox='0 0 24 24'
-    fill='none'
-    stroke='currentColor'
-    strokeWidth='2'
-    strokeLinecap='round'
-    strokeLinejoin='round'
+    xmlns="http://www.w3.org/2000/svg"
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2"
+    strokeLinecap="round"
+    strokeLinejoin="round"
   >
-    <path d='M9 18l6-6-6-6' />
+    <path d="M9 18l6-6-6-6" />
   </svg>
 );
 
@@ -94,47 +94,47 @@ const SpeakersSection = () => {
   };
 
   // Function to directly select a speaker
-  const selectSpeaker = (index : number) => {
+  const selectSpeaker = (index: number) => {
     setActiveIndex(index);
   };
 
   return (
-    <div className='w-full py-10 px-8 relative overflow-hidden mt-10 lg:mt-0'>
+    <div className="w-full py-10 px-8 relative overflow-hidden mt-10 lg:mt-0">
       {/* Header section */}
-      <div className='text-center mb-12'>
-        <h2 className='text-4xl lg:text-5xl font-bold  mb-4 flex items-center justify-center'>
+      <div className="text-center mb-12">
+        <h2 className="text-4xl lg:text-5xl font-bold  mb-4 flex items-center justify-center">
           Our Inspiring Speakers
-          <span className='lg:ml-4 '>
-            <div className='flex'>
-              <img src={shape} alt='' />
+          <span className="lg:ml-4 ">
+            <div className="flex">
+              <img src={shape} alt="" />
             </div>
           </span>
         </h2>
-        <p className='text-base sm:text-lg md:text-xl text-gray-600  max-w-xl mx-auto'>
+        <p className="text-base sm:text-lg md:text-xl text-gray-600  max-w-xl mx-auto">
           Introducing the innivators and Visionaries leading the charge in
           development and technology
         </p>
       </div>
 
       {/* Speakers carousel */}
-      <div className='flex flex-col md:flex-col lg:flex-row justify-between items-center max-w-6xl mx-auto relative lg:gap-20'>
+      <div className="flex flex-col md:flex-col lg:flex-row justify-between items-center max-w-6xl mx-auto relative lg:gap-20">
         {/* Navigation arrows and active speaker info */}
-        <div className='flex flex-col items-start mb-8 lg:mb-0 w-full lg:w-1/3 text-left'>
-          <div className='flex items-center mb-6 w-full justify-start'>
+        <div className="flex flex-col items-start mb-8 lg:mb-0 w-full lg:w-1/3 text-left">
+          <div className="flex items-center mb-6 w-full justify-start">
             <button
               onClick={prevSpeaker}
-              className='p-2 rounded-full hover:bg-gray-100 flex-shrink-0 w-10 h-10 flex items-center justify-center mr-2'
-              aria-label='Previous speaker'
+              className="p-2 rounded-full hover:bg-gray-100 flex-shrink-0 w-10 h-10 flex items-center justify-center mr-2"
+              aria-label="Previous speaker"
             >
               <ChevronLeft />
             </button>
-            <h3 className='text-2xl font-bold flex-1 text-center'>
+            <h3 className="text-2xl font-bold flex-1 text-center">
               {speakers[activeIndex]?.name || "Speaker"}
             </h3>
             <button
               onClick={nextSpeaker}
-              className='p-2 rounded-full hover:bg-gray-100 flex-shrink-0 w-10 h-10 flex items-center justify-center ml-2'
-              aria-label='Next speaker'
+              className="p-2 rounded-full hover:bg-gray-100 flex-shrink-0 w-10 h-10 flex items-center justify-center ml-2"
+              aria-label="Next speaker"
             >
               <ChevronRight />
             </button>
@@ -148,7 +148,7 @@ const SpeakersSection = () => {
             {speakers[activeIndex]?.title || "Speaker Title"}
           </div>
 
-          <p className='text-gray-700 md:text-xl text-sm'>
+          <p className="text-gray-700 md:text-xl text-sm">
             {speakers[activeIndex]?.description ||
               "Speaker description goes here."}
           </p>
@@ -160,7 +160,7 @@ const SpeakersSection = () => {
             speakers[activeIndex]?.color || "bg-gray-100"
           } rounded-3xl p-6`}
         >
-          <div className='flex h-full items-center justify-center'>
+          <div className="flex h-full items-center justify-center">
             {speakers &&
               speakers.length > 0 &&
               [-1, 0, 1].map((offset) => {
@@ -177,7 +177,8 @@ const SpeakersSection = () => {
                   scaleClass = "scale-75 opacity-70";
                   zIndex = "z-10";
                 } else if (offset === 0) {
-                  positionClasses = "absolute left-1/2 transform -translate-x-1/2";
+                  positionClasses =
+                    "absolute left-1/2 transform -translate-x-1/2";
                   scaleClass = "scale-100";
                   zIndex = "z-20";
                 } else if (offset === 1) {
@@ -191,14 +192,14 @@ const SpeakersSection = () => {
                     key={speakerIndex}
                     className={`${positionClasses} ${scaleClass} ${zIndex} transition-all duration-300 ease-in-out`}
                   >
-                    <div className='w-48 h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg'>
+                    <div className="w-48 h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
                       <img
                         src={
                           speakers[speakerIndex]?.image ||
                           "https://via.placeholder.com/200"
                         }
                         alt={`${speakers[speakerIndex]?.name || "Speaker"}`}
-                        className='w-full h-full object-cover'
+                        className="w-full h-full object-cover"
                       />
                     </div>
                   </div>
@@ -207,7 +208,7 @@ const SpeakersSection = () => {
           </div>
 
           {/* Pagination dots */}
-          <div className='absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2'>
+          <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
             {speakers &&
               speakers.map((_, index) => (
                 <button
@@ -224,31 +225,31 @@ const SpeakersSection = () => {
           </div>
         </div>
       </div>
-      
-      <div className='mt-10 flex items-center justify-center'>
-        <Link to='/devfest/speakers'>
-          <button className='bg-blue-300 hover:bg-blue-500 text-gray-800  p-3 rounded-lg flex gap-2 items-center'>
+
+      <div className="mt-10 flex items-center justify-center">
+        <Link to="/devfest/speakers">
+          <button className="bg-blue-300 hover:bg-blue-500 text-gray-800  p-3 rounded-lg flex gap-2 items-center">
             See all Speakers
             {/* <RiMicLine  className="text-2xl"/> */}
             <svg
-              xmlns='http://www.w3.org/2000/svg'
-              width='24'
-              height='24'
-              fill='none'
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
             >
               <path
-                stroke='#0A0A0A'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='1.5'
-                d='M12 19c3.31 0 6-2.69 6 6V8c0-3.31-2.69-6-6-6S6 4.69 6 8v5c0 3.31 2.69 6 6 6'
+                stroke="#0A0A0A"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M12 19c3.31 0 6-2.69 6 6V8c0-3.31-2.69-6-6-6S6 4.69 6 8v5c0 3.31 2.69 6 6 6"
               ></path>
               <path
-                stroke='#0A0A0A'
-                stroke-linecap='round'
-                stroke-linejoin='round'
-                stroke-width='1.5'
-                d='M3 11v2a9 9 0 0 0 18 0v-2M9.11 7.48a8 8 0 0 1 5.5 0M10.03 10.48c1.2-.33 2.47-.33 3.67 0'
+                stroke="#0A0A0A"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="1.5"
+                d="M3 11v2a9 9 0 0 0 18 0v-2M9.11 7.48a8 8 0 0 1 5.5 0M10.03 10.48c1.2-.33 2.47-.33 3.67 0"
               ></path>
             </svg>
           </button>
