@@ -92,7 +92,6 @@ const PartnersSection: React.FC = () => {
             />
           </div>
 
-
         </div>
       </section>
 
