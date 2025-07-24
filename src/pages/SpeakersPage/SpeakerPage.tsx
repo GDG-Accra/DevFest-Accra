@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { BeFirst } from "../../Components/BeFirst/BeFirst";
 import FAQSection from "../../Components/FAQSection/FAQSection";
 import Footer from "../../Components/Footer/Footer";
