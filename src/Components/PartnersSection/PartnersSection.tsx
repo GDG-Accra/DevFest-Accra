@@ -4,10 +4,11 @@ import GDGLogo from "../../assets/images/Partners/logos/gdg.svg";
 import ATULibraryLogo from "../../assets/images/Partners/logos/atu-library.svg";
 import GamersHiveLogo from "../../assets/images/Partners/logos/gamers-hive.svg";
 import InfobipLogo from "../../assets/images/Partners/logos/infobib.svg";
-import MestLogo from "../../assets/images/Partners/logos/mest.svg";
 import HashLogo from "../../assets/images/Partners/logos/hash.svg";
 import SlashLogo from "../../assets/images/Partners/logos/slash.svg";
 import KraadoLogo from "../../assets/images/Partners/logos/kraado.svg";
+import MestLogo from '../../assets/images/Partners/logos/mest.svg'; // Fixed: capital "P"
+
 
 const PartnersSection: React.FC = () => {
   return (
@@ -71,16 +72,8 @@ const PartnersSection: React.FC = () => {
               className='max-h-full w-full object-contain'
             />
           </div>
-          {/* 5 */}
-          <div className='flex items-center justify-center'>
-            <img
-              src={MestLogo}
-              alt='Mest'
-              className='max-h-full w-full object-contain'
-            />
-          </div>
 
-          {/* 6 */}
+          {/* 5 */}
           <div className='flex items-center justify-center'>
             <img
               src={KraadoLogo}
@@ -88,6 +81,18 @@ const PartnersSection: React.FC = () => {
               className='max-h-full w-full object-contain'
             />
           </div>
+
+
+          {/* 6 */}
+          <div className='flex items-center justify-center'>
+            <img
+               src={MestLogo}
+              alt='Mest'
+              className='max-h-full w-full object-contain'
+            />
+          </div>
+
+
         </div>
       </section>
 
