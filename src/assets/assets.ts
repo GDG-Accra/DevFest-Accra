@@ -7,8 +7,5 @@ export const assets = {
   gifs: {
     faqLinkGif: "/src/assets/images/FAQs/link.gif",
     
-  },
-//  mestlogo: {
-//   mestLinkGif: "src/assets/images/partners/logos/mest.svg",
-// }
+  }
 };
