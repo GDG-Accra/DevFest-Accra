@@ -20,11 +20,11 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
-    "noUncheckedSideEffectImports": true
+    "noUncheckedSideEffectImports": true,
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"]
+    }
   },
-  "include": ["src"],
-  "baseUrl": "src", // Added to set src as the base URL
-  "paths": {
-    "@/*": ["*"] // Updated to reflect that paths are now relative to src
-  }
+  "include": ["src"]
 }
