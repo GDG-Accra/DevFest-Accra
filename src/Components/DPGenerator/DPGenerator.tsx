@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import DPImage from "../../assets/images/DP/DPImage.png";
+import DPImage2 from "../../assets/images/DP/DPImage2.png";
 import { Link } from "react-router-dom";
 import { assets } from "../../assets/assets";
 
@@ -39,7 +40,7 @@ const DPGenerator = () => {
           </div>
           <div className='transform -rotate-3 hidden '>
             <img
-              src={DPImage}
+              src={DPImage2}
               alt='DevFest DP Template 2'
               className='w-64 shadow-lg rounded-lg'
             />
@@ -57,7 +58,7 @@ const DPGenerator = () => {
           </div>
           <div className=' absolute transform translate-x-20 lg:translate-x-28 -rotate-6 z-0 hover:z-20'>
             <img
-              src={DPImage}
+              src={DPImage2}
               alt='DevFest DP Template 2'
               className='w-80 lg:w-96 shadow-lg rounded-lg transition-transform duration-300 hover:scale-105'
             />
