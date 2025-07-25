@@ -1,9 +1,17 @@
 import React from 'react';
 import Navbar from '../../Components/Navbar/Navbar';
 import BGImage from "../../assets/images/LandingPageImage/bgImage.svg";
+import { useNavigate } from 'react-router-dom';
 // import Photo1 from "../../assets/images/Speakers/OkaiAbena.svg";
 
 const DPBanner: React.FC = () => {
+
+  const navigate = useNavigate();
+
+  const goToForm = () => {
+    navigate("/DPForm");
+  };
+
   return (
     <div className="min-h-screen bg-gray-100 overflow-hidden relative">
       {/* Navigation - Fixed positioning with higher z-index */}
@@ -32,7 +40,9 @@ const DPBanner: React.FC = () => {
           <h1 className="text-5xl sm:text-3xl md:text-8xl lg:text-6xl xl:text-7xl font-black text-black mb-6 sm:mb-8 md:mb-10 leading-tight max-w-xs sm:max-w-md md:max-w-5xl lg:max-w-6xl drop-shadow-sm">
             Create your custom DevFest display photo
           </h1>
-          <button className="bg-black text-white px-6 py-3 sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl text-base sm:text-lg md:text-xl font-bold hover:bg-gray-800 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl active:scale-95">
+          <button 
+          onClick={goToForm}
+          >
             Time To Get Cooking!
           </button>
         </div>
