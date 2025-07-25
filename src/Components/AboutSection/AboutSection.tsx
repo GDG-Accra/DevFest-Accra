@@ -1,39 +1,45 @@
-import AboutImage from "../../assets/images/About/AboutImage.svg";
-import { Code } from "../../assets/elements/code";
-import { Heart } from "../../assets/elements/heart";
+import { assets } from "@/assets/assets";
 
-export const AboutSection = () => {
+const AboutSection = () => {
   return (
-    <section className='container mx-auto px-4 py-12 sm:py-16 md:py-24 lg:py-40 relative mt-20 lg:mt-0 md:mt-0'>
-      <div className='flex flex-col md:flex-col lg:flex-row gap-8'>
-        {/* Text content on the left */}
-        <div className='lg:w-1/2 px-2 sm:px-4 md:px-6 lg:px-10'>
-          <div className='flex mb-6'>
-            <h1 className='text-4xl lg:text-5xl font-bold '>
-              About <br /> DevFest Accra
+    <section className='py-16 px-4 bg-white overflow-hidden'>
+      <div className='container mx-auto'>
+        <div className='flex flex-col lg:flex-row items-center gap-12'>
+          {/* Text Content */}
+          <div className='lg:w-1/2 space-y-6'>
+            <h2 className='text-sm uppercase text-gray-600 mb-2'>
+              About DevFest Accra 2025
+            </h2>
+            <h1 className='text-4xl lg:text-5xl font-bold leading-tight'>
+              Think you know what a tech conference should be?
+              <br />
+              <span className='text-blue-600'>Think again.</span>
             </h1>
-            <Code className='w-6 md:ml-2' />
+            <p className='text-lg text-gray-700 leading-relaxed'>
+              DevFest Accra 2025 isn't just about tech talks and networking—
+              it's where Ghana's brightest developers, innovators, and dreamers
+              come together to push boundaries, spark ideas, and create the
+              future.
+            </p>
+            <p className='text-lg text-gray-700 leading-relaxed'>
+              From cutting-edge workshops to mind-blowing keynotes, we're
+              redefining what it means to learn, grow, and connect in the tech
+              space.
+            </p>
           </div>
-          <p className='text-base sm:text-lg md:text-xl text-gray-700 text-justify'>
-            DevFest Accra brings this global experience to Ghana, uniting local
-            developers, designers, and industry experts in an environment that
-            fosters learning and innovation. It serves as a platform for
-            professionals and aspiring technologists to engage with cutting-edge
-            tools, gain hands-on experience, and build meaningful connections
-            within the tech ecosystem. By promoting collaboration and knowledge
-            sharing, DevFest Accra contributes to the expansion and development
-            of Ghana's technology community.
-          </p>
-        </div>
 
-        {/* Image and heart on the right */}
-        <div className='lg:w-1/2 relative md:mt-5 lg:mt-0 flex justify-center md:pr-5'>
-          <div className='relative w-4/5 lg:w-full'>
-            <img src={AboutImage} alt='About Image' className='w-full h-auto' />
-            <Heart className='absolute right-0 bottom-0 sm:right-2 md:right-3 lg:right-10 2xl:-right-3' />
+          {/* Image */}
+          <div className='lg:w-1/2'>
+            <img
+              src={assets.about.aboutImage}
+              alt='DevFest Accra 2025'
+              className='w-full h-auto'
+            />
           </div>
         </div>
       </div>
     </section>
   );
 };
+
+export default AboutSection;

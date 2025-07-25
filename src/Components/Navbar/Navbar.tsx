@@ -1,189 +1,135 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Volume2, Users, Menu, X } from "lucide-react";
-import { TbMessage2Question } from "react-icons/tb";
-import DFLogo from "../../assets/images/Logos/DFLogo-Accra.svg";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { assets } from "@/assets/assets";
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [activeItem, setActiveItem] = useState("");
-  const menuRef = useRef<HTMLDivElement>(null);
-  const buttonRef = useRef<HTMLButtonElement>(null);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  useEffect(() => {
-    const currentPath = window.location.pathname;
-    if (currentPath.includes("/speakers")) {
-      setActiveItem("speakers");
-    } else if (currentPath.includes("/teams")) {
-      setActiveItem("teams");
-    } else if (currentPath.includes("/faqs")) {
-      setActiveItem("faqs");
-    } else {
-      setActiveItem("");
-    }
-  }, []);
-
-  useEffect(() => {
-    const handleClickOutside = (event: MouseEvent) => {
-      if (
-        isMenuOpen &&
-        menuRef.current &&
-        !menuRef.current.contains(event.target as Node) &&
-        buttonRef.current &&
-        !buttonRef.current.contains(event.target as Node)
-      ) {
-        setIsMenuOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => {
-      document.removeEventListener("mousedown", handleClickOutside);
-    };
-  }, [isMenuOpen]);
-
-  const handleMenuClick = (item: string) => {
-    setActiveItem(item);
-    setIsMenuOpen(false);
-  };
-
-  const getMenuItemClasses = (item: string) => {
-    const baseClasses = "flex items-center transition duration-200 relative";
-    const activeClasses = "text-[#57CAFF]";
-    const inactiveClasses = "text-gray-800 hover:text-gray-600";
-    return `${baseClasses} ${activeItem === item ? activeClasses : inactiveClasses}`;
-  };
-
-  const getIconClasses = (item: string) => {
-    return `mr-1 h-5 w-5 ${activeItem === item ? "text-[#57CAFF]" : ""}`;
-  };
-
-  const getMobileIconClasses = (item: string) => {
-    return `mr-2 h-5 w-5 ${activeItem === item ? "text-[#57CAFF]" : ""}`;
-  };
-
   return (
-    <nav className="relative z-10 mt-5 bg-opacity-90">
-      <div className="mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between">
-        {/* Left side with DevFest Logo */}
-        <div className="flex items-center">
-          <a href="/">
-            <img src={DFLogo} alt="DevFest" className="h-10 mt-2 lg:mt-0" />
-          </a>
-        </div>
-
-        {/* Desktop Navigation */}
-        <div className="hidden lg:flex items-center space-x-6">
-          <a
-            href="/devfest/speakers"
-            className={getMenuItemClasses("speakers")}
-            onClick={() => handleMenuClick("speakers")}
-          >
-            <Volume2 className={getIconClasses("speakers")} />
-            <span className="font-medium">Speakers</span>
-            {activeItem === "speakers" && (
-              <div className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-[#57CAFF] rounded-full shadow-[0_0_8px_rgba(87,202,255,0.6)]" />
-            )}
-          </a>
-
-          <a
-            href="/devfest/teams"
-            className={getMenuItemClasses("teams")}
-            onClick={() => handleMenuClick("teams")}
-          >
-            <Users className={getIconClasses("teams")} />
-            <span className="font-medium">Team</span>
-            {activeItem === "teams" && (
-              <div className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-[#57CAFF] rounded-full shadow-[0_0_8px_rgba(87,202,255,0.6)]" />
-            )}
-          </a>
-
-          <a
-            href="/devfest/faqs"
-            className={getMenuItemClasses("faqs")}
-            onClick={() => handleMenuClick("faqs")}
-          >
-            <TbMessage2Question className={getIconClasses("faqs")} />
-            <span className="font-medium">FAQs</span>
-            {activeItem === "faqs" && (
-              <div className="absolute bottom-[-12px] left-1/2 transform -translate-x-1/2 w-1.5 h-1.5 bg-[#57CAFF] rounded-full shadow-[0_0_8px_rgba(87,202,255,0.6)]" />
-            )}
-          </a>
-        </div>
-
-        {/* Mobile Menu Button */}
-        <button
-          ref={buttonRef}
-          className="lg:hidden flex items-center justify-center w-10 h-10 rounded-full hover:bg-gray-100 transition-colors duration-200"
-          onClick={toggleMenu}
-          aria-label="Toggle menu"
-        >
-          <div className="relative w-6 h-6 flex items-center justify-center">
-            <Menu
-              className={`absolute h-6 w-6 text-gray-800 transition-all duration-300 ${
-                isMenuOpen
-                  ? "opacity-0 rotate-90 scale-0"
-                  : "opacity-100 rotate-0 scale-100"
-              }`}
+    <nav className='bg-white shadow-md fixed top-0 left-0 right-0 z-50'>
+      <div className='container mx-auto px-4 py-3'>
+        <div className='flex items-center justify-between'>
+          {/* Logo */}
+          <Link to='/' className='flex items-center'>
+            <img
+              src={assets.logos.dfLogoAccra}
+              alt='DevFest Accra Logo'
+              className='h-8 w-auto'
             />
-            <X
-              className={`absolute h-6 w-6 text-gray-800 transition-all duration-300 ${
-                isMenuOpen
-                  ? "opacity-100 rotate-0 scale-100"
-                  : "opacity-0 rotate-90 scale-0"
-              }`}
-            />
+          </Link>
+
+          {/* Desktop Navigation */}
+          <div className='hidden md:flex items-center space-x-8'>
+            <Link to='/' className='text-gray-700 hover:text-blue-600 transition-colors'>
+              Home
+            </Link>
+            <Link to='/about' className='text-gray-700 hover:text-blue-600 transition-colors'>
+              About
+            </Link>
+            <Link to='/speakers' className='text-gray-700 hover:text-blue-600 transition-colors'>
+              Speakers
+            </Link>
+            <Link to='/schedule' className='text-gray-700 hover:text-blue-600 transition-colors'>
+              Schedule
+            </Link>
+            <Link to='/sponsors' className='text-gray-700 hover:text-blue-600 transition-colors'>
+              Sponsors
+            </Link>
+            <Link to='/contact' className='text-gray-700 hover:text-blue-600 transition-colors'>
+              Contact
+            </Link>
+            <button className='bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors'>
+              Register Now
+            </button>
           </div>
-        </button>
-      </div>
 
-      {/* Mobile Menu */}
-      <div
-        ref={menuRef}
-        className={`absolute top-full left-0 right-0 bg-white shadow-md py-4 px-4 lg:hidden flex flex-col space-y-4 transform transition-all duration-300 ${
-          isMenuOpen
-            ? "opacity-100 translate-y-0"
-            : "opacity-0 -translate-y-2 pointer-events-none"
-        }`}
-      >
-        <a
-          href="/devfest/speakers"
-          className={getMenuItemClasses("speakers")}
-          onClick={() => handleMenuClick("speakers")}
-        >
-          <Volume2 className={getMobileIconClasses("speakers")} />
-          <span className="font-medium">Speakers</span>
-          {activeItem === "speakers" && (
-            <div className="absolute right-2 w-2 h-2 bg-[#57CAFF] rounded-full shadow-[0_0_6px_rgba(87,202,255,0.8)]" />
-          )}
-        </a>
+          {/* Mobile menu button */}
+          <button
+            onClick={toggleMenu}
+            className='md:hidden p-2 rounded-lg hover:bg-gray-100'
+            aria-label='Toggle menu'
+          >
+            <svg
+              className='w-6 h-6'
+              fill='none'
+              stroke='currentColor'
+              viewBox='0 0 24 24'
+            >
+              {isMenuOpen ? (
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M6 18L18 6M6 6l12 12'
+                />
+              ) : (
+                <path
+                  strokeLinecap='round'
+                  strokeLinejoin='round'
+                  strokeWidth={2}
+                  d='M4 6h16M4 12h16M4 18h16'
+                />
+              )}
+            </svg>
+          </button>
+        </div>
 
-        <a
-          href="/devfest/teams"
-          className={getMenuItemClasses("teams")}
-          onClick={() => handleMenuClick("teams")}
-        >
-          <Users className={getMobileIconClasses("teams")} />
-          <span className="font-medium">Team</span>
-          {activeItem === "teams" && (
-            <div className="absolute right-2 w-2 h-2 bg-[#57CAFF] rounded-full shadow-[0_0_6px_rgba(87,202,255,0.8)]" />
-          )}
-        </a>
-
-        <a
-          href="/devfest/faqs"
-          className={getMenuItemClasses("faqs")}
-          onClick={() => handleMenuClick("faqs")}
-        >
-          <TbMessage2Question className={getMobileIconClasses("faqs")} />
-          <span className="font-medium">FAQs</span>
-          {activeItem === "faqs" && (
-            <div className="absolute right-2 w-2 h-2 bg-[#57CAFF] rounded-full shadow-[0_0_6px_rgba(87,202,255,0.8)]" />
-          )}
-        </a>
+        {/* Mobile Navigation */}
+        {isMenuOpen && (
+          <div className='md:hidden mt-4 pb-4 border-t border-gray-200'>
+            <div className='flex flex-col space-y-3 pt-4'>
+              <Link
+                to='/'
+                className='text-gray-700 hover:text-blue-600 transition-colors py-2'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Home
+              </Link>
+              <Link
+                to='/about'
+                className='text-gray-700 hover:text-blue-600 transition-colors py-2'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                About
+              </Link>
+              <Link
+                to='/speakers'
+                className='text-gray-700 hover:text-blue-600 transition-colors py-2'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Speakers
+              </Link>
+              <Link
+                to='/schedule'
+                className='text-gray-700 hover:text-blue-600 transition-colors py-2'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Schedule
+              </Link>
+              <Link
+                to='/sponsors'
+                className='text-gray-700 hover:text-blue-600 transition-colors py-2'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Sponsors
+              </Link>
+              <Link
+                to='/contact'
+                className='text-gray-700 hover:text-blue-600 transition-colors py-2'
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Contact
+              </Link>
+              <button className='bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors mt-4 w-full'>
+                Register Now
+              </button>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
