@@ -6,8 +6,8 @@ export default defineConfig({
   plugins: [react()],
   resolve: {
     alias: {
-      "@": new URL("./src", import.meta.url).pathname,
-      "@assets": new URL("./src/assets", import.meta.url).pathname,
+      "@": `${process.cwd()}/src`,
+      "@assets": `${process.cwd()}/src/assets`,
     },
   },
   server: {
