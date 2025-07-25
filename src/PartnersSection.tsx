@@ -1,5 +1,5 @@
 import React from "react";
-import { assets } from "../../assets/assets";
+import { assets } from "./assets/assets";
 
 const PartnersSection: React.FC = () => {
   return (
@@ -65,13 +65,13 @@ const PartnersSection: React.FC = () => {
           </div>
 
           {/* 5 */}
-          {/* <div className='flex items-center justify-center'>
+          <div className='flex items-center justify-center'>
             <img
               src={assets.partners.kraado}
               alt='Kraado'
               className='max-h-full w-full object-contain'
             />
-          </div> */}
+          </div>
 
           {/* 6 */}
           <div className='flex items-center justify-center'>

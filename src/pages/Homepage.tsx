@@ -4,7 +4,7 @@ import AboutSection from "../Components/AboutSection/AboutSection";
 import SpeakersSection from "../Components/SpeakersSection/SpeakersSection";
 import BeFirst from "../Components/BeFirst/BeFirst";
 import ThrowbackSection from "../Components/ThrowbackSection/ThrowbackSection";
-import PartnersSection from "../Components/PartnersSection/PartnersSection";
+import PartnersSection from "../PartnersSection";
 import FAQSection from "../Components/FAQSection/FAQSection";
 import Footer from "../Components/Footer/Footer";
 

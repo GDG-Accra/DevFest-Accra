@@ -24,7 +24,7 @@ import gamersHiveLogo from "./images/Partners/logos/gamers-hive.svg";
 import infobibLogo from "./images/Partners/logos/infobib.svg";
 import hashLogo from "./images/Partners/logos/hash.svg";
 import slashLogo from "./images/Partners/logos/slash.svg";
-// import kraadoLogo from "./images/Partners/logos/kraado.svg";
+import kraadoLogo from "./images/Partners/logos/kraado.svg";
 import mestLogo from "./images/Partners/logos/mest.svg";
 
 // Speakers
@@ -95,7 +95,7 @@ export const assets = {
     infobib: infobibLogo,
     hash: hashLogo,
     slash: slashLogo,
-    // kraado: kraadoLogo,
+    kraado: kraadoLogo,
     mest: mestLogo,
   },
   speakers: {
