@@ -6,6 +6,7 @@
   "engines": {
     "node": ">=22.0.0"
   },
+  "packageManager": "npm@10.9.0",
   "scripts": {
     "dev": "vite",
     "start": "vite --port 3000 --host 0.0.0.0",
