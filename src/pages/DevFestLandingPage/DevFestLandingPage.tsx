@@ -21,9 +21,9 @@ const DevFestLandingPage = () => {
       {/* Navbar will be imported from existing code */}
       <Navbar />
       {/* Main Content */}
-      <main className='pt-20 px-4 mx-auto max-w-6xl'>
+      <main className='px-4 mx-auto max-w-6xl min-h-screen flex flex-col justify-center'>
         {/* GDG Accra Presents Badge */}
-        <div className='text-center mb-3'>
+        <div className='text-center mb-10'>
           <div className='inline-block px-6 py-2 bg-white rounded-full shadow-md'>
             <span className='text-gray-700 tracking-wide'>
               GDG ACCRA PRESENTS
@@ -32,7 +32,7 @@ const DevFestLandingPage = () => {
         </div>
 
         {/* Main Heading */}
-        <div className='text-center mt-10 relative'>
+        <div className='text-center mt-6 relative'>
           <h1 className='text-7xl md:text-9xl font-bold mb-2'>DevFest Accra</h1>
           <div className='absolute top-0 right-[19%] md:right-[26%] lg:right-[14%] -mt-1'>
             <span className='md:text-3xl text-2xl font-bold'>2025</span>
@@ -40,16 +40,17 @@ const DevFestLandingPage = () => {
         </div>
 
         {/* Description Text */}
-        <div className='max-w-3xl mx-auto text-center mt-5 md:mt-16 md:mb-16'>
+        <div className='max-w-3xl mx-auto text-center mt-8 mb-8'>
           <p className='text-base sm:text-lg md:text-xl'>
-            Join us at DevFest Accra 2025 on 4th October 2025 for Accra's largest
-            tech celebration of the year! This event is your gateway to the
-            latest in AI, Android, Cloud, Web, and more. Don't miss out on this!
+            Join us at DevFest Accra 2025 on 4th October 2025 for Accra's
+            largest tech celebration of the year! This event is your gateway to
+            the latest in AI, Android, Cloud, Web, and more. Don't miss out on
+            this!
           </p>
         </div>
 
         {/* Join Now Button */}
-        <div className='p-8 flex justify-center'>
+        <div className='flex justify-center'>
           <Link to='https://gdg.community.dev/gdg-accra/'>
             <button className='bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 px-10 rounded-md flex items-center justify-center gap-2 shadow-md'>
               <span className='text-base font-medium text-white font-inter'>

@@ -1,119 +1,140 @@
 import React from "react";
 import Navbar from "../../Components/Navbar/Navbar";
 import BGImage from "../../assets/images/LandingPageImage/bgImage.svg";
+import DP1 from "../../assets/images/dp/dp1.png";
+import DP2 from "../../assets/images/dp/dp2.png";
+import DP3 from "../../assets/images/dp/dp3.png";
+import DP4 from "../../assets/images/dp/dp4.png";
+import DP5 from "../../assets/images/dp/dp5.png";
+import DP6 from "../../assets/images/dp/dp6.png";
+import DP7 from "../../assets/images/dp/dp7.png";
 
 const DPBanner: React.FC = () => {
   return (
-    <div className="relative min-h-screen overflow-hidden bg-gray-100">
+    <div className='relative min-h-screen overflow-hidden bg-gray-100'>
       {/* Navigation - Fixed positioning with higher z-index */}
-      <div className="relative z-50">
+      <div className='relative z-50'>
         <Navbar />
       </div>
 
       {/* Background Image - Centered with max width */}
-      <div className="absolute inset-0 z-0 flex justify-center">
+      <div className='absolute inset-0 z-0 flex justify-center'>
         <img
           src={BGImage}
-          alt="Background"
-          className="object-cover w-full h-full max-w-4xl"
+          alt='Background'
+          className='object-cover w-full h-full max-w-4xl'
         />
         {/* Optional subtle overlay for better text readability */}
-        <div className="absolute inset-0 bg-white/20"></div>
+        <div className='absolute inset-0 bg-white/20'></div>
       </div>
 
       {/* Hero Section */}
-      <div className="relative z-10">
+      <div className='relative z-10'>
         {/* Content Overlay */}
-        <div className="flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-12 lg:px-8 pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-8 sm:pb-12 md:pb-16 min-h-[70vh] sm:min-h-[75vh] md:min-h-[70vh] lg:min-h-[80vh]">
-          <p className="max-w-xs mb-3 text-base font-medium tracking-wide text-gray-800 sm:mb-4 md:mb-5 sm:text-lg md:text-2xl lg:text-xl sm:max-w-sm md:max-w-2xl lg:max-w-none drop-shadow-sm">
+        <div className='flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-12 lg:px-8 pt-20 sm:pt-24 md:pt-28 lg:pt-10 pb-8 sm:pb-12 md:pb-16 min-h-[70vh] sm:min-h-[75vh] md:min-h-[70vh] lg:min-h-[80vh]'>
+          <p className='max-w-xs mb-3 text-base font-medium tracking-wide text-gray-800 sm:mb-4 md:mb-5 sm:text-lg md:text-2xl lg:text-xl sm:max-w-sm md:max-w-2xl lg:max-w-none drop-shadow-sm'>
             Let everyone know you're coming!
           </p>
-          <h1 className="max-w-xs mb-6 text-5xl font-black leading-tight text-black sm:text-3xl md:text-8xl lg:text-6xl xl:text-7xl sm:mb-8 md:mb-10 sm:max-w-md md:max-w-5xl lg:max-w-6xl drop-shadow-sm">
+          <h1 className='max-w-xs mb-6 text-5xl font-black leading-tight text-black sm:text-3xl md:text-8xl lg:text-6xl xl:text-7xl sm:mb-8 md:mb-10 sm:max-w-md md:max-w-5xl lg:max-w-6xl drop-shadow-sm'>
             Create your custom DevFest display photo
           </h1>
-          <button className="px-6 py-3 text-base font-bold text-white transition-all duration-300 transform bg-black shadow-lg sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl sm:text-lg md:text-xl hover:bg-gray-800 hover:scale-105 hover:shadow-xl active:scale-95">
+          <button className='px-6 py-3 text-base font-bold text-white transition-all duration-300 transform bg-black shadow-lg sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl sm:text-lg md:text-xl hover:bg-gray-800 hover:scale-105 hover:shadow-xl active:scale-95'>
             Time To Get Cooking!
           </button>
         </div>
 
-        {/* Floating Photo Cutouts */}
-        <div className="relative z-20">
-          <div className="flex flex-wrap items-end justify-center px-4 pb-6 space-x-4 sm:space-x-6 md:space-x-8 lg:space-x-12 sm:px-6 md:px-8 sm:pb-8 md:pb-12">
-            {/* Photo 1 - Rounded Square */}
-            <div className="relative transition-transform duration-300 transform hover:scale-110">
-              <div className="w-20 h-20 overflow-hidden bg-gray-300 border-yellow-400 shadow-lg sm:w-24 sm:h-24 md:w-32 md:h-32 lg:w-32 lg:h-32 xl:w-36 xl:h-36 rounded-xl md:rounded-2xl lg:rounded-3xl border-3 sm:border-4 md:border-5 lg:border-6 rotate-3">
-                {/* Photo placeholder - replace with actual image */}
-                <img
-                  src="/path/to/your/photo5.jpg"
-                  alt="DevFest participant"
-                  className="object-cover w-full h-full grayscale"
-                />
-              </div>
-              <div className="absolute -top-2 -right-2 sm:-top-3 sm:-right-3 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 bg-yellow-400 rounded-full animate-bounce animation-delay-[0s]"></div>
+        {/* Floating Photo Cutouts - Large Sizes */}
+        <div className='relative md:w-full max-w-6xl md:h-[500px] h-[400px] mx-auto'>
+          {/* Large Photo 1 */}
+          <div className='absolute md:top-20 md:left-24 -top-20 transform -rotate-12 hover:rotate-0 transition-transform duration-300'>
+            <div className='relative w-52 h-52 md:w-80 md:h-80 md:w-88 md:h-88 overflow-hidden'>
+              <img
+                src={DP1}
+                alt='DevFest participant'
+                className='w-full h-full object-cover'
+              />
             </div>
+            <div className='absolute -top-4 -right-4 sm:-top-5 sm:-right-5 md:w-12 md:h-12 w-5 h-5 bg-yellow-400 rounded-lg animate-bounce'></div>
+          </div>
 
-            {/* Photo 2 - Circle */}
-            <div className="relative transition-transform duration-300 transform hover:scale-110">
-              <div className="w-24 h-24 overflow-hidden bg-gray-300 border-pink-400 rounded-full shadow-lg sm:w-28 sm:h-28 md:w-36 md:h-36 lg:w-36 lg:h-36 xl:w-40 xl:h-40 border-3 sm:border-4 md:border-5 lg:border-6 -rotate-2">
-                {/* Photo placeholder - replace with actual image */}
-                <img
-                  src="/path/to/your/photo1.jpg"
-                  alt="DevFest participant"
-                  className="object-cover w-full h-full grayscale"
-                />
-              </div>
-              <div className="absolute w-0 h-0 border-l-4 border-r-4 -top-3 -left-3 sm:-top-4 sm:-left-4 border-b-6 sm:border-l-5 sm:border-r-5 sm:border-b-8 md:border-l-6 md:border-r-6 md:border-b-10 border-l-transparent border-r-transparent border-b-green-400 animate-pulse"></div>
+          {/* Medium Photo 2 */}
+          <div className='absolute top-5 left-1/2 transform translate-x-8 rotate-15 hover:rotate-0 transition-transform duration-300'>
+            <div className='relative w-56 h-56 md:w-64 md:h-64 overflow-hidden'>
+              <img
+                src={DP2}
+                alt='DevFest participant'
+                className='w-full h-full object-cover'
+              />
             </div>
+            <div className='absolute -top-3 -right-3 sm:-top-4 sm:-right-4 md:w-12 md:h-12 w-5 h-5 bg-red-400 rounded-lg animate-bounce animation-delay-[0.2s]'></div>
+          </div>
 
-            {/* Photo 3 - Rounded Rectangle (Portrait) */}
-            <div className="relative transition-transform duration-300 transform hover:scale-110">
-              <div className="w-20 overflow-hidden bg-gray-300 border-blue-400 shadow-lg h-28 sm:w-24 sm:h-32 md:w-32 md:h-40 lg:w-32 lg:h-40 xl:w-36 xl:h-44 rounded-xl md:rounded-2xl lg:rounded-3xl border-3 sm:border-4 md:border-5 lg:border-6 rotate-1">
-                {/* Photo placeholder - replace with actual image */}
-                <img
-                  src="/path/to/your/photo3.jpg"
-                  alt="DevFest participant"
-                  className="object-cover w-full h-full grayscale"
-                />
-              </div>
-              <div className="absolute -bottom-2 -right-2 sm:-bottom-3 sm:-right-3 w-8 h-2 sm:w-10 sm:h-2.5 md:w-12 md:h-3 lg:w-14 lg:h-3.5 bg-red-400 rounded-full animate-pulse animation-delay-[1s]"></div>
+          {/* Large Photo 3 */}
+          <div className='absolute top-5 md:bottom-10 lg:top-5 right-32 lg:right-32 md:right-0 transform -rotate-8 hover:rotate-0 transition-transform duration-300'>
+            <div className='relative w-56 h-56 md:w-76 md:h-76 rounded-sm overflow-hidden'>
+              <img
+                src={DP3}
+                alt='DevFest participant'
+                className='w-full h-full object-cover'
+              />
             </div>
+            <div className='absolute -top-4 -right-4 md:w-12 md:h-12 w-5 h-5 bg-indigo-400 rounded-full animate-bounce animation-delay-[0.4s]'></div>
+          </div>
 
-            {/* Photo 4 - Squircle (Super Rounded Square) */}
-            <div className="relative transition-transform duration-300 transform hover:scale-110">
-              <div
-                className="overflow-hidden bg-gray-300 border-green-400 shadow-lg w-22 h-22 sm:w-26 sm:h-26 md:w-34 md:h-34 lg:w-34 lg:h-34 xl:w-38 xl:h-38 border-3 sm:border-4 md:border-5 lg:border-6 -rotate-3"
-                style={{ borderRadius: "30%" }}
-              >
-                {/* Photo placeholder - replace with actual image */}
-                <img
-                  src="/path/to/your/photo4.jpg"
-                  alt="DevFest participant"
-                  className="object-cover w-full h-full grayscale"
-                />
-              </div>
-              <div className="absolute -top-2 -left-2 sm:-top-3 sm:-left-3 w-0 h-0 border-t-6 border-b-6 border-r-6 sm:border-t-7 sm:border-b-7 sm:border-r-7 md:border-t-8 md:border-b-8 md:border-r-8 border-t-transparent border-b-transparent border-r-purple-400 animate-bounce animation-delay-[500ms]"></div>
+          {/* Medium Photo 4 */}
+          <div className='absolute md:-bottom-20 bottom-0 left-56 md:left-30 transform rotate-20 hover:rotate-0 transition-transform duration-300'>
+            <div className='relative w-52 h-52 md:w-60 md:h-60 overflow-hidde'>
+              <img
+                src={DP4}
+                alt='DevFest participant'
+                className='w-full h-full object-contain'
+              />
             </div>
+            <div className='absolute -top-3 -right-3 md:w-12 md:h-12 w-5 h-5 bg-blue-400 rounded-lg animate-bounce animation-delay-[0.6s]'></div>
+          </div>
 
-            {/* Photo 5 - Rounded Rectangle (Landscape) */}
-            <div className="relative transition-transform duration-300 transform hover:scale-110">
-              <div className="h-20 overflow-hidden bg-gray-300 border-purple-400 shadow-lg w-28 sm:w-32 sm:h-24 md:w-40 md:h-32 lg:w-40 lg:h-32 xl:w-44 xl:h-36 rounded-xl md:rounded-2xl lg:rounded-3xl border-3 sm:border-4 md:border-5 lg:border-6 rotate-2">
-                {/* Photo placeholder - replace with actual image */}
-                <img
-                  src="/path/to/your/photo5.jpg"
-                  alt="DevFest participant"
-                  className="object-cover w-full h-full grayscale"
-                />
-              </div>
-              <div className="absolute -top-3 -right-3 sm:-top-4 sm:-right-4 w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-9 lg:h-9 bg-orange-400 transform rotate-45 animate-spin animation-duration-[4s]"></div>
+          {/* Extra Large Photo 5 - Hero */}
+          <div className='absolute bottom-20 left-1/2 transform -translate-x-1/2 -rotate-6 hover:rotate-0 transition-transform duration-300'>
+            <div className='relative w-52 h-52 md:w-88 md:h-88 md:w-96 md:h-96 rounded-full overflow-hidden'>
+              <img
+                src={DP5}
+                alt='DevFest participant'
+                className='w-full h-full object-cover'
+              />
             </div>
+            <div className='absolute -top-5 -right-5 md:w-12 md:h-12 w-5 h-5 bg-green-400 rounded-full animate-bounce animation-delay-[0.8s]'></div>
+          </div>
+
+          {/* Large Photo 6 */}
+          <div className='absolute top-56 right-24 transform rotate-25 hover:rotate-0 transition-transform duration-300'>
+            <div className='relative w-52 h-52 md:w-72 md:h-72 rounded-full overflow-hidden'>
+              <img
+                src={DP6}
+                alt='DevFest participant'
+                className='w-full h-full object-cover'
+              />
+            </div>
+            <div className='absolute -top-3 -right-3 md:w-12 md:h-12 w-5 h-5 bg-purple-400 rounded-lg animate-bounce animation-delay-[1s]'></div>
+          </div>
+
+          {/* Medium Photo 7 */}
+          <div className='absolute bottom-0 right-39 transform -rotate-18 hover:rotate-0 transition-transform duration-300'>
+            <div className='relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden'>
+              <img
+                src={DP7}
+                alt='DevFest participant'
+                className='w-full h-full object-cover'
+              />
+            </div>
+            <div className='absolute -top-2 -right-2 md:w-12 md:h-12 w-5 h-5 bg-orange-400 rounded-full animate-bounce animation-delay-[1.2s]'></div>
           </div>
         </div>
 
         {/* Decorative Elements */}
-        <div className="absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full animate-bounce animation-delay-[1s] z-30 drop-shadow-md"></div>
-        <div className="absolute top-32 right-16 w-0 h-0 border-l-4 border-r-4 border-b-6 border-l-transparent border-r-transparent border-b-pink-400 animate-pulse animation-delay-[2s] z-30 drop-shadow-md"></div>
-        <div className="absolute bottom-32 left-8 w-6 h-2 bg-blue-400 rounded-full animate-pulse animation-delay-[500ms] z-30 drop-shadow-md"></div>
-        <div className="absolute bottom-40 right-12 w-4 h-4 bg-green-400 transform rotate-45 animate-spin animation-duration-[6s] z-30 drop-shadow-md"></div>
+        <div className='absolute top-20 left-10 w-4 h-4 bg-yellow-400 rounded-full animate-bounce animation-delay-[1s] z-30 drop-shadow-md'></div>
+        <div className='absolute top-32 right-16 w-0 h-0 border-l-4 border-r-4 border-b-6 border-l-transparent border-r-transparent border-b-pink-400 animate-pulse animation-delay-[2s] z-30 drop-shadow-md'></div>
+        <div className='absolute bottom-32 left-8 w-6 h-2 bg-blue-400 rounded-full animate-pulse animation-delay-[500ms] z-30 drop-shadow-md'></div>
+        <div className='absolute bottom-40 right-12 w-4 h-4 bg-green-400 transform rotate-45 animate-spin animation-duration-[6s] z-30 drop-shadow-md'></div>
       </div>
     </div>
   );
