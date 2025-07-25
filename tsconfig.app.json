@@ -22,5 +22,9 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "baseUrl": "src", // Added to set src as the base URL
+  "paths": {
+    "@/*": ["*"] // Updated to reflect that paths are now relative to src
+  }
 }
