@@ -5,10 +5,10 @@ import react from "@vitejs/plugin-react";
 export default defineConfig({
   plugins: [react()],
   resolve: {
-    alias: {
-      "@": `${process.cwd()}/src`,
-      "@assets": `${process.cwd()}/src/assets`,
-    },
+    alias: [
+      { find: "@", replacement: "/src" },
+      { find: "@assets", replacement: "/src/assets" },
+    ],
   },
   server: {
     allowedHosts: [".gdgaccra.org", ".traefik.me"],
