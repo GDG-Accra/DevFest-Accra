@@ -2,7 +2,7 @@ import React from "react";
 import BeFirst from "../../Components/BeFirst/BeFirst";
 import FAQSection from "../../Components/FAQSection/FAQSection";
 import Footer from "../../Components/Footer/Footer";
-import { assets } from "@/assets/assets";
+import { assets } from "../../assets/assets";
 import Speakers from "./Speakers";
 
 const SpeakerPage: React.FC = () => {

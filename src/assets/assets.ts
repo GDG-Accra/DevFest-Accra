@@ -1,57 +1,57 @@
 // Centralized asset imports
-import AboutImage from "@assets/images/About/AboutImage.svg";
-import BefirstImage from "@assets/images/BeFirst/BeImage.svg";
-import DPImage from "@assets/images/DP/DPImage.png";
-import Location from "@assets/images/EventDetails/Location.png";
-import Calendar from "@assets/images/EventDetails/Calendar.png";
-import faqLinkGif from "@assets/images/FAQs/link.gif";
-import bgImage from "@assets/images/LandingPageImage/bgImage.svg";
-import shape from "@assets/images/LandingPageImage/shape.svg";
+import AboutImage from "./images/About/AboutImage.svg";
+import BefirstImage from "./images/BeFirst/BeImage.svg";
+import DPImage from "./images/DP/DPImage.png";
+import Location from "./images/EventDetails/Location.png";
+import Calendar from "./images/EventDetails/Calendar.png";
+import faqLinkGif from "./images/FAQs/link.gif";
+import bgImage from "./images/LandingPageImage/bgImage.svg";
+import shape from "./images/LandingPageImage/shape.svg";
 
 // Logos
-import DF25AccraPNG from "@assets/images/Logos/_DF25-Accra.png";
-import DF25AccraJPG from "@assets/images/Logos/_DF25-Accra.jpg";
-import DF25LogoLockupYear from "@assets/images/Logos/DF25-Logo-Lockup-year.png";
-import DF25LogoLockup from "@assets/images/Logos/DF25-Logo-Lockup.png";
-import DFLogoAccra from "@assets/images/Logos/DFLogo-Accra.svg";
-import DFShapeLogo from "@assets/images/Logos/DFShapeLogo.svg";
-import GDGLogo from "@assets/images/Logos/GDGLogo.png";
+import DF25AccraPNG from "./images/Logos/_DF25-Accra.png";
+import DF25AccraJPG from "./images/Logos/_DF25-Accra.jpg";
+import DF25LogoLockupYear from "./images/Logos/DF25-Logo-Lockup-year.png";
+import DF25LogoLockup from "./images/Logos/DF25-Logo-Lockup.png";
+import DFLogoAccra from "./images/Logos/DFLogo-Accra.svg";
+import DFShapeLogo from "./images/Logos/DFShapeLogo.svg";
+import GDGLogo from "./images/Logos/GDGLogo.png";
 
 // Partners
-import gdgLogo from "@assets/images/Partners/logos/gdg.svg";
-import atuLibraryLogo from "@assets/images/Partners/logos/atu-library.svg";
-import gamersHiveLogo from "@assets/images/Partners/logos/gamers-hive.svg";
-import infobibLogo from "@assets/images/Partners/logos/infobib.svg";
-import hashLogo from "@assets/images/Partners/logos/hash.svg";
-import slashLogo from "@assets/images/Partners/logos/slash.svg";
-import kraadoLogo from "@assets/images/Partners/logos/kraado.svg";
-import mestLogo from "@assets/images/Partners/logos/mest.svg";
+import gdgLogo from "./images/Partners/logos/gdg.svg";
+import atuLibraryLogo from "./images/Partners/logos/atu-library.svg";
+import gamersHiveLogo from "./images/Partners/logos/gamers-hive.svg";
+import infobibLogo from "./images/Partners/logos/infobib.svg";
+import hashLogo from "./images/Partners/logos/hash.svg";
+import slashLogo from "./images/Partners/logos/slash.svg";
+import kraadoLogo from "./images/Partners/logos/kraado.svg";
+import mestLogo from "./images/Partners/logos/mest.svg";
 
 // Speakers
-import ShadrackInusahImage from "@assets/images/Speakers/ShadrackInusah.svg";
-import OkaiAbenaImage from "@assets/images/Speakers/OkaiAbena.svg";
-import SosuAlfredImage from "@assets/images/Speakers/SosuAlfred.svg";
-import ShadrackOdameteyImage from "@assets/images/Speakers/ShadrackOdametey.svg";
-import speakersShape from "@assets/images/Speakers/shape.svg";
+import ShadrackInusahImage from "./images/Speakers/ShadrackInusah.svg";
+import OkaiAbenaImage from "./images/Speakers/OkaiAbena.svg";
+import SosuAlfredImage from "./images/Speakers/SosuAlfred.svg";
+import ShadrackOdameteyImage from "./images/Speakers/ShadrackOdametey.svg";
+import speakersShape from "./images/Speakers/shape.svg";
 
 // Team Images
-import codeLeft from "@assets/images/TeamImages/codeLeft.svg";
-import codeRight from "@assets/images/TeamImages/codeRight.svg";
-import TeamBG from "@assets/images/TeamImages/TeamBG.png";
-import TeamBGWebp from "@assets/images/TeamImages/TeamBG.webp";
+import codeLeft from "./images/TeamImages/codeLeft.svg";
+import codeRight from "./images/TeamImages/codeRight.svg";
+import TeamBG from "./images/TeamImages/TeamBG.png";
+import TeamBGWebp from "./images/TeamImages/TeamBG.webp";
 
 // Throwback
-import throwbackImage from "@assets/images/Throwback/throwbackImage.svg";
-import throwbackImageOne from "@assets/images/Throwback/throwbackImageone.jpg";
-import throwbackImageTwo from "@assets/images/Throwback/throwbackImagetwo.jpg";
-import throwbackImageThree from "@assets/images/Throwback/throwbackImagethree.jpg";
-import throwbackImageFour from "@assets/images/Throwback/throwbackImagefour.jpg";
-import throwbackImageFive from "@assets/images/Throwback/throwbackImagefive.png";
+import throwbackImage from "./images/Throwback/throwbackImage.svg";
+import throwbackImageOne from "./images/Throwback/throwbackImageone.jpg";
+import throwbackImageTwo from "./images/Throwback/throwbackImagetwo.jpg";
+import throwbackImageThree from "./images/Throwback/throwbackImagethree.jpg";
+import throwbackImageFour from "./images/Throwback/throwbackImagefour.jpg";
+import throwbackImageFive from "./images/Throwback/throwbackImagefive.png";
 
 // DP Template
-import DPTemplateShape from "@assets/DPTemplate/shape.svg";
-import DPTemplateSlash from "@assets/DPTemplate/slash.svg";
-import DPTemplateLogo from "@assets/DPTemplate/DFShapeLogo.svg";
+import DPTemplateShape from "./DPTemplate/shape.svg";
+import DPTemplateSlash from "./DPTemplate/slash.svg";
+import DPTemplateLogo from "./DPTemplate/DFShapeLogo.svg";
 
 export const assets = {
   about: {

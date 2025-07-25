@@ -2,7 +2,7 @@ import React, { useState, useRef } from "react";
 import html2canvas from "html2canvas";
 import { Button } from "../../Components/DPForm/Button";
 import { Input } from "../../Components/DPForm/Input";
-import { assets } from "@/assets/assets";
+import { assets } from "../../assets/assets";
 
 interface FormData {
   name: string;
