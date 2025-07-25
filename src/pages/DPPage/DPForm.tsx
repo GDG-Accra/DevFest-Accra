@@ -1,235 +1,113 @@
-import React, { useState, useRef, ChangeEvent } from "react";
-import { toPng } from "html-to-image";
-import { Wand2, UploadCloud } from "lucide-react";
-import download from "downloadjs";
-
-import { Input } from "../../Components/DPForm/Input";
+import React, { useState, useRef } from "react";
+import html2canvas from "html2canvas";
 import { Button } from "../../Components/DPForm/Button";
-import DPImage from "../../assets/images/DP/DPImage.png";
-import DPTemplate from "./DPTemplate";
+import { Input } from "../../Components/DPForm/Input";
+import { assets } from "../../assets/assets";
 
-const hooks = [
-  "Teching it easy!",
-  "Code. Coffee. Repeat!",
-  "Debugging life, one line at a time.",
-  "Powered by caffeine",
-  "Catch me at DevFest!",
-  "Techie by choice and purpose. peace out!",
-];
+interface FormData {
+  name: string;
+  role: string;
+}
 
 const DPForm: React.FC = () => {
-  const [name, setName] = useState("");
-  const [hook, setHook] = useState("");
-  const [image, setImage] = useState<File | null>(null);
-  const [imageURL, setImageURL] = useState("");
-  const [showTemplate, setShowTemplate] = useState(false);
-  const [isDownloading, setIsDownloading] = useState(false);
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    role: "",
+  });
 
-  // File input ref for upload button click handling
-  const fileInputRef = useRef<HTMLInputElement>(null);
+  const cardRef = useRef<HTMLDivElement>(null);
 
-  const handleImageUpload = (e: ChangeEvent<HTMLInputElement>) => {
-    const file = e.target.files?.[0];
-    if (!file) return;
-    processImage(file);
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
   };
 
-  const processImage = (file: File) => {
-    const allowedTypes = [
-      "image/jpeg",
-      "image/png",
-      "image/gif",
-      "image/svg+xml",
-    ];
-    if (!allowedTypes.includes(file.type)) {
-      alert("Only JPG, PNG, GIF, or SVG images are allowed.");
-      return;
-    }
-
-    const img = new Image();
-    img.src = URL.createObjectURL(file);
-
-    img.onload = () => {
-      // TODO: Add image size validation - I commented this because most of my images for testing are above 800 x 400
-      // NOTE: and also since the image is not being stored or hosted I am thinking we can allow images above 800 x 400
-
-      // if (img.width > 800 || img.height > 400) {
-      //   alert(
-      //     "Please upload an image with a maximum resolution of 800 x 400 pixels."
-      //   );
-      //   return;
-      // }
-
-      setImage(file);
-      setImageURL(img.src);
-    };
-  };
-
-  const handleDrop = (e: React.DragEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    const file = e.dataTransfer.files?.[0];
-    if (file) processImage(file);
-  };
-
-  const handleBoxClick = () => {
-    fileInputRef.current?.click();
-  };
-
-  const generateRandomHook = () => {
-    const random = hooks[Math.floor(Math.random() * hooks.length)];
-    setHook(random);
-  };
-
-  const handleGenerate = async () => {
-    if (!isFormComplete) return;
-    // Navigate to template page instead of generating image here
-    setShowTemplate(true);
-  };
-
-  const handleDownloadClick = async () => {
-    const dpCardElement = document.getElementById("dp-card");
-    if (!dpCardElement) return;
-
-    setIsDownloading(true);
+  const handleDownload = async () => {
+    if (!cardRef.current) return;
 
     try {
-      const dataUrl = await toPng(dpCardElement);
-      download(dataUrl, `devfest-dp-${name}.png`, "image/png");
+      const canvas = await html2canvas(cardRef.current, {
+        backgroundColor: null,
+        scale: 2,
+      });
+
+      const link = document.createElement('a');
+      link.download = `devfest-accra-2025-${formData.name || 'dp'}.png`;
+      link.href = canvas.toDataURL();
+      link.click();
     } catch (error) {
-      console.error("Error generating image:", error);
-      alert("There was an error generating your image. Please try again.");
-    } finally {
-      setIsDownloading(false);
-      setShowTemplate(false);
-      setName("");
-      setHook("");
-      setImage(null);
-      setImageURL("");
+      console.error('Error generating image:', error);
     }
   };
 
-  const handleBackToForm = () => {
-    setShowTemplate(false);
-  };
-
-  const isFormComplete = name && hook && image;
-
   return (
-    <>
-      {showTemplate ? (
-        <div id="dp-template" className="dp-template-container">
-          <DPTemplate
-            name={name}
-            hook={hook}
-            imageURL={imageURL}
-            onDownload={handleDownloadClick}
-            onBack={handleBackToForm}
-            isDownloading={isDownloading}
-          />
-        </div>
-      ) : (
-        <div className="container px-4 py-8 mx-auto max-w-7xl">
-          <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
-            {/* Form Section - Left Column */}
-            <div className="p-8 lg:w-1/2 rounded-xl">
-              <h2 className="pb-4 mb-8 text-3xl font-bold border-b-2 border-black">
-                Input your details
-              </h2>
-
-              <div className="space-y-6">
-                <div>
-                  <label className="block mb-3 font-semibold">Full Name</label>
-                  <Input
-                    placeholder="Your Name"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="text-lg rounded-2xl h-14"
-                  />
-                </div>
-
-                <div>
-                  <label className="block mb-3 font-semibold">
-                    Upload Image
-                  </label>
-                  <div
-                    className="relative flex flex-col justify-center h-64 p-12 text-center transition-all border-2 border-dashed cursor-pointer rounded-2xl hover:border-blue-500"
-                    onClick={handleBoxClick}
-                    onDrop={handleDrop}
-                    onDragOver={(e) => e.preventDefault()}
-                  >
-                    {imageURL ? (
-                      <div className="absolute inset-0 flex items-center justify-center">
-                        <img
-                          src={imageURL}
-                          alt="Preview"
-                          className="object-cover w-24 h-24 border-2 border-white rounded-full shadow"
-                        />
-                      </div>
-                    ) : (
-                      <>
-                        <UploadCloud className="mx-auto mb-2" size={40} />
-                        <p className="text-sm">
-                          Click or drag and drop your profile picture
-                          <br />
-                          SVG, PNG, JPG or GIF (max. 800 x 400 px)
-                        </p>
-                      </>
-                    )}
-                    <input
-                      type="file"
-                      ref={fileInputRef}
-                      accept="image/*"
-                      style={{ display: "none" }}
-                      onChange={handleImageUpload}
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <label className="block mb-3 font-semibold">Hook</label>
-                  <div className="flex gap-2">
-                    <Input
-                      placeholder="Optional one-liner"
-                      value={hook}
-                      onChange={(e) => setHook(e.target.value)}
-                      className="text-lg rounded-2xl h-14"
-                    />
-                    <Button
-                      type="button"
-                      onClick={generateRandomHook}
-                      variant="outline"
-                      className="h-14"
-                    >
-                      <Wand2 size={20} />
-                    </Button>
-                  </div>
-                </div>
-
-                <Button
-                  disabled={!isFormComplete}
-                  onClick={handleGenerate}
-                  className={`w-full rounded-2xl h-14 text-lg ${
-                    !isFormComplete ? "opacity-50 cursor-not-allowed" : ""
-                  }`}
-                >
-                  Generate
-                </Button>
-              </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 p-4">
+      <div className="max-w-6xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 items-center">
+          {/* Form Section */}
+          <div className="bg-white rounded-lg shadow-lg p-6">
+            <h1 className="text-3xl font-bold text-gray-800 mb-6">
+              Create Your DevFest Accra 2025 DP
+            </h1>
+            
+            <div className="space-y-4">
+              <Input
+                type="text"
+                name="name"
+                placeholder="Enter your name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="w-full"
+              />
+              
+              <Input
+                type="text"
+                name="role"
+                placeholder="Enter your role/title"
+                value={formData.role}
+                onChange={handleInputChange}
+                className="w-full"
+              />
+              
+              <Button
+                onClick={handleDownload}
+                disabled={!formData.name}
+                className="w-full bg-blue-600 hover:bg-blue-700 disabled:bg-gray-400"
+              >
+                Download DP
+              </Button>
             </div>
+          </div>
 
-            <div className="hidden lg:w-1/2 lg:block items-center justify-center ">
-              <div className="relative w-full h-[500px] flex items-center justify-center">
-                <img
-                  src={DPImage}
-                  alt="Frame"
-                  className="absolute inset-0 w-full h-full object-contain rotate-[9deg] z-0 top-1/4"
-                />
+          {/* Preview Section */}
+          <div className="flex justify-center">
+            <div 
+              ref={cardRef}
+              className="relative w-80 h-80 bg-gradient-to-br from-blue-600 to-purple-700 rounded-lg overflow-hidden"
+            >
+              <img
+                src={assets.dp.dpImage}
+                alt="DevFest Accra 2025 DP Template"
+                className="absolute inset-0 w-full h-full object-cover"
+              />
+              
+              {/* Text Overlay */}
+              <div className="absolute bottom-4 left-4 right-4 text-white">
+                <h2 className="text-xl font-bold mb-1">
+                  {formData.name || "Your Name"}
+                </h2>
+                <p className="text-sm opacity-90">
+                  {formData.role || "Your Role"}
+                </p>
               </div>
             </div>
           </div>
         </div>
-      )}
-    </>
+      </div>
+    </div>
   );
 };
 
