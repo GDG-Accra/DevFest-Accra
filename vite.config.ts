@@ -8,6 +8,6 @@ export default defineConfig({
     alias: {},
   },
   server: {
-    allowedHosts: ["staging.gdgaccra.org"],
+    allowedHosts: [".gdgaccra.org", ".traefik.me"],
   },
 });
