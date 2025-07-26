@@ -190,7 +190,7 @@ const SpeakersSection = () => {
                 return (
                   <div
                     key={speakerIndex}
-                    className={`${positionClasses} ${scaleClass} ${zIndex} transition-all duration-300 ease-in-out`}
+                    className={${positionClasses} ${scaleClass} ${zIndex} transition-all duration-300 ease-in-out}
                   >
                     <div className="w-48 h-48 bg-gray-200 rounded-lg overflow-hidden shadow-lg">
                       <img
@@ -198,7 +198,7 @@ const SpeakersSection = () => {
                           speakers[speakerIndex]?.image ||
                           "https://via.placeholder.com/200"
                         }
-                        alt={`${speakers[speakerIndex]?.name || "Speaker"}`}
+                        alt={${speakers[speakerIndex]?.name || "Speaker"}}
                         className="w-full h-full object-cover"
                       />
                     </div>
@@ -219,7 +219,7 @@ const SpeakersSection = () => {
                       ? "bg-white"
                       : "bg-white bg-opacity-50"
                   }`}
-                  aria-label={`Go to speaker ${index + 1}`}
+                  aria-label={Go to speaker ${index + 1}}
                 />
               ))}
           </div>
