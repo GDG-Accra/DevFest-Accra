@@ -3,8 +3,9 @@ import { Download } from "lucide-react";
 
 import { Button } from "../../Components/DPForm/Button";
 import DFLogoAccraPNG from "../../assets/images/Logos/_DF25-Accra.png";
-import { assets } from "../../assets/assets";
-
+import DFShapeLogo from "../../assets/DPTemplate/DFShapeLogo.svg";
+import shape from "../../assets/DPTemplate/shape.svg";
+import slash from "../../assets/DPTemplate/slash.svg";
 interface DPTemplateProps {
   name: string;
   hook: string;
@@ -36,12 +37,12 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
       >
         {/* Decorative elements */}
         <img
-          src={assets.logos.dfShapeLogo}
+          src={DFShapeLogo}
           alt="DevFest Shape"
           className="absolute z-10 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 top-2 sm:top-4 lg:top-6 xl:top-8 right-3 sm:right-6 lg:right-8 xl:right-12 rotate-12"
         />
         <img
-          src={assets.logos.shape}
+          src={shape}
           alt="Shape"
           className="absolute z-10 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 top-3 sm:top-5 lg:top-8 xl:top-10 left-4 sm:left-8 lg:left-12 xl:left-16"
         />
@@ -63,7 +64,7 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
             </div>
             <div className="absolute bottom-1 sm:bottom-2 lg:bottom-3 xl:bottom-4 right-1 sm:right-2 lg:right-3 xl:right-4">
               <img
-                src={assets.logos.slash}
+                src={slash}
                 alt="Slash"
                 className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rotate-12"
               />

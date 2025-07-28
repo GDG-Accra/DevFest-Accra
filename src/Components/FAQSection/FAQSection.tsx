@@ -1,8 +1,7 @@
 import { useState } from "react";
 import { Plus, Minus } from "lucide-react";
 import { Link } from "react-router-dom";
-import { assets } from "../../assets/assets";
-
+import faqLinkGif from "../../assets/images/FAQs/link.gif";
 interface FAQItem {
   question: string;
   answer: string;
@@ -104,7 +103,7 @@ const FAQSection = () => {
             </span>
             <div className='bg-white rounded-full p-1 w-5 h-5'>
               <img
-                src={assets.gifs.faqLinkGif}
+                src={faqLinkGif}
                 alt='icon'
                 className='w-full h-full object-contain'
               />
