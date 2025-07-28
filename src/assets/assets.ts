@@ -6,9 +6,12 @@ export const assets = {
   },
   gifs: {
     faqLinkGif: "/src/assets/images/FAQs/link.gif",
-    
   },
-//  mestlogo: {
-//   mestLinkGif: "src/assets/images/partners/logos/mest.svg",
-// }
+  images: {
+    dpImage: "/src/assets/images/DP/DPImage.png",
+    dpImage2: "/src/assets/images/DP/DPImage2.png",
+  },
+  //  mestlogo: {
+  //   mestLinkGif: "src/assets/images/partners/logos/mest.svg",
+  // }
 };
