@@ -1,6 +1,7 @@
 import React from "react";
 
 import gdg from "../../assets/images/Partners/logos/gdg.svg";
+import hash from "../../assets/images/Partners/logos/hash.svg"
 
 const PartnersSection: React.FC = () => {
   return (
@@ -8,7 +9,6 @@ const PartnersSection: React.FC = () => {
       <h2 className="max-w-xl mx-auto text-gray-700 mb-2 md:mb-4 uppercase">
         Sponsors | Partners
       </h2>
-      {/* 
       <div className="relative max-w-5xl mx-auto mb-4">
         <img
           src={hash}
@@ -22,7 +22,7 @@ const PartnersSection: React.FC = () => {
           <br />
           Our Sponsors and Partners.
         </h1>
-      </div> */}
+      </div>
 
       <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl mx-auto mb-10">
         DevFest Accra 2024 set the stage; but in 2025, we're turning it all the
