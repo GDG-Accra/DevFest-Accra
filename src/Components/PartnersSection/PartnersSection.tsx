@@ -1,7 +1,9 @@
 import React from "react";
 
 import gdg from "../../assets/images/Partners/logos/gdg.svg";
-import hash from "../../assets/images/Partners/logos/hash.svg"
+import hash from "../../assets/images/Partners/logos/hash.svg";
+import atuLibrary from "../../assets/images/Partners/logos/atu-library.svg";
+import gamersHive from "../../assets/images/Partners/logos/gamers-hive.svg";
 
 const PartnersSection: React.FC = () => {
   return (
@@ -42,19 +44,19 @@ const PartnersSection: React.FC = () => {
           </div>
           {/* 2 */}
           <div className="flex items-center justify-center">
-            {/* <img
+            <img
               src={atuLibrary}
               alt="ATU Library"
               className="max-h-full w-full object-contain"
-            /> */}
+            />
           </div>
           {/* 3 */}
           <div className="flex items-center justify-center">
-            {/* <img
+            <img
               src={gamersHive}
               alt="Gamers Hive"
               className="max-h-full w-full object-contain"
-            /> */}
+            />
           </div>
           {/* 4 */}
           <div className="flex items-center justify-center">
