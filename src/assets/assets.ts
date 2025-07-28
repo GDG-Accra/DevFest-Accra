@@ -1,14 +1,21 @@
+import DFShapeLogo from "./DPTemplate/DFShapeLogo.svg";
+import shape from "./DPTemplate/shape.svg";
+import slash from "./DPTemplate/slash.svg";
+import faqLinkGif from "./images/FAQs/link.gif";
+import dpImage from "./images/DP/DPImage.png";
+import dpImage2 from "./images/DP/DPImage2.png";
+
 export const assets = {
   logos: {
-    dfShapeLogo: "/src/assets/DPTemplate/DFShapeLogo.svg",
-    shape: "/src/assets/DPTemplate/shape.svg",
-    slash: "/src/assets/DPTemplate/slash.svg",
+    dfShapeLogo: DFShapeLogo,
+    shape: shape,
+    slash: slash,
   },
   gifs: {
-    faqLinkGif: "/src/assets/images/FAQs/link.gif",
+    faqLinkGif: faqLinkGif,
   },
   images: {
-    dpImage: "/src/assets/images/DP/DPImage.png",
-    dpImage2: "/src/assets/images/DP/DPImage2.png",
+    dpImage: dpImage,
+    dpImage2: dpImage2,
   },
 };
