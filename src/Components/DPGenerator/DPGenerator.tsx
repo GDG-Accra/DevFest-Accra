@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import faqLinkGif from "../../assets/images/FAQs/link.gif";
-import dpImage from "../../assets/images/DP/DPImage.png";
-import dpImage2 from "../../assets/images/DP/DPImage2.png";
+import DPImage from "../../assets/images/DP/DPImage-min.png";
+import DPImage2 from "../../assets/images/DP/DPImage2-min.png";
 
 const DPGenerator = () => {
   useEffect(() => {
@@ -33,14 +33,14 @@ const DPGenerator = () => {
         <div className="md:hidden flex flex-col items-center gap-6">
           <div className="transform rotate-3">
             <img
-              src={dpImage}
+              src={DPImage}
               alt="DevFest DP Template 1"
               className="w-64 shadow-lg rounded-lg"
             />
           </div>
           <div className="transform -rotate-3 hidden ">
             <img
-              src={dpImage2}
+              src={DPImage2}
               alt="DevFest DP Template 2"
               className="w-64 shadow-lg rounded-lg"
             />
@@ -51,14 +51,14 @@ const DPGenerator = () => {
         <div className="hidden md:flex justify-center relative h-96">
           <div className="absolute transform -translate-x-20 lg:-translate-x-28 rotate-6 z-10 hover:z-20">
             <img
-              src={dpImage}
+              src={DPImage}
               alt="DevFest DP Template 1"
               className="w-80 lg:w-96 shadow-lg rounded-lg transition-transform duration-300 hover:scale-105"
             />
           </div>
           <div className=" absolute transform translate-x-20 lg:translate-x-28 -rotate-6 z-0 hover:z-20">
             <img
-              src={dpImage2}
+              src={DPImage2}
               alt="DevFest DP Template 2"
               className="w-80 lg:w-96 shadow-lg rounded-lg transition-transform duration-300 hover:scale-105"
             />

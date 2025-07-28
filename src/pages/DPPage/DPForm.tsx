@@ -5,7 +5,7 @@ import download from "downloadjs";
 
 import { Input } from "../../Components/DPForm/Input";
 import { Button } from "../../Components/DPForm/Button";
-import DPImage from "../../assets/images/DP/DPImage.png";
+import DPImage from "../../assets/images/DP/DPImage-min.png";
 import DPTemplate from "./DPTemplate";
 
 const hooks = [
