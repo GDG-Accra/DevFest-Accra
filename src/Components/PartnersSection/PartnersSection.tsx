@@ -5,6 +5,8 @@ import hash from "../../assets/images/Partners/logos/hash.svg";
 import atuLibrary from "../../assets/images/Partners/logos/atu-library.svg";
 import gamersHive from "../../assets/images/Partners/logos/gamers-hive.svg";
 import kraado from "../../assets/images/Partners/logos/kraado.svg";
+import mest from "../../assets/images/Partners/logos/mest.svg";
+import slash from "../../assets/DPTemplate/slash.svg";
 
 const PartnersSection: React.FC = () => {
   return (
@@ -70,22 +72,22 @@ const PartnersSection: React.FC = () => {
 
           {/* 5 */}
           <div className="flex items-center justify-center">
-            {/* <img
+            <img
               src={mest}
               alt="Mest"
               className="max-h-full w-full object-contain"
-            /> */}
+            />
           </div>
         </div>
       </section>
 
       <div className="lg:w-full  flex justify-end mt-6 ">
         {/* md:mt-[-110px] */}
-        {/* <img
+        <img
           src={slash}
           alt="Slash Logo"
           className="h-10 md:h-12 lg:h-20 m-0 lg:mr-20"
-        /> */}
+        />
       </div>
     </section>
   );
