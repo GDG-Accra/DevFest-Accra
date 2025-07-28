@@ -4,8 +4,8 @@ import gdg from "../../assets/images/Partners/logos/gdg.svg";
 import hash from "../../assets/images/Partners/logos/hash.svg";
 import atuLibrary from "../../assets/images/Partners/logos/atu-library.svg";
 import gamersHive from "../../assets/images/Partners/logos/gamers-hive.svg";
-import kraado from "../../assets/images/Partners/logos/kraado.svg";
-import mest from "../../assets/images/Partners/logos/mest.svg";
+import kraado from "../../assets/images/Partners/logos/kraado-logo.png";
+import mest from "../../assets/images/Partners/logos/mest.png";
 import slash from "../../assets/DPTemplate/slash.svg";
 
 const PartnersSection: React.FC = () => {
