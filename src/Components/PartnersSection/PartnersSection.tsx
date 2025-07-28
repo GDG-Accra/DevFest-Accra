@@ -1,13 +1,6 @@
 import React from "react";
 
 import gdg from "../../assets/images/Partners/logos/gdg.svg";
-import atuLibrary from "../../assets/images/Partners/logos/atu-library.svg";
-import gamersHive from "../../assets/images/Partners/logos/gamers-hive.svg";
-import infobip from "../../assets/images/Partners/logos/infobib.svg";
-import hash from "../../assets/images/Partners/logos/hash.svg";
-import slash from "../../assets/DPTemplate/slash.svg";
-import mest from "../../assets/images/Partners/logos/mest.svg";
-import kraado from "../../assets/images/Partners/logos/kraado.svg";
 
 const PartnersSection: React.FC = () => {
   return (
@@ -15,7 +8,7 @@ const PartnersSection: React.FC = () => {
       <h2 className="max-w-xl mx-auto text-gray-700 mb-2 md:mb-4 uppercase">
         Sponsors | Partners
       </h2>
-
+      {/* 
       <div className="relative max-w-5xl mx-auto mb-4">
         <img
           src={hash}
@@ -29,7 +22,7 @@ const PartnersSection: React.FC = () => {
           <br />
           Our Sponsors and Partners.
         </h1>
-      </div>
+      </div> */}
 
       <p className="text-base sm:text-lg md:text-xl text-gray-600 max-w-xl mx-auto mb-10">
         DevFest Accra 2024 set the stage; but in 2025, we're turning it all the
@@ -49,56 +42,56 @@ const PartnersSection: React.FC = () => {
           </div>
           {/* 2 */}
           <div className="flex items-center justify-center">
-            <img
+            {/* <img
               src={atuLibrary}
               alt="ATU Library"
               className="max-h-full w-full object-contain"
-            />
+            /> */}
           </div>
           {/* 3 */}
           <div className="flex items-center justify-center">
-            <img
+            {/* <img
               src={gamersHive}
               alt="Gamers Hive"
               className="max-h-full w-full object-contain"
-            />
+            /> */}
           </div>
           {/* 4 */}
           <div className="flex items-center justify-center">
-            <img
+            {/* <img
               src={infobip}
               alt="Infobip"
               className="max-h-full w-full object-contain"
-            />
+            /> */}
           </div>
 
           {/* 5 */}
           <div className="flex items-center justify-center">
-            <img
+            {/* <img
               src={kraado}
               alt="Kraado"
               className="max-h-full w-full object-contain"
-            />
+            /> */}
           </div>
 
           {/* 6 */}
           <div className="flex items-center justify-center">
-            <img
+            {/* <img
               src={mest}
               alt="Mest"
               className="max-h-full w-full object-contain"
-            />
+            /> */}
           </div>
         </div>
       </section>
 
       <div className="lg:w-full  flex justify-end mt-6 ">
         {/* md:mt-[-110px] */}
-        <img
+        {/* <img
           src={slash}
           alt="Slash Logo"
           className="h-10 md:h-12 lg:h-20 m-0 lg:mr-20"
-        />
+        /> */}
       </div>
     </section>
   );
