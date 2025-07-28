@@ -1,6 +1,13 @@
 import React from "react";
 
-import { assets } from "../../assets/assets";
+import gdg from "../../assets/images/Partners/logos/gdg.svg";
+import atuLibrary from "../../assets/images/Partners/logos/atu-library.svg";
+import gamersHive from "../../assets/images/Partners/logos/gamers-hive.svg";
+import infobip from "../../assets/images/Partners/logos/infobib.svg";
+import hash from "../../assets/images/Partners/logos/hash.svg";
+import slash from "../../assets/DPTemplate/slash.svg";
+import mest from "../../assets/images/Partners/logos/mest.svg";
+import kraado from "../../assets/images/Partners/logos/kraado.svg";
 
 const PartnersSection: React.FC = () => {
   return (
@@ -11,7 +18,7 @@ const PartnersSection: React.FC = () => {
 
       <div className="relative max-w-5xl mx-auto mb-4">
         <img
-          src={assets.logos.hash}
+          src={hash}
           alt="Hash Logo"
           className="absolute md:-left-16 lg:-left-32 top-[40%] -translate-y-1/2
                h-10 lg:h-24 md:ml-20"
@@ -35,7 +42,7 @@ const PartnersSection: React.FC = () => {
           {/* 1 */}
           <div className="flex items-center justify-center">
             <img
-              src={assets.logos.gdg}
+              src={gdg}
               alt="GDG"
               className="max-h-full w-full object-contain"
             />
@@ -43,7 +50,7 @@ const PartnersSection: React.FC = () => {
           {/* 2 */}
           <div className="flex items-center justify-center">
             <img
-              src={assets.logos.atuLibrary}
+              src={atuLibrary}
               alt="ATU Library"
               className="max-h-full w-full object-contain"
             />
@@ -51,7 +58,7 @@ const PartnersSection: React.FC = () => {
           {/* 3 */}
           <div className="flex items-center justify-center">
             <img
-              src={assets.logos.gamersHive}
+              src={gamersHive}
               alt="Gamers Hive"
               className="max-h-full w-full object-contain"
             />
@@ -59,7 +66,7 @@ const PartnersSection: React.FC = () => {
           {/* 4 */}
           <div className="flex items-center justify-center">
             <img
-              src={assets.logos.infobip}
+              src={infobip}
               alt="Infobip"
               className="max-h-full w-full object-contain"
             />
@@ -68,7 +75,7 @@ const PartnersSection: React.FC = () => {
           {/* 5 */}
           <div className="flex items-center justify-center">
             <img
-              src={assets.logos.kraado}
+              src={kraado}
               alt="Kraado"
               className="max-h-full w-full object-contain"
             />
@@ -77,7 +84,7 @@ const PartnersSection: React.FC = () => {
           {/* 6 */}
           <div className="flex items-center justify-center">
             <img
-              src={assets.logos.mest}
+              src={mest}
               alt="Mest"
               className="max-h-full w-full object-contain"
             />
@@ -88,7 +95,7 @@ const PartnersSection: React.FC = () => {
       <div className="lg:w-full  flex justify-end mt-6 ">
         {/* md:mt-[-110px] */}
         <img
-          src={assets.logos.slash}
+          src={slash}
           alt="Slash Logo"
           className="h-10 md:h-12 lg:h-20 m-0 lg:mr-20"
         />
