@@ -3,6 +3,7 @@ export const assets = {
     dfShapeLogo: "/src/assets/DPTemplate/DFShapeLogo.svg",
     shape: "/src/assets/DPTemplate/shape.svg",
     slash: "/src/assets/DPTemplate/slash.svg",
+    kraado: "/src/assets/images/Partners/logos/kraado.svg"
   },
   gifs: {
     faqLinkGif: "/src/assets/images/FAQs/link.gif",

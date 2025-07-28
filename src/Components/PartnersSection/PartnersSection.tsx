@@ -6,8 +6,8 @@ import GamersHiveLogo from "../../assets/images/Partners/logos/gamers-hive.svg";
 import InfobipLogo from "../../assets/images/Partners/logos/infobib.svg";
 import HashLogo from "../../assets/images/Partners/logos/hash.svg";
 import SlashLogo from "../../assets/images/Partners/logos/slash.svg";
-import KraadoLogo from "../../assets/images/Partners/logos/kraado.svg";
 import MestLogo from '../../assets/images/Partners/logos/mest.svg'; // Fixed: capital "P"
+import { assets } from "../../assets/assets";
 
 
 const PartnersSection: React.FC = () => {
@@ -76,7 +76,7 @@ const PartnersSection: React.FC = () => {
           {/* 5 */}
           <div className='flex items-center justify-center'>
             <img
-              src={KraadoLogo}
+              src={assets.logos.kraado}
               alt='Kraado'
               className='max-h-full w-full object-contain'
             />
