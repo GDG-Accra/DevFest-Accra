@@ -4,6 +4,7 @@ import gdg from "../../assets/images/Partners/logos/gdg.svg";
 import hash from "../../assets/images/Partners/logos/hash.svg";
 import atuLibrary from "../../assets/images/Partners/logos/atu-library.svg";
 import gamersHive from "../../assets/images/Partners/logos/gamers-hive.svg";
+import kraado from "../../assets/images/Partners/logos/kraado.svg";
 
 const PartnersSection: React.FC = () => {
   return (
@@ -60,23 +61,14 @@ const PartnersSection: React.FC = () => {
           </div>
           {/* 4 */}
           <div className="flex items-center justify-center">
-            {/* <img
-              src={infobip}
-              alt="Infobip"
-              className="max-h-full w-full object-contain"
-            /> */}
-          </div>
-
-          {/* 5 */}
-          <div className="flex items-center justify-center">
-            {/* <img
+            <img
               src={kraado}
               alt="Kraado"
               className="max-h-full w-full object-contain"
-            /> */}
+            />
           </div>
 
-          {/* 6 */}
+          {/* 5 */}
           <div className="flex items-center justify-center">
             {/* <img
               src={mest}
