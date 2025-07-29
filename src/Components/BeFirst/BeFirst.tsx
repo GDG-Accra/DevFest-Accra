@@ -1,6 +1,6 @@
-import { assets } from "../../assets/assets";
-import BefirstImage from "../../assets/images/BeFirst/BeImage.svg";
+import BefirstImage from "../../assets/images/BeFirst/BeImage.png";
 import { Link } from "react-router-dom";
+import faqLinkGif from "../../assets/images/FAQs/link.gif";
 
 export const BeFirst = () => {
   return (
@@ -71,7 +71,7 @@ export const BeFirst = () => {
               </span>
               <div className='bg-white rounded-full p-1 w-5 h-5'>
                 <img
-                  src={assets.gifs.faqLinkGif}
+                  src={faqLinkGif}
                   alt='icon'
                   className='w-full h-full object-contain'
                 />
