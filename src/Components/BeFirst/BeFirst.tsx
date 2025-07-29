@@ -1,4 +1,4 @@
-import BefirstImage from "../../assets/images/BeFirst/BeImage.svg";
+import BefirstImage from "../../assets/images/BeFirst/BeImage.png";
 import { Link } from "react-router-dom";
 import faqLinkGif from "../../assets/images/FAQs/link.gif";
 
