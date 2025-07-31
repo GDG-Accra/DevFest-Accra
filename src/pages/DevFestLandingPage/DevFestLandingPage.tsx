@@ -21,7 +21,7 @@ const DevFestLandingPage = () => {
       {/* Navbar will be imported from existing code */}
       <Navbar />
       {/* Main Content */}
-      <main className="px-4 mx-auto max-w-6xl min-h-screen flex flex-col justify-center">
+      <main className="px-4 mx-auto max-w-6xl md:mt-32 lg:mt-44 mt-12 flex flex-col justify-center">
         {/* GDG Accra Presents Badge */}
         <div className="text-center mb-10">
           <div className="inline-block px-6 py-2 bg-white rounded-full shadow-md">

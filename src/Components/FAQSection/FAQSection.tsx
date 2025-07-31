@@ -95,7 +95,7 @@ const FAQSection = () => {
           </div>
         ))}
       </div>
-      <div className='flex justify-center mt-12'>
+      <div className='flex justify-center mt-12 mb-10'>
         <Link to='/devfest/faqs'>
           <button className='bg-blue-500 hover:bg-blue-600 transition-colors text-white py-3 px-10 rounded-md flex items-center justify-center gap-2 shadow-md'>
             <span className='text-base font-medium text-white font-inter'>

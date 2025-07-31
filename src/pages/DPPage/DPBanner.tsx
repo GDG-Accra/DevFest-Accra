@@ -47,7 +47,7 @@ const DPBanner: React.FC = () => {
         <div className='relative md:w-full max-w-6xl md:h-[500px] h-[400px] mx-auto'>
           {/* Large Photo 1 */}
           <div className='absolute md:top-20 md:left-24 -top-20 transform -rotate-12 hover:rotate-0 transition-transform duration-300'>
-            <div className='relative w-52 h-52 md:w-80 md:h-80 md:w-88 md:h-88 overflow-hidden'>
+            <div className='relative w-52 h-52  md:w-88 md:h-88 overflow-hidden'>
               <img
                 src={DP1}
                 alt='DevFest participant'
@@ -59,7 +59,7 @@ const DPBanner: React.FC = () => {
 
           {/* Medium Photo 2 */}
           <div className='absolute top-5 left-1/2 transform translate-x-8 rotate-15 hover:rotate-0 transition-transform duration-300'>
-            <div className='relative w-56 h-56 md:w-64 md:h-64 overflow-hidden'>
+            <div className='relative w-52 h-52  md:w-88 md:h-88 overflow-hidden'>
               <img
                 src={DP2}
                 alt='DevFest participant'
@@ -71,7 +71,7 @@ const DPBanner: React.FC = () => {
 
           {/* Large Photo 3 */}
           <div className='absolute top-5 md:bottom-10 lg:top-5 right-32 lg:right-32 md:right-0 transform -rotate-8 hover:rotate-0 transition-transform duration-300'>
-            <div className='relative w-56 h-56 md:w-76 md:h-76 rounded-sm overflow-hidden'>
+            <div className='relative w-52 h-52  md:w-88 md:h-88 overflow-hidden'>
               <img
                 src={DP3}
                 alt='DevFest participant'
@@ -83,7 +83,7 @@ const DPBanner: React.FC = () => {
 
           {/* Medium Photo 4 */}
           <div className='absolute md:-bottom-20 bottom-0 left-56 md:left-30 transform rotate-20 hover:rotate-0 transition-transform duration-300'>
-            <div className='relative w-52 h-52 md:w-60 md:h-60 overflow-hidde'>
+            <div className='relative w-52 h-52  md:w-88 md:h-88 overflow-hidden'>
               <img
                 src={DP4}
                 alt='DevFest participant'
@@ -95,7 +95,7 @@ const DPBanner: React.FC = () => {
 
           {/* Extra Large Photo 5 - Hero */}
           <div className='absolute bottom-20 left-1/2 transform -translate-x-1/2 -rotate-6 hover:rotate-0 transition-transform duration-300'>
-            <div className='relative w-52 h-52 md:w-88 md:h-88 md:w-96 md:h-96 rounded-full overflow-hidden'>
+            <div className='relative w-52 h-52 md:w-80 md:h-80 overflow-hidden'>
               <img
                 src={DP5}
                 alt='DevFest participant'
@@ -107,7 +107,7 @@ const DPBanner: React.FC = () => {
 
           {/* Large Photo 6 */}
           <div className='absolute top-56 right-24 transform rotate-25 hover:rotate-0 transition-transform duration-300'>
-            <div className='relative w-52 h-52 md:w-72 md:h-72 rounded-full overflow-hidden'>
+            <div className='relative w-52 h-52 md:w-80 md:h-80 md:w-88 md:h-88 overflow-hidden'>
               <img
                 src={DP6}
                 alt='DevFest participant'
@@ -119,7 +119,7 @@ const DPBanner: React.FC = () => {
 
           {/* Medium Photo 7 */}
           <div className='absolute bottom-0 right-39 transform -rotate-18 hover:rotate-0 transition-transform duration-300'>
-            <div className='relative w-48 h-48 sm:w-56 sm:h-56 rounded-full overflow-hidden'>
+            <div className='relative w-52 h-52 md:w-80 md:h-80 md:w-88 md:h-88 overflow-hidden'>
               <img
                 src={DP7}
                 alt='DevFest participant'
