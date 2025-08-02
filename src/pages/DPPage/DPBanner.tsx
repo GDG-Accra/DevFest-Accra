@@ -8,8 +8,10 @@ import DP4 from "../../assets/images/dp/dp4.png";
 import DP5 from "../../assets/images/dp/dp5.png";
 import DP6 from "../../assets/images/dp/dp6.png";
 import DP7 from "../../assets/images/dp/dp7.png";
+import { Link as ScrollLink } from "react-scroll";
 
 const DPBanner: React.FC = () => {
+
   return (
     <div className='relative min-h-screen overflow-hidden bg-gray-100'>
       {/* Navigation - Fixed positioning with higher z-index */}
@@ -38,9 +40,11 @@ const DPBanner: React.FC = () => {
           <h1 className='max-w-xs mb-6 text-5xl font-black leading-tight text-black sm:text-3xl md:text-8xl lg:text-6xl xl:text-7xl sm:mb-8 md:mb-10 sm:max-w-md md:max-w-5xl lg:max-w-6xl drop-shadow-sm'>
             Create your custom DevFest display photo
           </h1>
+          <ScrollLink to="dp-form-section" smooth={true} duration={500}>
           <button className='px-6 py-3 text-base font-bold text-white transition-all duration-300 transform bg-black shadow-lg sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl sm:text-lg md:text-xl hover:bg-gray-800 hover:scale-105 hover:shadow-xl active:scale-95'>
             Time To Get Cooking!
           </button>
+          </ScrollLink>
         </div>
 
         {/* Floating Photo Cutouts - Large Sizes */}

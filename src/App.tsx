@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./pages/Homepage";
@@ -7,6 +8,7 @@ import FAQs from "./pages/FAQsPage/ FAQs";
 import DPPage from "./pages/DPPage/DPPage";
 import SpeakerPage from "./pages/SpeakersPage/SpeakerPage";
 import TeamPage from "./pages/TeamPage/TeamPage";
+import DPForm from "./pages/DPPage/DPForm";
 // import MainPage from "./pages/MainPage/MainPage";
 
 
@@ -29,6 +31,9 @@ const App: React.FC = () => {
 
         {/* DP section  */}
         <Route path="/devfest/dp-generator" element={<DPPage />} />
+
+        {/* DP Form*/} 
+        <Route path="/DPForm" element={<DPForm/>} />
       </Routes>
     </div>
   );
