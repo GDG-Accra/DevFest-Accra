@@ -1,12 +1,18 @@
 import React from "react";
 import { Download } from "lucide-react";
-
 import { Button } from "../../Components/DPForm/Button";
-import DFLogoAccraPNG from "../../assets/images/Logos/_DF25-Accra.png";
-import DFShapeLogo from "../../assets/DPTemplate/DFShapeLogo.svg";
-import shape from "../../assets/DPTemplate/shape.svg";
-import slash from "../../assets/DPTemplate/slash.svg";
-interface DPTemplateProps {
+
+import DFShapeSet from "../../assets/DPTemplate/DF25 sym2.png";
+import DFShapeSet2 from "../../assets/DPTemplate/DF25 sym.png";
+import DFLogo from "../../assets/DPTemplate/DF25-Logo-accra.png";
+import DF25 from "../../assets/DPTemplate/df25.png";
+import Union from "../../assets/DPTemplate/Union.png";
+import Log2 from "../../assets/DPTemplate/log2.png";
+import Log1 from "../../assets/DPTemplate/log1.png";
+import Pattern from "../../assets/DPTemplate/pattern.png";
+import Vector from "../../assets/DPTemplate/Vector.png";
+
+interface FinalDPBannerProps {
   name: string;
   hook: string;
   imageURL: string;
@@ -15,7 +21,7 @@ interface DPTemplateProps {
   isDownloading?: boolean;
 }
 
-const DPTemplate: React.FC<DPTemplateProps> = ({
+const DPTemplate: React.FC<FinalDPBannerProps> = ({
   name,
   hook,
   imageURL,
@@ -23,136 +29,194 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
   isDownloading = false,
 }) => {
   return (
-    <main className="flex flex-col items-center max-w-6xl px-4 py-6 mx-auto">
-      <div className="mb-8 text-center">
-        <div className="mb-2 text-gray-600">Viola ✨</div>
-        <h1 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800">
+    <main className="flex flex-col items-center w-full min-h-screen px-2 sm:px-4 py-4 sm:py-6 mx-auto">
+      <div className="mb-4 sm:mb-8 text-center">
+        <div className="mb-2 text-sm sm:text-base text-gray-600">Viola ✨</div>
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800">
           Here's your DP
         </h1>
       </div>
 
-      <div
-        id="dp-card"
-        className="relative w-full max-w-[1024px] aspect-[1024/900] mx-auto mb-6 overflow-hidden bg-white shadow-lg rounded-xl"
-      >
-        {/* Decorative elements */}
-        <img
-          src={DFShapeLogo}
-          alt="DevFest Shape"
-          className="absolute z-10 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 top-2 sm:top-4 lg:top-6 xl:top-8 right-3 sm:right-6 lg:right-8 xl:right-12 rotate-12"
-        />
-        <img
-          src={shape}
-          alt="Shape"
-          className="absolute z-10 w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 top-3 sm:top-5 lg:top-8 xl:top-10 left-4 sm:left-8 lg:left-12 xl:left-16"
-        />
-        <div className="grid w-full h-full grid-cols-12 grid-rows-6">
-          {/* Quote Section - Top Left */}
-          <div className="col-span-5 rounded-lg border-white border-2 sm:border-4 row-span-3 bg-[#FFE7A5] p-2 sm:p-3 lg:p-4 xl:p-6 flex flex-col justify-center relative">
-            <div className="absolute top-1 sm:top-2 lg:top-3 xl:top-4 left-1 sm:left-2 lg:left-3 xl:left-4">
-              <div className="w-3 h-3 sm:w-4 sm:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 border-2 rotate-12 border-[#FF7F7F] rounded-sm"></div>
-            </div>
-            <div className="absolute flex gap-1 top-1 sm:top-2 lg:top-3 xl:top-4 right-1 sm:right-2 lg:right-3 xl:right-4">
-              <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 border-2 border-[#80C994] rounded-full"></div>
-              <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 border-2 border-[#FF7F7F] rounded-full"></div>
-              <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 border-2 border-[#6B9BD1] rounded-full"></div>
-            </div>
-            <div className="text-center px-1">
-              <div className="text-sm sm:text-lg lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-tight text-gray-800">
-                {hook}
-              </div>
-            </div>
-            <div className="absolute bottom-1 sm:bottom-2 lg:bottom-3 xl:bottom-4 right-1 sm:right-2 lg:right-3 xl:right-4">
-              <img
-                src={slash}
-                alt="Slash"
-                className="w-8 h-8 sm:w-12 sm:h-12 lg:w-16 lg:h-16 xl:w-20 xl:h-20 rotate-12"
+      {/* Container with proper aspect ratio and responsive sizing */}
+      <div className="w-full max-w-2xl sm:max-w-3xl md:max-w-4xl lg:max-w-5xl mb-4 sm:mb-6">
+        <div
+          id="dp-card"
+          className="relative w-full bg-white shadow-xl aspect-square overflow-hidden font-sans"
+          style={{ maxWidth: '800px', margin: '0 auto' }}
+        >
+          {/* Background Vector */}
+          <div className="absolute inset-0">
+            <img
+              src={Vector}
+              alt="Background"
+              className="w-full h-full object-cover"
+            />
+          </div>
+
+          {/* Top-left Shapes - Responsive positioning */}
+          <div className="absolute top-[2%] left-[4%] w-[32%] h-[10%]">
+            <img
+              src={DFShapeSet}
+              alt="Top Symbols"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          {/* Top-right Pattern - Responsive positioning */}
+          <div className="absolute right-0 w-[48%] h-[7%]">
+            <img
+              src={Pattern}
+              alt="Top right pattern"
+              className="w-full h-full object-contain"
+            />
+          </div>
+
+          {/* Tag Hook Bubble - Responsive positioning and sizing */}
+          <div className="absolute top-[13%] left-[4%] w-[36%] h-[26%]">
+            <div className="relative w-full h-full">
+              <svg className="absolute inset-0 w-full h-full">
+                <defs>
+                  <clipPath id="tagBubbleShape" clipPathUnits="objectBoundingBox">
+                    <path
+                      d="M 0.16 0.1
+                         L 0.84 0.1
+                         Q 0.94 0.1 0.94 0.26
+                         L 0.94 0.5
+                         Q 0.94 0.66 0.84 0.66
+                         L 0.6 0.66
+                         Q 0.55 0.66 0.55 0.75
+                         Q 0.55 0.9 0.46 0.9
+                         L 0.16 0.9
+                         Q 0.06 0.9 0.06 0.73
+                         L 0.06 0.26
+                         Q 0.06 0.1 0.16 0.1
+                         Z"
+                    />
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <div
+                className="w-full h-full bg-[#FFB800] border-2 border-black"
+                style={{ clipPath: "url(#tagBubbleShape)" }}
               />
+
+              <div className="absolute inset-0 flex items-center justify-center px-[8%]">
+                <div className="text-black font-bold text-center leading-tight"
+                     style={{ fontSize: 'clamp(0.7rem, 2.5vw, 1.1rem)' }}>
+                  {hook}
+                </div>
+              </div>
             </div>
           </div>
 
-          {/* Avatar Section - Top Right */}
-          <div className="col-span-7 row-span-3 border-white border-r-2 border-t-2 sm:border-r-4 sm:border-t-4 bg-[#80C994] flex items-center justify-center">
-            <div className="p-1 sm:p-2 lg:p-3 rotate-[9deg] bg-white rounded-lg w-32 h-28 sm:w-48 sm:h-40 lg:w-64 lg:h-52 xl:w-80 xl:h-64 2xl:w-96 2xl:h-80">
-              <div
-                className="relative w-full h-full overflow-hidden"
-                style={{
-                  clipPath:
-                    "polygon(0% 15%, 15% 0%, 85% 0%, 100% 15%, 100% 85%, 85% 100%, 15% 100%, 0% 85%)",
-                  borderRadius: "0",
-                }}
-              >
-                {/* User's uploaded image */}
+          {/* Profile Image - Responsive positioning and sizing */}
+          <div className="absolute lg:top-[22%] top-[15%] right-[8%] lg:w-[28%] lg:h-[55%] w-[29%] h-[45%]">
+            <div className="w-full h-full overflow-hidden relative">
+              <img
+                src={imageURL}
+                alt={name}
+                className="w-full h-full object-cover"
+                style={{ clipPath: "url(#customShape)" }}
+                crossOrigin="anonymous"
+              />
+              <svg className="absolute inset-0 w-full h-full">
+                <defs>
+                  <clipPath id="customShape" clipPathUnits="objectBoundingBox">
+                    <path d="M0.18,0 L0.82,0 Q1,0 1,0.12 L1,0.88 Q1,1 0.82,1 L0.29,1 Q0.18,1 0.18,0.93 L0.18,0.83 Q0.07,0.83 0.07,0.76 Q0.07,0.69 0.18,0.69 L0.18,0.12 Q0.18,0 0.18,0 Z" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+          </div>
+
+          {/* Name Section Bubble - Responsive positioning and sizing */}
+          <div className="absolute top-[40%] left-[4%] w-[35%] h-[18%]">
+            <div className="bg-[#5095F1] text-white rounded-3xl w-full h-full p-[4%] shadow-lg flex flex-col justify-between">
+              <div className="flex items-start">
                 <img
-                  src={imageURL}
-                  alt={name}
-                  className="object-cover w-full h-full"
+                  src={Log2}
+                  alt="Quote marks"
+                  className="w-[18%] h-auto object-contain"
+                />
+              </div>
+              <div className="flex-1 flex flex-col justify-center">
+                <div className="font-bold uppercase leading-tight text-center"
+                     style={{ fontSize: 'clamp(0.7rem, 2.5vw, 1.2rem)' }}>
+                  {name}
+                </div>
+                <div className="font-semibold mt-1 text-center"
+                     style={{ fontSize: 'clamp(0.5rem, 1.8vw, 0.9rem)' }}>
+                  WILL BE AT
+                </div>
+              </div>
+              <div className="flex justify-end">
+                <img
+                  src={Log1}
+                  alt="Quote marks"
+                  className="w-[18%] h-auto object-contain"
                 />
               </div>
             </div>
           </div>
 
-          {/* Name Section - Middle Left */}
-          <div className="col-span-5 rounded-lg border-white border-t-0 border-b-2 border-l-2 border-r-2 sm:border-b-4 sm:border-l-4 sm:border-r-4 row-span-2 bg-[#FF7F7F] flex flex-col items-center justify-center text-white px-1">
-            <div className="text-sm sm:text-lg lg:text-2xl xl:text-3xl 2xl:text-4xl font-bold leading-tight text-center uppercase">
-              {name}
-            </div>
-            <div className="mt-1 text-xs sm:text-sm lg:text-base xl:text-lg font-medium">
-              WILL BE AT
-            </div>
-          </div>
-
-          {/* DevFest Logo Section - Middle Center */}
-          <div className="col-span-4 border-white border-r-2 border-t-0 border-b-2 sm:border-r-4 sm:border-b-4 row-span-2 bg-[#80C994] flex flex-col items-center justify-center p-1 sm:p-2 lg:p-3 xl:p-4">
-            {/* PNG image for better download compatibility */}
+          {/* DevFest Logo - Responsive positioning and sizing */}
+          <div className="absolute lg:bottom-[30%] bottom-[33%] lg:left-[28%] left-[39%] w-[25%] h-[8%]">
             <img
-              src={DFLogoAccraPNG}
+              src={DFLogo}
               alt="DevFest Accra Logo"
-              className="w-full max-w-[80px] sm:max-w-[120px] lg:max-w-[160px] xl:max-w-[200px] 2xl:max-w-[250px] h-auto"
+              className="w-full h-full object-contain"
               crossOrigin="anonymous"
             />
           </div>
 
-          {/* Date & Venue Section - Right */}
-          <div className="relative col-span-3 rounded-lg row-span-2 border-white border-t-2 border-r-2 border-b-2 border-l-0 sm:border-t-4 sm:border-r-4 sm:border-b-4 bg-[#6B9BD1] text-white p-1 sm:p-2 lg:p-3 xl:p-4 flex flex-col justify-center overflow-hidden">
-            <div className="mb-0.5 text-xs sm:text-sm lg:text-base xl:text-lg text-blue-200">
-              Date
+          {/* Event Details - Responsive positioning and sizing */}
+          <div className="absolute bottom-[20%] lg:left-[24%] left-[25%] w-[72%] space-y-[1%]">
+            <div className="flex items-center text-black font-medium"
+                 style={{ fontSize: 'clamp(0.55rem, 1.6vw, 0.8rem)' }}>
+              <span className="bg-[#FFB800] text-black px-[6px] py-[3px] rounded-md font-semibold flex items-center whitespace-nowrap text-xs">
+                Date
+                <img src={Union} alt="Arrow" className="w-[10px] h-[10px] ml-1" />
+              </span>
+              <span className="ml-2 truncate">Saturday, 4th October 2025</span>
             </div>
-            <div className="mb-1 sm:mb-2 text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-xl font-bold leading-tight">
-              15 - 16th Nov
-            </div>
-            <div className="mb-0.5 text-xs sm:text-sm lg:text-base xl:text-lg text-blue-200">
-              Venue
-            </div>
-            <div className="text-xs sm:text-sm lg:text-base xl:text-lg 2xl:text-xl font-bold leading-tight break-words">
-              Landmark Event Center
-            </div>
-            <div className="absolute flex gap-1 top-1 sm:top-2 lg:top-3 xl:top-4 -rotate-12 right-1 sm:right-2 lg:right-3 xl:right-4">
-              <div className="w-2 h-2 sm:w-3 sm:h-3 lg:w-4 lg:h-4 border-2 border-[#FF7F7F] rounded-full"></div>
+            <div className="flex items-center text-black font-medium"
+                 style={{ fontSize: 'clamp(0.55rem, 1.6vw, 0.8rem)' }}>
+              <span className="bg-[#FFB800] text-black px-[6px] py-[3px] rounded-md font-semibold flex items-center whitespace-nowrap text-xs">
+                Venue
+                <img src={Union} alt="Arrow" className="w-[10px] h-[10px] ml-1" />
+              </span>
+              <span className="ml-2 truncate">
+                ISSER Conference Hall - University of Ghana, Legon
+              </span>
             </div>
           </div>
 
-          {/* City Skyline Section - Bottom */}
-          <div className="col-span-12 border-white border-l-2 border-r-2 border-b-2 sm:border-l-4 sm:border-r-4 sm:border-b-4 rounded-lg row-span-1 bg-[#F4D03F] relative overflow-hidden">
-            <div className="absolute bottom-0 left-0 right-0 z-0 h-full">
-              <svg viewBox="0 0 800 100" className="w-full h-full">
-                <path
-                  d="M0,100 L0,60 L40,60 L40,40 L80,40 L80,20 L120,20 L120,50 L160,50 L160,30 L200,30 L200,70 L240,70 L240,45 L280,45 L280,25 L320,25 L320,55 L360,55 L360,35 L400,35 L400,65 L440,65 L440,40 L480,40 L480,20 L520,20 L520,50 L560,50 L560,30 L600,30 L600,60 L640,60 L640,40 L680,40 L680,20 L720,20 L720,50 L760,50 L760,30 L800,30 L800,100 Z"
-                  fill="#E67E22"
-                  stroke="#D35400"
-                  strokeWidth="1"
-                />
-              </svg>
-            </div>
+          {/* Bottom-left 15 years logo - Responsive positioning and sizing */}
+          <div className="absolute bottom-[13%] left-[1%] w-[15%] h-[15%]">
+            <img 
+              src={DF25} 
+              alt="15 Years GDG Accra" 
+              className="w-full h-full object-contain" 
+            />
+          </div>
+
+          {/* Bottom Decorative Shapes - Responsive positioning and sizing */}
+          <div className="absolute top-[60%] left-[6%] w-[65%] h-[65%]">
+            <img 
+              src={DFShapeSet2} 
+              alt="Bottom symbols" 
+              className="w-full h-full object-contain"
+            />
           </div>
         </div>
       </div>
 
-      <div className="flex justify-center w-full gap-4 mb-8">
+      <div className="flex justify-center w-full gap-2 sm:gap-4 px-4">
         <Button
           onClick={() => onDownload && onDownload()}
           disabled={isDownloading}
-          className={`flex items-center gap-2 px-4 py-2 text-white ${
+          className={`flex items-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base text-white rounded-lg transition-colors ${
             isDownloading
               ? "bg-gray-500 cursor-not-allowed"
               : "bg-gray-800 hover:bg-gray-700"
@@ -160,12 +224,12 @@ const DPTemplate: React.FC<DPTemplateProps> = ({
         >
           {isDownloading ? (
             <>
-              <div className="w-5 h-5 border-2 border-t-2 border-white rounded-full animate-spin"></div>
+              <div className="w-4 h-4 sm:w-5 sm:h-5 border-2 border-t-2 border-white rounded-full animate-spin"></div>
               <span>Generating...</span>
             </>
           ) : (
             <>
-              <Download className="w-5 h-5" />
+              <Download className="w-4 h-4 sm:w-5 sm:h-5" />
               <span>Download Your DP</span>
             </>
           )}
