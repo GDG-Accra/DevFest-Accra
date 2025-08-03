@@ -4,7 +4,6 @@ import { Wand2, UploadCloud } from "lucide-react";
 import download from "downloadjs";
 
 import { Input } from "../../Components/DPForm/Input";
-import { Button } from "../../Components/DPForm/Button";
 import DPImage from "../../assets/images/DP/DPImage-min.png";
 import DPTemplate from "./DPTemplate";
 
@@ -194,18 +193,17 @@ const DPForm: React.FC = () => {
                       onChange={(e) => setHook(e.target.value)}
                       className="text-lg rounded-2xl h-14"
                     />
-                    <Button
+                    <button
                       type="button"
                       onClick={generateRandomHook}
-                      variant="outline"
                       className="h-14"
                     >
                       <Wand2 size={20} />
-                    </Button>
+                    </button>
                   </div>
                 </div>
 
-                <Button
+                <button
                   disabled={!isFormComplete}
                   onClick={handleGenerate}
                   className={`w-full rounded-2xl h-14 text-lg ${
@@ -213,7 +211,7 @@ const DPForm: React.FC = () => {
                   }`}
                 >
                   Generate
-                </Button>
+                </button>
               </div>
             </div>
 
