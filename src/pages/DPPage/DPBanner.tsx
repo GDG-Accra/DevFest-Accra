@@ -38,9 +38,9 @@ const DPBanner: React.FC = () => {
           <h1 className='max-w-xs mb-6 text-5xl font-black leading-tight text-black sm:text-3xl md:text-8xl lg:text-6xl xl:text-7xl sm:mb-8 md:mb-10 sm:max-w-md md:max-w-5xl lg:max-w-6xl drop-shadow-sm'>
             Create your custom DevFest display photo
           </h1>
-          <button className='px-6 py-3 text-base font-bold text-white transition-all duration-300 transform bg-black shadow-lg sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl sm:text-lg md:text-xl hover:bg-gray-800 hover:scale-105 hover:shadow-xl active:scale-95'>
+          <a href="#dp-container" className='cursor-pointer px-6 py-3 text-base font-bold text-white transition-all duration-300 transform bg-black shadow-lg sm:px-8 sm:py-4 md:px-10 md:py-5 rounded-xl sm:text-lg md:text-xl hover:bg-gray-800 hover:scale-105 hover:shadow-xl active:scale-95'>
             Time To Get Cooking!
-          </button>
+          </a>
         </div>
 
         {/* Floating Photo Cutouts - Large Sizes */}

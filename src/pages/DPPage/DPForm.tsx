@@ -128,7 +128,7 @@ const DPForm: React.FC = () => {
           />
         </div>
       ) : (
-        <div className="container px-4 py-8 mx-auto max-w-7xl">
+        <div id="dp-container" className="container px-4 py-8 mx-auto max-w-7xl">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
             {/* Form Section - Left Column */}
             <div className="p-8 lg:w-1/2 rounded-xl">
