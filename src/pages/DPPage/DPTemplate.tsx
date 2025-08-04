@@ -55,7 +55,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
           </div>
 
           {/* Top-left Shapes - Responsive positioning */}
-          <div className='absolute top-[2%] left-[4%] w-[32%] h-[10%]'>
+          <div className='absolute top-[-1%] left-[4%] w-[32%] h-[10%]'>
             <img
               src={DFShapeSet}
               alt='Top Symbols'
@@ -73,7 +73,8 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
           </div>
 
           {/* Tag Hook Bubble - Responsive positioning and sizing */}
-          <div className='absolute top-[13%] left-[4%] w-[28%] h-[20%]'>
+          {/* <div className='absolute top-[13%] left-[4%] w-[28%] h-[20%]'> */}
+          <div className='absolute top-[11%] left-[4%] w-[38%] h-[25%]'>
             <div className='relative w-full h-full'>
               <svg
                 width='100%'
@@ -114,7 +115,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
               <img
                 src={Shape}
                 alt='shape'
-                className='absolute top-[69%] left-[79%]  lg:w-8 lg:h-8  w-5 h-5'
+                className='absolute bottom-3 sm:bottom-8 md:bottom-10 right-0  w-5 h-5 lg:w-8 lg:h-8 '
               />
 
               <div className='absolute inset-0 flex items-center justify-center px-[8%]'>
@@ -130,12 +131,13 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
 
           {/* Profile Image - Responsive positioning and sizing */}
           {/* <div className='absolute lg:top-[22%] top-[15%] right-[8%] lg:w-[28%] lg:h-[55%] w-[29%] h-[45%]'> */}
-          <div className='absolute lg:top-[4%] top-[12%] right-[4%] w-[40%] h-[50%] lg:w-[40%] lg:h-[80%] '>
+          {/* <div className='absolute lg:top-[4%] top-[12%] right-[8%] w-[40%] h-[50%] lg:w-[40%] lg:h-[80%] '> */}
+          <div className='absolute top-20 sm:top-32 lg:top-32 right-8 sm:right-12 md:right-14 lg:right-16 w-[30%] sm:w-[32%] md:w-[35%] lg:w-[38%]'>
 
-            <div className='w-full h-full relative overflow-hidden'>
+            <div className='w-full h-[800px] relative overflow-hidden'>
               {/* SVG for clipPath definition - must be visible for clipPath to work */}
               <svg
-                className='absolute inset-0 w-full h-full'
+                className='absolute inset-0 w-full max-h-full'
                 viewBox='0 0 744 1131'
               >
                 <defs>
@@ -169,7 +171,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
 
           {/* Name Section Bubble - Responsive positioning and sizing */}
           <div className='absolute top-[40%] left-[4%] w-[35%] h-[18%]'>
-            <div className='bg-[#5095F1] text-white rounded-[10%]  p-[4%] shadow-lg flex flex-col justify-between'>
+            <div className='bg-[#5095F1] text-white rounded-2xl sm:rounded-3xl  p-[4%] shadow-lg flex flex-col justify-between'>
               <div className='flex items-start'>
                 <img
                   src={Log2}
@@ -185,8 +187,8 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
                   {name}
                 </div>
                 <div
-                  className='font-semibold mt-1 text-center'
-                  style={{ fontSize: "clamp(0.5rem, 1.8vw, 0.9rem)" }}
+                  className='font-semibold mt-1 text-center line-clamp-2 overflow-ellipsis'
+                  style={{ fontSize: "clamp(0.4rem, 1.8vw, 0.9rem)" }}
                 >
                   WILL BE AT
                 </div>
@@ -195,7 +197,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
                 <img
                   src={Log1}
                   alt='Quote marks'
-                  className='w-[18%] h-auto object-contain'
+                  className='w-[18%] h-auto object-contain absolute -bottom-[12%] xs:bottom-[5%] md:bottom-1 lg:bottom-2'
                 />
               </div>
             </div>
@@ -239,7 +241,10 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
                   className='w-[10px] h-[10px] ml-1'
                 />
               </span>
-              <span className='ml-2 truncate'>
+              <span className='ml-2 truncate md:hidden'>
+                ISSER Conference Hall - UG
+              </span>
+              <span className='ml-2 truncate hidden md:inline'>
                 ISSER Conference Hall - University of Ghana, Legon
               </span>
             </div>
@@ -255,7 +260,8 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
           </div>
 
           {/* Bottom Decorative Shapes - Responsive positioning and sizing */}
-          <div className='absolute top-[60%] left-[6%] w-[65%] h-[65%]'>
+          {/* <div className='absolute top-[60%] left-[2%] w-[65%] h-[65%]'> */}
+          <div className='absolute bottom-1 left-[2%] w-[73%]'>
             <img
               src={DFShapeSet2}
               alt='Bottom symbols'
