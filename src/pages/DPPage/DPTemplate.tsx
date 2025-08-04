@@ -197,7 +197,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
                 <img
                   src={Log1}
                   alt='Quote marks'
-                  className='w-[18%] h-auto object-contain'
+                  className='w-[18%] h-auto object-contain absolute -bottom-2'
                 />
               </div>
             </div>
