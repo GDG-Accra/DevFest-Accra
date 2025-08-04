@@ -171,7 +171,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
 
           {/* Name Section Bubble - Responsive positioning and sizing */}
           <div className='absolute top-[40%] left-[4%] w-[35%] h-[18%]'>
-            <div className='bg-[#5095F1] text-white rounded-3xl  p-[4%] shadow-lg flex flex-col justify-between'>
+            <div className='bg-[#5095F1] text-white rounded-2xl sm:rounded-3xl  p-[4%] shadow-lg flex flex-col justify-between'>
               <div className='flex items-start'>
                 <img
                   src={Log2}
