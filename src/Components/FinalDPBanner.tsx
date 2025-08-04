@@ -1,7 +1,7 @@
 import React from "react";
 import { Download } from "lucide-react";
 
-import { Button } from "../../Components/DPForm/Button";
+import { Button } from "../Components/DPForm/Button";
 import DFLogoAccraPNG from "../../assets/images/Logos/_DF25-Accra.png";
 import DFShapeLogo from "../../assets/DPTemplate/DFShapeLogo.svg";
 import shape from "../../assets/DPTemplate/shape.svg";
