@@ -140,7 +140,7 @@ const DPForm: React.FC = () => {
                 <div>
                   <label className="block mb-3 font-semibold">Full Name</label>
                   <Input
-                    placeholder="Your Name"
+                    placeholder="Your Name" maxLength={30}
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="text-lg rounded-2xl h-14"
@@ -189,7 +189,8 @@ const DPForm: React.FC = () => {
                   <label className="block mb-3 font-semibold">Hook</label>
                   <div className="flex gap-2">
                     <Input
-                      placeholder="Optional one-liner"
+                      placeholder="Optional (max 75 characters)"
+                      maxLength={75}
                       value={hook}
                       onChange={(e) => setHook(e.target.value)}
                       className="text-lg rounded-2xl h-14"
@@ -208,9 +209,8 @@ const DPForm: React.FC = () => {
                 <Button
                   disabled={!isFormComplete}
                   onClick={handleGenerate}
-                  className={`w-full rounded-2xl h-14 text-lg ${
-                    !isFormComplete ? "opacity-50 cursor-not-allowed" : ""
-                  }`}
+                  className={`w-full rounded-2xl h-14 text-lg ${!isFormComplete ? "opacity-50 cursor-not-allowed" : ""
+                    }`}
                 >
                   Generate
                 </Button>
