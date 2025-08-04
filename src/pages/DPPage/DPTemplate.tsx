@@ -129,7 +129,9 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
           </div>
 
           {/* Profile Image - Responsive positioning and sizing */}
-          <div className='absolute lg:top-[22%] top-[15%] right-[8%] lg:w-[28%] lg:h-[55%] w-[29%] h-[45%]'>
+          {/* <div className='absolute lg:top-[22%] top-[15%] right-[8%] lg:w-[28%] lg:h-[55%] w-[29%] h-[45%]'> */}
+          <div className='absolute lg:top-[4%] top-[12%] right-[4%] w-[40%] h-[50%] lg:w-[40%] lg:h-[80%] '>
+
             <div className='w-full h-full relative overflow-hidden'>
               {/* SVG for clipPath definition - must be visible for clipPath to work */}
               <svg
