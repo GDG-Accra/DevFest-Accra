@@ -120,7 +120,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
               <div className='absolute inset-0 flex items-center justify-center px-[8%]'>
                 <div
                   className='text-black font-bold text-center leading-tight'
-                  style={{ fontSize: "clamp(0.6rem, 2vw, 0.9rem)" }}
+                  style={{ fontSize: "clamp(0.4rem, 2vw, 0.9rem)" }}
                 >
                   {hook}
                 </div>

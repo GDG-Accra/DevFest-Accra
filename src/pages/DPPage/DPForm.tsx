@@ -189,7 +189,8 @@ const DPForm: React.FC = () => {
                   <label className="block mb-3 font-semibold">Hook</label>
                   <div className="flex gap-2">
                     <Input
-                      placeholder="Optional one-liner" maxLength={80}
+                      placeholder="Optional (max 75 characters)"
+                      maxLength={75}
                       value={hook}
                       onChange={(e) => setHook(e.target.value)}
                       className="text-lg rounded-2xl h-14"
