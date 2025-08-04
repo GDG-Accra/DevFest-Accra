@@ -267,11 +267,10 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
         <Button
           onClick={() => onDownload && onDownload()}
           disabled={isDownloading}
-          className={`flex items-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base text-white rounded-lg transition-colors ${
-            isDownloading
-              ? "bg-gray-500 cursor-not-allowed"
-              : "bg-gray-800 hover:bg-gray-700"
-          }`}
+          className={`flex items-center gap-2 px-3 sm:px-4 py-2 text-sm sm:text-base text-white rounded-lg transition-colors ${isDownloading
+            ? "bg-gray-500 cursor-not-allowed"
+            : "bg-gray-800 hover:bg-gray-700"
+            }`}
         >
           {isDownloading ? (
             <>
