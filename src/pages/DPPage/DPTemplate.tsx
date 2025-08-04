@@ -187,7 +187,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
                   {name}
                 </div>
                 <div
-                  className='font-semibold mt-1 text-center'
+                  className='font-semibold mt-1 text-center line-clamp-2 overflow-ellipsis'
                   style={{ fontSize: "clamp(0.4rem, 1.8vw, 0.9rem)" }}
                 >
                   WILL BE AT
@@ -197,7 +197,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
                 <img
                   src={Log1}
                   alt='Quote marks'
-                  className='w-[18%] h-auto object-contain absolute -bottom-2'
+                  className='w-[18%] h-auto object-contain absolute -bottom-[12%] xs:bottom-[5%] md:bottom-1 lg:bottom-2'
                 />
               </div>
             </div>
