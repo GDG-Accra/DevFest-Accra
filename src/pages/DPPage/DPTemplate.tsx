@@ -55,7 +55,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
           </div>
 
           {/* Top-left Shapes - Responsive positioning */}
-          <div className='absolute top-[2%] left-[4%] w-[32%] h-[10%]'>
+          <div className='absolute top-[-1%] left-[4%] w-[32%] h-[10%]'>
             <img
               src={DFShapeSet}
               alt='Top Symbols'
@@ -73,7 +73,8 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
           </div>
 
           {/* Tag Hook Bubble - Responsive positioning and sizing */}
-          <div className='absolute top-[13%] left-[4%] w-[28%] h-[20%]'>
+          {/* <div className='absolute top-[13%] left-[4%] w-[28%] h-[20%]'> */}
+          <div className='absolute top-[11%] left-[4%] w-[38%] h-[25%]'>
             <div className='relative w-full h-full'>
               <svg
                 width='100%'
@@ -114,7 +115,7 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
               <img
                 src={Shape}
                 alt='shape'
-                className='absolute top-[69%] left-[79%]  lg:w-8 lg:h-8  w-5 h-5'
+                className='absolute bottom-3 sm:bottom-8 md:bottom-10 right-0  w-5 h-5 lg:w-8 lg:h-8 '
               />
 
               <div className='absolute inset-0 flex items-center justify-center px-[8%]'>
@@ -240,7 +241,10 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
                   className='w-[10px] h-[10px] ml-1'
                 />
               </span>
-              <span className='ml-2 truncate'>
+              <span className='ml-2 truncate md:hidden'>
+                ISSER Conference Hall - UG
+              </span>
+              <span className='ml-2 truncate hidden md:inline'>
                 ISSER Conference Hall - University of Ghana, Legon
               </span>
             </div>
@@ -256,7 +260,8 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
           </div>
 
           {/* Bottom Decorative Shapes - Responsive positioning and sizing */}
-          <div className='absolute top-[60%] left-[6%] w-[65%] h-[65%]'>
+          {/* <div className='absolute top-[60%] left-[2%] w-[65%] h-[65%]'> */}
+          <div className='absolute bottom-1 left-[2%] w-[73%]'>
             <img
               src={DFShapeSet2}
               alt='Bottom symbols'
