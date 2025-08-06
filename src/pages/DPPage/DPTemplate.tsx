@@ -38,196 +38,80 @@ const DPTemplate: React.FC<FinalDPBannerProps> = ({
         return;
       }
 
-      // Fallback download implementation
+      // Fallback download implementation using html2canvas
       const element = document.getElementById('dp-card');
       if (!element) {
         console.error('DP card element not found');
-        alert('Could not find the DP to download. Please try again.');
         return;
       }
 
+      // Dynamically import html2canvas
+      const html2canvas = await import('html2canvas');
+      
       // Wait for all images to load
-      await waitForImages(element);
-
-      let html2canvas;
-      try {
-        // Try to load html2canvas from CDN if not available
-        if (typeof window !== 'undefined' && !window.html2canvas) {
-          await loadHtml2CanvasFromCDN();
+      await new Promise((resolve) => {
+        const images = element.querySelectorAll('img');
+        let loadedCount = 0;
+        const totalImages = images.length;
+        
+        if (totalImages === 0) {
+          resolve(true);
+          return;
         }
-        html2canvas = window.html2canvas || (await import('html2canvas')).default;
-      } catch (importError) {
-        console.error('Could not load html2canvas:', importError);
-        alert('Download feature requires additional resources. Please check your internet connection and try again.');
-        return;
-      }
+        
+        images.forEach((img) => {
+          if (img.complete) {
+            loadedCount++;
+            if (loadedCount === totalImages) resolve(true);
+          } else {
+            img.onload = () => {
+              loadedCount++;
+              if (loadedCount === totalImages) resolve(true);
+            };
+            img.onerror = () => {
+              loadedCount++;
+              if (loadedCount === totalImages) resolve(true);
+            };
+          }
+        });
+      });
 
-      const canvas = await html2canvas(element, {
+      const canvas = await html2canvas.default(element, {
         useCORS: true,
-        allowTaint: false,
+        allowTaint: true,
         backgroundColor: '#ffffff',
-        scale: Math.min(2, window.devicePixelRatio || 1),
+        scale: 2,
         width: element.offsetWidth,
         height: element.offsetHeight,
-        scrollX: 0,
-        scrollY: 0,
-        windowWidth: window.innerWidth,
-        windowHeight: window.innerHeight,
         onclone: (clonedDoc) => {
           const clonedElement = clonedDoc.getElementById('dp-card');
           if (clonedElement) {
             clonedElement.style.transform = 'none';
             clonedElement.style.maxWidth = 'none';
-            clonedElement.style.margin = '0';
           }
         }
       });
 
-      // Multiple download methods for browser compatibility
-      await downloadCanvas(canvas, `${name.replace(/\s+/g, '_')}_DevFest_DP.png`);
+      // Convert canvas to blob and download
+      canvas.toBlob((blob) => {
+        if (!blob) {
+          console.error('Failed to create blob');
+          return;
+        }
+        
+        const url = URL.createObjectURL(blob);
+        const link = document.createElement('a');
+        link.href = url;
+        link.download = `${name.replace(/\s+/g, '_')}_DevFest_DP.png`;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+        URL.revokeObjectURL(url);
+      }, 'image/png', 1.0);
 
     } catch (error) {
       console.error('Download failed:', error);
-      alert('Download failed. Please try again or contact support if the issue persists.');
-    }
-  };
-
-  const waitForImages = (element) => {
-    return new Promise((resolve) => {
-      const images = element.querySelectorAll('img, image');
-      let loadedCount = 0;
-      const totalImages = images.length;
-      
-      if (totalImages === 0) {
-        resolve();
-        return;
-      }
-      
-      const checkComplete = () => {
-        loadedCount++;
-        if (loadedCount >= totalImages) {
-          // Add small delay to ensure rendering is complete
-          setTimeout(resolve, 100);
-        }
-      };
-      
-      images.forEach((img) => {
-        if (img.complete || img.readyState === 'complete') {
-          checkComplete();
-        } else {
-          img.onload = checkComplete;
-          img.onerror = checkComplete;
-          // Fallback timeout
-          setTimeout(checkComplete, 3000);
-        }
-      });
-    });
-  };
-
-  const loadHtml2CanvasFromCDN = () => {
-    return new Promise((resolve, reject) => {
-      if (window.html2canvas) {
-        resolve();
-        return;
-      }
-
-      const script = document.createElement('script');
-      script.src = 'https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js';
-      script.onload = () => {
-        if (window.html2canvas) {
-          resolve();
-        } else {
-          reject(new Error('html2canvas not loaded properly'));
-        }
-      };
-      script.onerror = () => reject(new Error('Failed to load html2canvas from CDN'));
-      document.head.appendChild(script);
-    });
-  };
-
-  const downloadCanvas = async (canvas, filename) => {
-    // Method 1: Modern browsers with toBlob support
-    if (canvas.toBlob) {
-      return new Promise((resolve, reject) => {
-        canvas.toBlob((blob) => {
-          if (!blob) {
-            reject(new Error('Failed to create blob'));
-            return;
-          }
-          
-          try {
-            // Modern download approach
-            if ('msSaveBlob' in navigator) {
-              // Internet Explorer/Edge legacy
-              navigator.msSaveBlob(blob, filename);
-            } else if (URL && URL.createObjectURL) {
-              const url = URL.createObjectURL(blob);
-              const link = document.createElement('a');
-              link.href = url;
-              link.download = filename;
-              link.style.display = 'none';
-              
-              // Different approaches for different browsers
-              document.body.appendChild(link);
-              
-              if ('click' in link) {
-                link.click();
-              } else if (document.createEvent) {
-                const event = document.createEvent('MouseEvents');
-                event.initEvent('click', true, true);
-                link.dispatchEvent(event);
-              }
-              
-              setTimeout(() => {
-                document.body.removeChild(link);
-                URL.revokeObjectURL(url);
-              }, 100);
-            } else {
-              // Fallback to dataURL method
-              downloadViaDataURL(canvas, filename);
-            }
-            resolve();
-          } catch (error) {
-            reject(error);
-          }
-        }, 'image/png', 1.0);
-      });
-    } else {
-      // Fallback for older browsers
-      downloadViaDataURL(canvas, filename);
-    }
-  };
-
-  const downloadViaDataURL = (canvas, filename) => {
-    try {
-      const dataURL = canvas.toDataURL('image/png');
-      
-      // For mobile browsers or when blob method fails
-      if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
-        // iOS Safari - open in new window
-        const newWindow = window.open();
-        newWindow.document.write(`
-          <img src="${dataURL}" style="max-width: 100%; height: auto;">
-          <p>Long press the image above and select "Save to Photos" or "Download Image"</p>
-        `);
-      } else {
-        // Desktop fallback
-        const link = document.createElement('a');
-        link.href = dataURL;
-        link.download = filename;
-        
-        if ('click' in link) {
-          document.body.appendChild(link);
-          link.click();
-          document.body.removeChild(link);
-        } else {
-          // Very old browser fallback
-          window.open(dataURL, '_blank');
-        }
-      }
-    } catch (error) {
-      console.error('DataURL download failed:', error);
-      alert('Could not download the image. Please try right-clicking and saving the image manually.');
+      alert('Download failed. Please try again.');
     }
   };
 
