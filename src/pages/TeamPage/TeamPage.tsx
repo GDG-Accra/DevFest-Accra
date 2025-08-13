@@ -15,7 +15,7 @@ const TeamPage = () => {
           alt=""
           className="absolute left-2  lg:left-10 top-[10%] z-10 h-[5%]  lg:h-[10%] w-auto"
         />
-        <div className="relative z-20">
+        <div className="relative z-20 mt-10">
           <FAQSection />
         </div>
         <img
