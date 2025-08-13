@@ -3,109 +3,21 @@ import { Linkedin, Twitter } from "lucide-react";
 import BGImage from "../../assets/images/LandingPageImage/bgImage.svg";
 import TeamImage from '../../assets/images/TeamImages/TeamBG.png'
 import Navbar from "../../Components/Navbar/Navbar";
-
-// Import individual team member images
-import EstherImage1 from '../../assets/images/Logos/GDGLogo.png';
-import EstherImage2 from '../../assets/images/Logos/DFShapeLogo.svg';
-import EstherImage3 from '../../assets/images/Logos/GDGLogo.png';
-import EstherImage4 from '../../assets/images/Logos/DFShapeLogo.svg';
-
-interface TeamMember {
-  id: number;
-  name: string;
-  role: string;
-  category: string;
-  linkedin: string;
-  twitter: string;
-  image: string; // Added image property
-}
+import { teamMembers, filters, TeamMember } from "./teamData";
 
 const Team: React.FC = () => {
   const [activeFilter, setActiveFilter] = useState<string>("All");
   const [hoveredMember, setHoveredMember] = useState<number | null>(null);
 
-  const teamMembers: TeamMember[] = [
-    {
-      id: 1,
-      name: "Shadrack Inusah",
-      role: "GDG Organizer",
-      category: "Organizers",
-      linkedin: "#",
-      twitter: "#",
-      image: EstherImage1, 
-    },
-    {
-      id: 2,
-      name: "Roberta Akoto",
-      role: "People Lead",
-      category: "Organizers",
-      linkedin: "#",
-      twitter: "#",
-      image: EstherImage2,
-    },
-    {
-      id: 3,
-      name: "Simms Smith",
-      role: "Marketing Lead",
-      category: "Organizers",
-      linkedin: "#",
-      twitter: "#",
-      image: EstherImage3,
-    },
-  
-      {
-      id: 4,
-      name: "Okai Abena Akweley",
-      role: "Partnerships Associate",
-      category: "Organizers",
-      linkedin: "#",
-      twitter: "#",
-      image: EstherImage4,
-    },
-      {
-      id: 5,
-      name: "Deborah Dzathor",
-      role: "Team Member",
-      category: "Organizers",
-      linkedin: "#",
-      twitter: "#",
-      image: EstherImage4,
-    },
-      {
-      id: 6,
-      name: "Sosu Alfred",
-      role: "Team Member",
-      category: "Organizers",
-      linkedin: "#",
-      twitter: "#",
-      image: EstherImage4,
-    },
-      {
-      id: 7,
-      name: "Paul Boamah",
-      role: "Team Member",
-      category: "Organizers",
-      linkedin: "#",
-      twitter: "#",
-      image: EstherImage4,
-    },
-     {
-      id: 8,
-      name: "Shadrack Odametey",
-      role: "Media/Technical Lead",
-      category: "Organizers",
-      linkedin: "#",
-      twitter: "#",
-      image: EstherImage4,
-    },
-  ];
+  const getFilteredMembers = (): TeamMember[] => {
+    if (activeFilter === "All") {
+      // Show only the first 4 members when "All" is selected
+      return teamMembers.slice(0, 4);
+    }
+    return teamMembers.filter((member) => member.category === activeFilter);
+  };
 
-  const filters = ["All", "Organizers", "Product", "Designers | Developers", "Content"];
-
-  const filteredMembers =
-    activeFilter === "All"
-      ? teamMembers
-      : teamMembers.filter((member) => member.category === activeFilter);
+  const filteredMembers = getFilteredMembers();
 
   const handleKeyPress = (
     event: React.KeyboardEvent,
