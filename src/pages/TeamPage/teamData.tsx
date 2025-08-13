@@ -1,10 +1,12 @@
+import Hanson from "../../assets/images/TeamImages/hanson.png";
+import Andrews from "../../assets/images/TeamImages/Andrews.jpeg";
+import Esther from "../../assets/images/TeamImages/Esther.jpeg";
+import Richard from "../../assets/images/TeamImages/Richard.jpeg";
+import Michael from "../../assets/images/TeamImages/Michael.jpeg";
+import CodeRight from "../../assets/images/TeamImages/DFShapeLogo.svg";
+import Samuella from "../../assets/images/TeamImages/samuella.jpg";
+import Joshua from "../../assets/images/TeamImages/joshua.jpeg";
 
-import Hanson from '../../assets/images/TeamImages/hanson.png'
-import Andrews from '../../assets/images/TeamImages/Andrews.jpeg'
-import Esther from '../../assets/images/TeamImages/Esther.jpeg'
-import Richard from '../../assets/images/TeamImages/Richard.jpeg'
-import Michael from '../../assets/images/TeamImages/Michael.jpeg'
-import CodeRight from '../../assets/images/TeamImages/DFShapeLogo.svg'
 
 export interface TeamMember {
   id: number;
@@ -24,7 +26,7 @@ export const teamMembers: TeamMember[] = [
     category: "Organizers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson, 
+    image: CodeRight,
   },
   {
     id: 2,
@@ -33,7 +35,7 @@ export const teamMembers: TeamMember[] = [
     category: "Organizers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: CodeRight,
   },
   {
     id: 3,
@@ -42,7 +44,7 @@ export const teamMembers: TeamMember[] = [
     category: "Organizers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: CodeRight,
   },
   {
     id: 4,
@@ -51,7 +53,7 @@ export const teamMembers: TeamMember[] = [
     category: "Organizers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: CodeRight,
   },
   {
     id: 5,
@@ -60,7 +62,7 @@ export const teamMembers: TeamMember[] = [
     category: "Organizers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: CodeRight,
   },
   {
     id: 6,
@@ -69,7 +71,7 @@ export const teamMembers: TeamMember[] = [
     category: "Organizers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: CodeRight,
   },
   {
     id: 7,
@@ -78,7 +80,7 @@ export const teamMembers: TeamMember[] = [
     category: "Organizers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: CodeRight,
   },
   {
     id: 8,
@@ -87,7 +89,7 @@ export const teamMembers: TeamMember[] = [
     category: "Organizers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: CodeRight,
   },
   {
     id: 9,
@@ -123,7 +125,7 @@ export const teamMembers: TeamMember[] = [
     category: "Developers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: CodeRight,
   },
   {
     id: 13,
@@ -132,7 +134,7 @@ export const teamMembers: TeamMember[] = [
     category: "Developers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: Joshua,
   },
   {
     id: 14,
@@ -150,7 +152,7 @@ export const teamMembers: TeamMember[] = [
     category: "Developers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: CodeRight,
   },
   {
     id: 16,
@@ -159,7 +161,7 @@ export const teamMembers: TeamMember[] = [
     category: "Developers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: CodeRight,
   },
   {
     id: 17,
@@ -168,7 +170,7 @@ export const teamMembers: TeamMember[] = [
     category: "Developers",
     linkedin: "#",
     twitter: "#",
-    image: Hanson,
+    image: Samuella,
   },
   {
     id: 18,
@@ -190,4 +192,10 @@ export const teamMembers: TeamMember[] = [
   },
 ];
 
-export const filters = ["All", "Organizers", "Graphic Designers | UIUX Designers", "Developers", "Content"];
+export const filters = [
+  "All",
+  "Organizers",
+  "Graphic Designers | UIUX Designers",
+  "Developers",
+  "Content",
+];
